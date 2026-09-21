@@ -1,0 +1,77 @@
+generated: '2026-09-20'
+method: searched
+source: https://github.com/payrix ; registry metadata endpoints (rubygems.org, api.nuget.org, registry.npmjs.org, crates.io, pypi.org, packagist,
+  search.maven.org)
+note: Worldpay for Platforms also distributes beta APIMatic-generated SDK zips (.NET, Java, PHP, Python, Ruby, TypeScript) from the Developer
+  Hub portal; its own disclaimer says they are "not officially created, owned, or maintained by Worldpay for Platforms" and they are not on any
+  registry. PyPI, Packagist and Maven Central returned no payrix package.
+packages:
+- name: payrix
+  registry: rubygems
+  url: https://rubygems.org/gems/payrix
+  language: Ruby
+  official: true
+  version: 0.1.2
+  published: '2021-05-25'
+  source_repo: https://github.com/payrix/public-payrix-ruby
+  note: gem authors field is "Payrix"; last release 2021 predates the current API docs (spec 1.7.0 / portal 26.x).
+  ownership_audit: metadata names payrix.com
+- name: payrix
+  registry: nuget
+  url: https://www.nuget.org/packages/payrix
+  language: C#
+  official: false
+  version: 1.0.4
+  published: '2020-05-01'
+  source_repo: https://github.com/payrix/public-payrix-net
+  note: NuGet authors field is "Payrix"; description "Payrix .NET SDK".
+  ownership_audit: 'registry metadata names neither the provider''s domain nor its GitHub org: official downgraded (harvest-packages.py --audit)'
+- name: public-payrix-php
+  registry: github
+  url: https://github.com/payrix/public-payrix-php
+  language: PHP
+  official: true
+  version: null
+  published: null
+  note: First-party repo in the payrix GitHub org; not published to Packagist (repo.packagist.org/p2/payrix/payrix.json -> 404). Last push 2025-06-05.
+- name: public-payrix_sdk_android
+  registry: github
+  url: https://github.com/payrix/public-payrix_sdk_android
+  language: Java
+  official: true
+  version: null
+  published: null
+  note: First-party Android SDK repo; no registry release found. Last push 2025-06-05.
+- name: public-payrix_mobile_sdk_v3-android_sdk_v3
+  registry: github
+  url: https://github.com/payrix/public-payrix_mobile_sdk_v3-android_sdk_v3
+  language: Java
+  official: true
+  version: null
+  published: null
+  note: Mobile SDK v3 (EMV); no registry release found. Last push 2025-06-05.
+- name: public-payrix_mobile_sdk_v3-ios_sdk_v3
+  registry: github
+  url: https://github.com/payrix/public-payrix_mobile_sdk_v3-ios_sdk_v3
+  language: Objective-C
+  official: true
+  version: null
+  published: null
+  note: Mobile SDK v3 for iOS; no registry release found. Last push 2025-06-05.
+- name: payrix
+  registry: npm
+  url: https://www.npmjs.com/package/payrix
+  language: JavaScript
+  official: false
+  version: 1.0.15
+  published: '2021-01-14'
+  note: 'Third-party: "Payrix npm package for ThryvPay mobile app and web app", maintainer thryvdeveloper.'
+- name: payrix
+  registry: crates.io
+  url: https://crates.io/crates/payrix
+  language: Rust
+  official: false
+  version: 0.3.0
+  published: '2026-02-09'
+  source_repo: https://github.com/outlawpractice/payrix-rs
+  note: Third-party Rust client.

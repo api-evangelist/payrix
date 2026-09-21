@@ -1,0 +1,390 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/payrix/main/json-schema/payrix-aggregations-put-request-schema.json",
+  "title": "aggregationsPutRequest",
+  "x-generated": "2026-09-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/payrix-aggregations-api-openapi.yml#/components/schemas/aggregationsPutRequest",
+  "type": "object",
+  "properties": {
+    "login": {
+      "type": "string",
+      "description": "The identifier of the Login that owns this Aggregation."
+    },
+    "entity": {
+      "type": "string",
+      "description": "The identifier of the Entity that this Aggregation applies to."
+    },
+    "forlogin": {
+      "type": "string",
+      "description": "The identifier of the Login that this Aggregation applies to."
+    },
+    "org": {
+      "type": "string",
+      "description": "The identifier of the Org that this Aggregation applies to."
+    },
+    "team": {
+      "type": "string",
+      "description": "The identifier of the Team that this Aggregation applies to."
+    },
+    "division": {
+      "type": "string",
+      "description": "The identifier of the Division that this Aggregation applies to."
+    },
+    "partition": {
+      "type": "string",
+      "description": "The identifier of the Partition that this Aggregation applies to."
+    },
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/aggregationType"
+        },
+        {
+          "description": "The type of aggregation. This will automatically set the search and total values.\n\n<details>\n<summary>Valid Values</summary>\n\n- `entityEntryEventMerchant` - **A merchant entry.**\n- `merchantTxnApprovedAll` - **All merchant transactions approved.**\n- `merchantTxnCapturedAll` - **All merchant transactions captured.**\n- `merchantTxnFailedAll` - **All merchant transactions failed.**\n\n</details>"
+        }
+      ]
+    },
+    "level": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/aggregationsLevel"
+        },
+        {
+          "description": "The level of user that this aggregation will run for.\n\n<details>\n<summary>Valid Values</summary>\n\n- `admin` - **Admin User.**\n- `division` - **Division-level User.**\n- `merchant` - **Merchant-level User.**\n- `partition` - **Partition-level User.**\n\n</details>"
+        }
+      ]
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of this Aggregation. This field is stored as a text string and must be between 0 and 100 characters long."
+    },
+    "description": {
+      "type": "string",
+      "description": "A description of this Aggregation. This field is stored as a text string and must be between 0 and 100 characters long."
+    },
+    "resource": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/resource"
+        },
+        {
+          "description": "<details><summary>Valid Values</summary>\n\n- `1` - **apiKeys**\n\n- `2` - **contacts**\n\n- `3` - **customers**\n\n- `4` - **alertTriggers**\n\n- `5` - **iplists**\n\n- `6` - **items**\n\n- `7` - **alerts**\n\n- `8` - **logins**\n\n- `9` - **merchants**\n\n- `10` - **orgs**\n\n- `12` - **permissions**\n\n- `13` - **decisions**\n\n- `14` - **parameters**\n\n- `15` - **sessions**\n\n- `16` - **alertActions**\n\n- `17` - **tokens**\n\n- `18` - **txns**\n\n- `19` - **teamLogins**\n\n- `20` - **credentials**\n\n- `21` - **members**\n\n- `22` - **accounts**\n\n- `23` - **plans**\n\n- `24` - **subscriptions**\n\n- `25` - **subscriptionTokens**\n\n- `26` - **disbursements**\n\n- `27` - **entries**\n\n- `28` - **fees**\n\n- `29` - **funds**\n\n- `30` - **orgEntities**\n\n- `31` - **payouts**\n\n- `32` - **feeRules**\n\n- `33` - **entityRefs**\n\n- `34` - **chargebacks**\n\n- `35` - **decisionRules**\n\n- `36` - **entities**\n\n- `37` - **facilitators**\n\n- `38` - **partitions**\n\n- `39` - **merchantResults**\n\n- `40` - **mccs**\n\n- `41` - **mappings**\n\n- `42` - **refunds**\n\n- `43` - **batches**\n\n- `44` - **txnResults**\n\n- `45` - **confirmCodes**\n\n- `46` - **accountVerifications**\n\n- `47` - **disbursementResults**\n\n- `48` - **reserveEntries**\n\n- `49` - **chargebackMessages**\n\n- `50` - **hosts**\n\n- `53` - **txnRefs**\n\n- `54` - **verifications**\n\n- `55` - **verificationResults**\n\n- `56` - **chargebackMessageResults**\n\n- `57` - **assessments**\n\n- `58` - **entryOrigins**\n\n- `59` - **adjustments**\n\n- `60` - **txnDatas**\n\n- `61` - **revenueBoosts**\n\n- `62` - **orgFlows**\n\n- `63` - **orgFlowActions**\n\n- `64` - **accountVerificationResults**\n\n- `65` - **disbursementRefs**\n\n- `66` - **reserves**\n\n- `67` - **entityReserves**\n\n- `68` - **txnReports**\n\n- `69` - **payoutFlows**\n\n- `70` - **vendors**\n\n- `71` - **fundOrigins**\n\n- `72` - **entityRoutes**\n\n- `73` - **pendingEntries**\n\n- `74` - **terminals**\n\n- `75` - **terminalRefs**\n\n- `76` - **holds**\n\n- `77` - **holdNotes**\n\n- `78` - **files**\n\n- `79` - **messageThreads**\n\n- `80` - **messages**\n\n- `81` - **bins**\n\n- `82` - **feeModifiers**\n\n- `83` - **versions**\n\n- `84` - **chargebackDocuments**\n\n- `85` - **divisions**\n\n- `86` - **entityReturns**\n\n- `87` - **chargebackStatuses**\n\n- `88` - **profitShares**\n\n- `89` - **profitShareResults**\n\n- `90` - **aggregations**\n\n- `91` - **aggregationResultGroups**\n\n- `92` - **aggregationResults**\n\n- `93` - **auditLogs**\n\n- `94` - **invoiceParameters**\n\n- `95` - **invoices**\n\n- `96` - **secrets**\n\n- `97` - **watchlists**\n\n- `98` - **watchlistItems**\n\n- `99` - **txnMetadatas**\n\n- `100` - **invoiceResults**\n\n- `101` - **invoiceItems**\n\n- `102` - **invoiceLineItems**\n\n- `103` - **profitShareRules**\n\n- `104` - **configurations**\n\n- `105` - **currencyRates**\n\n- `106` - **terminalTxns**\n\n- `107` - **terminalTxnDatas**\n\n- `108` - **terminalTxnRefs**\n\n- `109` - **terminalTxnResults**\n\n- `110` - **configurationStages**\n\n- `111` - **disbursementEntries**\n\n- `112` - **decisionActions**\n\n- `113` - **notes**\n\n- `114` - **noteDocuments**\n\n- `115` - **paymentUpdates**\n\n- `117` - **paymentUpdateGroups**\n\n- `118` - **authTokens**\n\n- `119` - **reportResults**\n\n- `120` - **reports**\n\n- `121` - **reportItems**\n\n- `122` - **entityDebts**\n\n- `123` - **billings**\n\n- `124` - **billingModifiers**\n\n- `125` - **statements**\n\n- `126` - **statementEntries**\n\n- `127` - **billingEvents**\n\n- `128` - **fundingParameters**\n\n- `129` - **requestTokens**\n\n- `130` - **accountRefs**\n\n- `131` - **settlements**\n\n- `132` - **entityDatas**\n\n- `133` - **terminalTxnMetadatas**\n\n- `134` - **batchRefs**\n\n- `135` - **verificationRefs**\n\n- `136` - **externalFees**\n\n- `137` - **saferPayments**\n\n- `138` - **mfaRecoveryCodes**\n\n- `139` - **debtorEntities**\n\n- `140` - **omniTokens**\n\n- `141` - **changeRequests**\n\n- `142` - **txnSession**\n\n- `143` - **revShareSchedules**\n\n- `144` - **revShareStatements**\n\n- `145` - **loginsHelpers**\n\n- `146` - **entityCustomFields**\n\n- `147' - **DisbursementEntriesLog**\n\n- `148` - **merchantPlatformStatuses**\n\n- `149` - **DisbursementEntitiesLog**\n\n- `150` - **orgsVASSaferPayments**\n\n- `151` - **orgsVASOmniTokens**\n\n- `152` - **orgsVASRevenueBoosts**\n\n- `153` - **tokenResults**\n\n- `154` - **PlaidConsumerAccounts**\n\n- `155` - **appleDomains**\n\n- `156` - **PlaidConsumerPayments**\n\n- `157` - **saferPaymentsCompliance**\n\n- `158` - **orgFlowRules**\n\n- `159` - **TaxFormRequests**\n\n- `160` - **HostThemes**\n\n- `161` - **IntegrationResults**\n\n- `162` - **VasEfeOffers**\n\n- `163` - **VasEfeOfferUpdates**\n\n- `165` - **EmbeddedFinance**\n\n- `166` - **OrgsVASEfeProducts**\n\n- `167` - **EntityTerms**\n\n- `168` - **PinlessDebitConversions**\n\n- `169` - **OrgsVASPinlessDebitConversions**\n\n- `170` - **FraudSightEnablements**\n\n- `171` - **FraudSightResults**\n\n- `172` - **OrgsVASFraudSightEnablements**\n</details>"
+        }
+      ]
+    },
+    "search": {
+      "type": "string",
+      "description": "The search query used to find records and apply the desired calculation. This field is stored as a text string and must be between 0 and 1000 characters long."
+    },
+    "totals": {
+      "type": "string",
+      "description": "The specification of the desired aggregation functions including count, sum, min and max. This field is stored as a text string and must be between 1 and 100 characters long."
+    },
+    "degrouping": {
+      "type": "string",
+      "description": "Degrouping is the reverse process of grouping, where progressively smaller groups are removed to provide aggregated results at higher levels. This is useful when you want to see overall totals without the detailed breakdowns. For example, degrouping can be used to sum up all transactions across all merchants and payment methods, providing a total approval count without needing to look at individual merchant or payment method details."
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/aggregationStatus"
+        },
+        {
+          "description": "The current status of the aggregation process.\n\n<details>\n<summary>Valid Values</summary>\n\n- `notReady` - **Aggregation is not ready.**\n- `ready` - **Aggregation is ready.**\n- `processing` - **Aggregation is processing.**\n- `processed` - **Aggregation has been processed.**\n\n</details>"
+        }
+      ]
+    },
+    "schedule": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/aggregationSchedule"
+        },
+        {
+          "description": "The schedule that determines when the aggregation function will be processed.\n\n<details>\n<summary>Valid Values</summary>\n\n- `hours` - **Hourly schedule.**\n- `days` - **Daily schedule.**\n- `weeks` - **Weekly schedule.**\n- `months` - **Monthly schedule.**\n- `years` - **Annual schedule.**\n\n</details>"
+        }
+      ]
+    },
+    "scheduleFactor": {
+      "type": "integer",
+      "description": "A multiplier that you can use to adjust the schedule set in the 'schedule' field, such as daily, weekly, monthly, or annually. In This field is specified as an integer and its value determines how the interval is multiplied.",
+      "contentEncoding": "int32"
+    },
+    "start": {
+      "type": "integer",
+      "description": "The date on which the aggregation processing should start. The date is specified as a twelve digit string in YYYYMMDDHHII format, for example, '201601201528' for January 20, 2016 at 15:28 (3:28 pm). The value of this field must represent a date in the future, or the present date. When the schedule is set to HOURLY (1) the minute part of the time must be divisible by 10 (15:10, 15:20, 15:30, etc...).",
+      "contentEncoding": "int64"
+    },
+    "default": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/aggregationDefault"
+        },
+        {
+          "description": "Indicates whether this aggregation was automatically created.\n\n<details>\n<summary>Valid Values</summary>\n\n- `0` - **Manually created.**\n- `1` - **Automatically created.**\n\n</details>"
+        }
+      ]
+    },
+    "inactive": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/inactive"
+        },
+        {
+          "description": "Whether this resource is marked as inactive.\n\n<details>\n<summary>Valid Values</summary>\n\n- `0` - **Active**\n- `1` - **Inactive**\n\n</details>"
+        }
+      ]
+    },
+    "frozen": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/frozen"
+        },
+        {
+          "description": "Whether this resource is marked as frozen.\n\n<details>\n<summary>Valid Values</summary>\n\n- `0` - **Not Frozen**\n- `1` - **Frozen**\n\n</details>"
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "aggregationDefault": {
+      "title": "aggregationDefault",
+      "enum": [
+        0,
+        1
+      ],
+      "type": "integer"
+    },
+    "aggregationSchedule": {
+      "title": "aggregationSchedule",
+      "enum": [
+        "hours",
+        "days",
+        "weeks",
+        "months",
+        "years"
+      ],
+      "type": "string"
+    },
+    "aggregationStatus": {
+      "title": "aggregationStatus",
+      "enum": [
+        "notReady",
+        "ready",
+        "processing",
+        "processed"
+      ],
+      "type": "string"
+    },
+    "aggregationType": {
+      "title": "aggregationType",
+      "enum": [
+        "entityEntryEventMerchant",
+        "merchantTxnApprovedAll",
+        "merchantTxnCapturedAll",
+        "merchantTxnFailedAll"
+      ],
+      "type": "string"
+    },
+    "aggregationsLevel": {
+      "title": "aggregationsLevel",
+      "enum": [
+        "admin",
+        "division",
+        "merchant",
+        "partition"
+      ],
+      "type": "string"
+    },
+    "frozen": {
+      "title": "frozen",
+      "enum": [
+        0,
+        1
+      ],
+      "type": "integer"
+    },
+    "inactive": {
+      "title": "inactive",
+      "enum": [
+        0,
+        1
+      ],
+      "type": "integer"
+    },
+    "resource": {
+      "title": "resource",
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172
+      ],
+      "type": "integer"
+    }
+  }
+}

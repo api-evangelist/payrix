@@ -1,0 +1,13 @@
+generated: '2026-09-20'
+method: none
+source: https://platforms.worldpay.com/
+name: Payrix (Worldpay for Platforms) pricing
+audience: business-product
+pricing_basis: negotiated
+published: false
+plan_count: 0
+delivery:
+  delivery: managed
+plans: []
+note: 'No public pricing page: https://payrix.com/pricing redirects to https://platforms.worldpay.com/pricing -> 404; the site offers only Request a Demo / Contact
+  Us. Partner fee schedules are configured per portfolio in the portal (resource.payrix.com/docs/overview-of-fees) and are not list prices.'

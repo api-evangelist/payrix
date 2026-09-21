@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/payrix/main/json-schema/payrix-batches-post-request-schema.json",
+  "title": "batchesPostRequest",
+  "x-generated": "2026-09-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/payrix-batches-settlements-api-openapi.yml#/components/schemas/batchesPostRequest",
+  "required": [
+    "merchant",
+    "platform"
+  ],
+  "type": "object",
+  "properties": {
+    "merchant": {
+      "type": "string",
+      "description": "The identifier of the Merchant that is associated with this Batch."
+    },
+    "platform": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/platformModel"
+        },
+        {
+          "description": "The platform used to process this resource.\n\n<details>\n<summary>Valid Values</summary>\n\n- `APPLE` - **The Apple Payment Processor.**\n- `ELAVON` - **The Elavon processor.**\n- `FIRSTDATA` - **The FirstData processor.**\n- `GOOGLE` - **The Google Payment Processor.**\n- `VANTIV` - **The WorldPay (aka Vantiv or Litle) eComm (aka VAP) processor.**\n- `VCORE` - **The WorldPay (aka Vantiv) Core processor.**\n- `TDBANKCA` - **External funding with TD Bank Canada via the Operating Account.**\n- `WELLSACH` - **The Wells Fargo ACH processor.**\n- `WELLSFARGO` - **The Wells Fargo Merchant Services processor.**\n- `WFSINGLE` - **The WFSINGLE processor.**\n- `WORLDPAY` - **The WORLDPAY processor.**\n\n</details>"
+        }
+      ]
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/batchStatus"
+        },
+        {
+          "description": "The current status of this Batch.\n\n<details>\n<summary>Valid Values</summary>\n\n- `open`  - **This Batch can accept more Transactions.**\n- `closed` - **This Batch is closed to new Transactions and is ready to be sent to the processor.**\n\n</details>"
+        }
+      ]
+    },
+    "ref": {
+      "type": "string",
+      "description": "The reference code of the batch. \nThis field is automatically generated and stored as a text string and must be between 0 and 50 characters long."
+    },
+    "clientRef": {
+      "type": "string",
+      "description": "The merchant's reference code of the batch. \nThis field is stored as a text string and must be between 0 and 50 characters long."
+    },
+    "processingId": {
+      "type": "string",
+      "description": "Internal ID set for processing."
+    },
+    "inactive": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/inactive"
+        },
+        {
+          "description": "Whether this resource is marked as inactive.\n\n<details>\n<summary>Valid Values</summary>\n\n- `0` - **Active**\n- `1` - **Inactive**\n\n</details>"
+        }
+      ]
+    },
+    "frozen": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/frozen"
+        },
+        {
+          "description": "Whether this resource is marked as frozen.\n\n<details>\n<summary>Valid Values</summary>\n\n- `0` - **Not Frozen**\n- `1` - **Frozen**\n\n</details>"
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "batchStatus": {
+      "title": "batchStatus",
+      "enum": [
+        "open",
+        "closed"
+      ],
+      "type": "string"
+    },
+    "frozen": {
+      "title": "frozen",
+      "enum": [
+        0,
+        1
+      ],
+      "type": "integer"
+    },
+    "inactive": {
+      "title": "inactive",
+      "enum": [
+        0,
+        1
+      ],
+      "type": "integer"
+    },
+    "platformModel": {
+      "title": "platformModel",
+      "enum": [
+        "APPLE",
+        "ELAVON",
+        "FIRSTDATA",
+        "GOOGLE",
+        "VANTIV",
+        "VCORE",
+        "TDBANKCA",
+        "WELLSACH",
+        "WELLSFARGO",
+        "WFSINGLE",
+        "WORLDPAY"
+      ],
+      "type": "string"
+    }
+  }
+}

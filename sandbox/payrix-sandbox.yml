@@ -1,0 +1,48 @@
+generated: '2026-09-20'
+method: searched
+source: https://resource.payrix.com/docs/get-started-with-sandbox-testing
+description: The Payrix Pro Sandbox mirrors the production portal and API; no funds move. Accounts are issued during implementation or requested through the sandbox
+  sign-up form.
+docs:
+- https://resource.payrix.com/docs/sandbox-testing
+- https://resource.payrix.com/docs/get-started-with-sandbox-testing
+- https://resource.payrix.com/docs/sandbox-utilization-guidelines
+- https://resource.payrix.com/docs/sandbox-simulators
+- https://resource.payrix.com/docs/transactions-sandbox-simulator
+- https://resource.payrix.com/docs/merchant-boarding-sandbox-simulator
+- https://resource.payrix.com/docs/payouts-sandbox-simulator
+- https://resource.payrix.com/docs/sandbox-apple-pay-testing
+modes:
+- name: sandbox
+  base_url: https://test-api.payrix.com
+  portal: https://test-portal.payrix.com/
+  notes: Requires a private API key generated in the Sandbox Portal.
+- name: canada sandbox
+  base_url: https://test-api.payrixcanada.com
+- name: production
+  base_url: https://api.payrix.com
+  portal: https://portal.payrix.com/
+signup: https://test-portal.payrix.com/signup/payrixsandbox
+test_cards:
+  success:
+  - number: 4242 4242 4242 4242
+    note: '"industry-standard test credit card number with a future expiration date, 3-digit CVV, and valid zip code"'
+simulators:
+  docs: https://resource.payrix.com/docs/transactions-sandbox-simulator
+  mechanism: trigger amounts — submitting a specific transaction total produces a specific simulated processor response
+  examples_vantiv_vap:
+  - amount: $95.87
+    response: Declined
+  - amount: $500.04
+    response: Insufficient Funds
+  - amount: $848.12
+    response: Lost/Stolen Card
+  - amount: $848.13
+    response: Expired Card
+  - amount: $848.19
+    response: Do Not Honor
+  - amount: $848.25
+    response: Generic Decline
+  other_simulators:
+  - Merchant Boarding Sandbox Simulator
+  - Payouts Sandbox Simulator

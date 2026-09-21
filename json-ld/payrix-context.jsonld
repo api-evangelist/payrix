@@ -1,0 +1,1473 @@
+{
+  "@context": {
+    "@vocab": "https://payrix.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "payrix": "https://payrix.com/schema#",
+    "changeRequest": "payrix:changeRequest",
+    "id": {
+      "@id": "payrix:id",
+      "@type": "xsd:string"
+    },
+    "created": {
+      "@id": "payrix:created",
+      "@type": "xsd:string"
+    },
+    "modified": {
+      "@id": "payrix:modified",
+      "@type": "xsd:string"
+    },
+    "creator": {
+      "@id": "payrix:creator"
+    },
+    "modifier": {
+      "@id": "payrix:modifier",
+      "@type": "xsd:string"
+    },
+    "deleted": {
+      "@id": "payrix:deleted",
+      "@type": "xsd:string"
+    },
+    "login": {
+      "@id": "payrix:login"
+    },
+    "authType": {
+      "@id": "payrix:authType",
+      "@type": "xsd:integer"
+    },
+    "operation": {
+      "@id": "payrix:operation"
+    },
+    "status": {
+      "@id": "payrix:status"
+    },
+    "reasonType": {
+      "@id": "payrix:reasonType",
+      "@type": "xsd:string"
+    },
+    "reason": {
+      "@id": "payrix:reason",
+      "@type": "xsd:string"
+    },
+    "changes": {
+      "@id": "payrix:changes",
+      "@type": "xsd:string"
+    },
+    "model": {
+      "@id": "payrix:model",
+      "@type": "xsd:string"
+    },
+    "recordId": {
+      "@id": "payrix:recordId"
+    },
+    "entity": {
+      "@id": "payrix:entity"
+    },
+    "analyst": {
+      "@id": "payrix:analyst"
+    },
+    "reviewed": {
+      "@id": "payrix:reviewed",
+      "@type": "xsd:string"
+    },
+    "verificationRef": {
+      "@id": "payrix:verificationRef",
+      "@type": "@id"
+    },
+    "aggregationDefault": "payrix:aggregationDefault",
+    "terminalRefsProcessor": "payrix:terminalRefsProcessor",
+    "descisionActionsAction": "payrix:descisionActionsAction",
+    "entityReturnsResponse": "payrix:entityReturnsResponse",
+    "payment": {
+      "@id": "payrix:payment"
+    },
+    "txn": {
+      "@id": "payrix:txn"
+    },
+    "disbursement": {
+      "@id": "payrix:disbursement"
+    },
+    "actionCode": {
+      "@id": "payrix:actionCode"
+    },
+    "code": {
+      "@id": "payrix:code"
+    },
+    "message": {
+      "@id": "payrix:message",
+      "@type": "xsd:string"
+    },
+    "inactive": {
+      "@id": "payrix:inactive"
+    },
+    "frozen": {
+      "@id": "payrix:frozen"
+    },
+    "CurrencyRatesFromCurrency": "payrix:CurrencyRatesFromCurrency",
+    "entryEvent": "payrix:entryEvent",
+    "parametersAutoTaxExemptEnabled": "payrix:parametersAutoTaxExemptEnabled",
+    "teamsAutoCascadeOwner": "payrix:teamsAutoCascadeOwner",
+    "invoiceStatus": "payrix:invoiceStatus",
+    "settlementsResponse": "payrix:settlementsResponse",
+    "platform": {
+      "@id": "payrix:platform"
+    },
+    "ref": {
+      "@id": "payrix:ref",
+      "@type": "xsd:string"
+    },
+    "amount": {
+      "@id": "payrix:amount",
+      "@type": "xsd:integer"
+    },
+    "parametersSameDayPayoutsEnabled": "payrix:parametersSameDayPayoutsEnabled",
+    "merchantsVisaDisclosureIP": "payrix:merchantsVisaDisclosureIP",
+    "paymentNumberUpdatedModel": "payrix:paymentNumberUpdatedModel",
+    "parametersMc3dsEnabled": "payrix:parametersMc3dsEnabled",
+    "currencyRatesResponse": "payrix:currencyRatesResponse",
+    "org": {
+      "@id": "payrix:org"
+    },
+    "division": {
+      "@id": "payrix:division"
+    },
+    "partition": {
+      "@id": "payrix:partition"
+    },
+    "fromCurrency": {
+      "@id": "payrix:fromCurrency"
+    },
+    "toCurrency": {
+      "@id": "payrix:toCurrency"
+    },
+    "rate": {
+      "@id": "payrix:rate",
+      "@type": "xsd:decimal"
+    },
+    "start": {
+      "@id": "payrix:start",
+      "@type": "xsd:integer"
+    },
+    "finish": {
+      "@id": "payrix:finish",
+      "@type": "xsd:integer"
+    },
+    "decisionsUseCache": "payrix:decisionsUseCache",
+    "reservesResponse": "payrix:reservesResponse",
+    "level": {
+      "@id": "payrix:level"
+    },
+    "hold": {
+      "@id": "payrix:hold"
+    },
+    "name": {
+      "@id": "payrix:name",
+      "@type": "xsd:string"
+    },
+    "description": {
+      "@id": "payrix:description",
+      "@type": "xsd:string"
+    },
+    "percent": {
+      "@id": "payrix:percent",
+      "@type": "xsd:integer"
+    },
+    "release": {
+      "@id": "payrix:release"
+    },
+    "releaseFactor": {
+      "@id": "payrix:releaseFactor",
+      "@type": "xsd:integer"
+    },
+    "max": {
+      "@id": "payrix:max",
+      "@type": "xsd:integer"
+    },
+    "reserveEntries": {
+      "@id": "payrix:reserveEntries",
+      "@container": "@list"
+    },
+    "invoiceParameterType": "payrix:invoiceParameterType",
+    "error-four-hundred-Properties": "payrix:error-four-hundred-Properties",
+    "severity": {
+      "@id": "payrix:severity",
+      "@type": "xsd:integer"
+    },
+    "msg": {
+      "@id": "payrix:msg",
+      "@type": "xsd:string"
+    },
+    "field": {
+      "@id": "payrix:field",
+      "@type": "xsd:string"
+    },
+    "errorCode": {
+      "@id": "payrix:errorCode",
+      "@type": "xsd:string"
+    },
+    "terminalRefPlatform": "payrix:terminalRefPlatform",
+    "holdsReleaseAction": "payrix:holdsReleaseAction",
+    "terminalTxnsResultCode": "payrix:terminalTxnsResultCode",
+    "terminalTxnsPin": "payrix:terminalTxnsPin",
+    "txnCheckStage": "payrix:txnCheckStage",
+    "credentialsResponse": "payrix:credentialsResponse",
+    "username": {
+      "@id": "payrix:username",
+      "@type": "xsd:string"
+    },
+    "password": {
+      "@id": "payrix:password",
+      "@type": "xsd:string"
+    },
+    "connectUsername": {
+      "@id": "payrix:connectUsername",
+      "@type": "xsd:string"
+    },
+    "connectPassword": {
+      "@id": "payrix:connectPassword",
+      "@type": "xsd:string"
+    },
+    "integration": {
+      "@id": "payrix:integration"
+    },
+    "type": {
+      "@id": "payrix:type"
+    },
+    "secret": {
+      "@id": "payrix:secret"
+    },
+    "subscriptionTokensResponse": "payrix:subscriptionTokensResponse",
+    "subscription": {
+      "@id": "payrix:subscription"
+    },
+    "token": {
+      "@id": "payrix:token"
+    },
+    "txnResultsResponse": "payrix:txnResultsResponse",
+    "originalCode": {
+      "@id": "payrix:originalCode",
+      "@type": "xsd:string"
+    },
+    "bankCode": {
+      "@id": "payrix:bankCode"
+    },
+    "binLocationType": "payrix:binLocationType",
+    "terminalTxnsSwiped": "payrix:terminalTxnsSwiped",
+    "statementsResponse": "payrix:statementsResponse",
+    "billing": {
+      "@id": "payrix:billing"
+    },
+    "totalPaid": {
+      "@id": "payrix:totalPaid",
+      "@type": "xsd:integer"
+    },
+    "total": {
+      "@id": "payrix:total",
+      "@type": "xsd:integer"
+    },
+    "currency": {
+      "@id": "payrix:currency"
+    },
+    "forentity": {
+      "@id": "payrix:forentity"
+    },
+    "disbursements": {
+      "@id": "payrix:disbursements",
+      "@container": "@list"
+    },
+    "entries": {
+      "@id": "payrix:entries",
+      "@container": "@list"
+    },
+    "pendingEntries": {
+      "@id": "payrix:pendingEntries",
+      "@container": "@list"
+    },
+    "statementEntries": {
+      "@id": "payrix:statementEntries",
+      "@container": "@list"
+    },
+    "txns": {
+      "@id": "payrix:txns",
+      "@container": "@list"
+    },
+    "orgFlowRulesResponse": "payrix:orgFlowRulesResponse",
+    "orgFlow": {
+      "@id": "payrix:orgFlow"
+    },
+    "value": {
+      "@id": "payrix:value",
+      "@type": "xsd:string"
+    },
+    "grouping": {
+      "@id": "payrix:grouping",
+      "@type": "xsd:string"
+    },
+    "parametersVerifyForBoardingNotRequired": "payrix:parametersVerifyForBoardingNotRequired",
+    "loginsConfirmed": "payrix:loginsConfirmed",
+    "terminalTxnsTerminalCapability": "payrix:terminalTxnsTerminalCapability",
+    "details": "payrix:details",
+    "requestId": {
+      "@id": "payrix:requestId",
+      "@type": "xsd:integer"
+    },
+    "totals": {
+      "@id": "payrix:totals"
+    },
+    "page": {
+      "@id": "payrix:page"
+    },
+    "payoutSchedule": "payrix:payoutSchedule",
+    "merchantsSaqType": "payrix:merchantsSaqType",
+    "terminalsAutoClose": "payrix:terminalsAutoClose",
+    "interchangeHistoriesIsCurrent": "payrix:interchangeHistoriesIsCurrent",
+    "partitionNoHoldEmail": "payrix:partitionNoHoldEmail",
+    "saferPaymentNonComplianceFeeManagedModel": "payrix:saferPaymentNonComplianceFeeManagedModel",
+    "teamsResponse": "payrix:teamsResponse",
+    "autoCascadeDisabled": {
+      "@id": "payrix:autoCascadeDisabled"
+    },
+    "autoCascadeOwner": {
+      "@id": "payrix:autoCascadeOwner"
+    },
+    "aggregations": {
+      "@id": "payrix:aggregations",
+      "@container": "@list"
+    },
+    "alerts": {
+      "@id": "payrix:alerts",
+      "@container": "@list"
+    },
+    "teamLogins": {
+      "@id": "payrix:teamLogins",
+      "@container": "@list"
+    },
+    "orgFlows": {
+      "@id": "payrix:orgFlows",
+      "@container": "@list"
+    },
+    "noteDocumentStatus": "payrix:noteDocumentStatus",
+    "configurationsResponse": "payrix:configurationsResponse",
+    "options": {
+      "@id": "payrix:options",
+      "@type": "xsd:string"
+    },
+    "configurationStages": {
+      "@id": "payrix:configurationStages",
+      "@container": "@list"
+    },
+    "entityDefault": "payrix:entityDefault",
+    "billingSchedule": "payrix:billingSchedule",
+    "invoiceResultStatus": "payrix:invoiceResultStatus",
+    "accountsPutRequestSchemaProperties": "payrix:accountsPutRequestSchemaProperties",
+    "method": {
+      "@id": "payrix:method"
+    },
+    "number": {
+      "@id": "payrix:number",
+      "@type": "xsd:string"
+    },
+    "routing": {
+      "@id": "payrix:routing",
+      "@type": "xsd:string"
+    },
+    "parametersSurchargeEnabled": "payrix:parametersSurchargeEnabled",
+    "payoutFlowsResponse": "payrix:payoutFlowsResponse",
+    "payoutLogin": {
+      "@id": "payrix:payoutLogin"
+    },
+    "trigger": {
+      "@id": "payrix:trigger"
+    },
+    "schedule": {
+      "@id": "payrix:schedule"
+    },
+    "scheduleFactor": {
+      "@id": "payrix:scheduleFactor",
+      "@type": "xsd:integer"
+    },
+    "um": {
+      "@id": "payrix:um"
+    },
+    "minimum": {
+      "@id": "payrix:minimum",
+      "@type": "xsd:integer"
+    },
+    "secondaryDescriptor": {
+      "@id": "payrix:secondaryDescriptor",
+      "@type": "xsd:string"
+    },
+    "payoutInactive": {
+      "@id": "payrix:payoutInactive"
+    },
+    "skipOffDays": {
+      "@id": "payrix:skipOffDays"
+    },
+    "sameDay": {
+      "@id": "payrix:sameDay"
+    },
+    "binsResponse": "payrix:binsResponse",
+    "bin": {
+      "@id": "payrix:bin",
+      "@type": "xsd:string"
+    },
+    "category": {
+      "@id": "payrix:category"
+    },
+    "address": {
+      "@id": "payrix:address",
+      "@type": "xsd:string"
+    },
+    "city": {
+      "@id": "payrix:city",
+      "@type": "xsd:string"
+    },
+    "state": {
+      "@id": "payrix:state",
+      "@type": "xsd:string"
+    },
+    "country": {
+      "@id": "payrix:country"
+    },
+    "zip": {
+      "@id": "payrix:zip",
+      "@type": "xsd:string"
+    },
+    "locationType": {
+      "@id": "payrix:locationType"
+    },
+    "newBin": {
+      "@id": "payrix:newBin",
+      "@type": "xsd:string"
+    },
+    "website": {
+      "@id": "payrix:website",
+      "@type": "xsd:string"
+    },
+    "phone": {
+      "@id": "payrix:phone",
+      "@type": "xsd:string"
+    },
+    "transferEnabled": {
+      "@id": "payrix:transferEnabled"
+    },
+    "numberLength": {
+      "@id": "payrix:numberLength",
+      "@type": "xsd:integer"
+    },
+    "debitOverCreditEnabled": {
+      "@id": "payrix:debitOverCreditEnabled"
+    },
+    "billPayEnabled": {
+      "@id": "payrix:billPayEnabled"
+    },
+    "pinlessSupport": {
+      "@id": "payrix:pinlessSupport"
+    },
+    "eventSchedule": {
+      "@id": "payrix:eventSchedule"
+    },
+    "parametersLoginAsEnabled": "payrix:parametersLoginAsEnabled",
+    "parametersVisaInstantPayoutsEnabled": "payrix:parametersVisaInstantPayoutsEnabled",
+    "decisionRuleType": "payrix:decisionRuleType",
+    "planType": "payrix:planType",
+    "reserveStatus": "payrix:reserveStatus",
+    "vendorFeesExternal": "payrix:vendorFeesExternal",
+    "messagesSecure": "payrix:messagesSecure",
+    "txnsMobile": "payrix:txnsMobile",
+    "configurationType": "payrix:configurationType",
+    "entitiesResponse": "payrix:entitiesResponse",
+    "ipCreated": {
+      "@id": "payrix:ipCreated",
+      "@type": "xsd:string"
+    },
+    "ipModified": {
+      "@id": "payrix:ipModified",
+      "@type": "xsd:string"
+    },
+    "clientIp": {
+      "@id": "payrix:clientIp",
+      "@type": "xsd:string"
+    },
+    "parameter": {
+      "@id": "payrix:parameter",
+      "@type": "xsd:string"
+    },
+    "totalCreditDisbursements": {
+      "@id": "payrix:totalCreditDisbursements",
+      "@type": "xsd:integer"
+    },
+    "displayName": {
+      "@id": "payrix:displayName",
+      "@type": "xsd:string"
+    },
+    "address1": {
+      "@id": "payrix:address1",
+      "@type": "xsd:string"
+    },
+    "address2": {
+      "@id": "payrix:address2",
+      "@type": "xsd:string"
+    },
+    "timezone": {
+      "@id": "payrix:timezone"
+    },
+    "customerPhone": {
+      "@id": "payrix:customerPhone",
+      "@type": "xsd:string"
+    },
+    "fax": {
+      "@id": "payrix:fax",
+      "@type": "xsd:string"
+    },
+    "email": {
+      "@id": "payrix:email",
+      "@type": "xsd:string"
+    },
+    "ein": {
+      "@id": "payrix:ein",
+      "@type": "xsd:string"
+    },
+    "einType": {
+      "@id": "payrix:einType"
+    },
+    "globalBusinessId": {
+      "@id": "payrix:globalBusinessId",
+      "@type": "xsd:string"
+    },
+    "globalBusinessType": {
+      "@id": "payrix:globalBusinessType"
+    },
+    "irsFilingName": {
+      "@id": "payrix:irsFilingName",
+      "@type": "xsd:string"
+    },
+    "locations": {
+      "@id": "payrix:locations",
+      "@type": "xsd:integer"
+    },
+    "tcVersion": {
+      "@id": "payrix:tcVersion",
+      "@type": "xsd:string"
+    },
+    "tcDate": {
+      "@id": "payrix:tcDate",
+      "@type": "xsd:string"
+    },
+    "tcIp": {
+      "@id": "payrix:tcIp",
+      "@type": "xsd:string"
+    },
+    "tcAcceptDate": {
+      "@id": "payrix:tcAcceptDate",
+      "@type": "xsd:string"
+    },
+    "tcAcceptIp": {
+      "@id": "payrix:tcAcceptIp",
+      "@type": "xsd:string"
+    },
+    "custom": {
+      "@id": "payrix:custom",
+      "@type": "xsd:string"
+    },
+    "tinStatus": {
+      "@id": "payrix:tinStatus"
+    },
+    "public": {
+      "@id": "payrix:public"
+    },
+    "reserved": {
+      "@id": "payrix:reserved"
+    },
+    "pendingRiskCheck": {
+      "@id": "payrix:pendingRiskCheck"
+    },
+    "checkStage": {
+      "@id": "payrix:checkStage"
+    },
+    "industry": {
+      "@id": "payrix:industry",
+      "@type": "xsd:string"
+    },
+    "payoutSecondaryDescriptor": {
+      "@id": "payrix:payoutSecondaryDescriptor",
+      "@type": "xsd:string"
+    },
+    "accounts": {
+      "@id": "payrix:accounts",
+      "@container": "@list"
+    },
+    "adjustments": {
+      "@id": "payrix:adjustments",
+      "@container": "@list"
+    },
+    "adjustmentsFromentity": {
+      "@id": "payrix:adjustmentsFromentity",
+      "@container": "@list"
+    },
+    "adjustmentsOnentity": {
+      "@id": "payrix:adjustmentsOnentity",
+      "@container": "@list"
+    },
+    "ownedAppleDomains": {
+      "@id": "payrix:ownedAppleDomains",
+      "@container": "@list"
+    },
+    "assessmentsOnentity": {
+      "@id": "payrix:assessmentsOnentity",
+      "@container": "@list"
+    },
+    "billingModifiers": {
+      "@id": "payrix:billingModifiers",
+      "@container": "@list"
+    },
+    "billings": {
+      "@id": "payrix:billings",
+      "@container": "@list"
+    },
+    "billingsForentity": {
+      "@id": "payrix:billingsForentity",
+      "@container": "@list"
+    },
+    "changeRequests": {
+      "@id": "payrix:changeRequests",
+      "@container": "@list"
+    },
+    "contacts": {
+      "@id": "payrix:contacts",
+      "@container": "@list"
+    },
+    "credentials": {
+      "@id": "payrix:credentials",
+      "@container": "@list"
+    },
+    "decisions": {
+      "@id": "payrix:decisions",
+      "@container": "@list"
+    },
+    "embeddedFinance": {
+      "@id": "payrix:embeddedFinance",
+      "@container": "@list"
+    },
+    "entityCustomFields": {
+      "@id": "payrix:entityCustomFields",
+      "@container": "@list"
+    },
+    "entityData": {
+      "@id": "payrix:entityData",
+      "@container": "@list"
+    },
+    "entityDebts": {
+      "@id": "payrix:entityDebts",
+      "@container": "@list"
+    },
+    "entityDebtsToentity": {
+      "@id": "payrix:entityDebtsToentity",
+      "@container": "@list"
+    },
+    "entityRefs": {
+      "@id": "payrix:entityRefs",
+      "@container": "@list"
+    },
+    "entityReturns": {
+      "@id": "payrix:entityReturns",
+      "@container": "@list"
+    },
+    "entityTerms": {
+      "@id": "payrix:entityTerms",
+      "@container": "@list"
+    },
+    "entriesOnentity": {
+      "@id": "payrix:entriesOnentity",
+      "@container": "@list"
+    },
+    "fees": {
+      "@id": "payrix:fees",
+      "@container": "@list"
+    },
+    "forentityFees": {
+      "@id": "payrix:forentityFees",
+      "@container": "@list"
+    },
+    "forentityProfitShares": {
+      "@id": "payrix:forentityProfitShares",
+      "@container": "@list"
+    },
+    "funds": {
+      "@id": "payrix:funds",
+      "@container": "@list"
+    },
+    "holds": {
+      "@id": "payrix:holds",
+      "@container": "@list"
+    },
+    "invoiceParameters": {
+      "@id": "payrix:invoiceParameters",
+      "@container": "@list"
+    },
+    "notes": {
+      "@id": "payrix:notes",
+      "@container": "@list"
+    },
+    "orgEntities": {
+      "@id": "payrix:orgEntities",
+      "@container": "@list"
+    },
+    "omniTokens": {
+      "@id": "payrix:omniTokens",
+      "@container": "@list"
+    },
+    "paymentUpdateGroups": {
+      "@id": "payrix:paymentUpdateGroups",
+      "@container": "@list"
+    },
+    "payoutFlows": {
+      "@id": "payrix:payoutFlows",
+      "@container": "@list"
+    },
+    "payouts": {
+      "@id": "payrix:payouts",
+      "@container": "@list"
+    },
+    "pendingEntriesOnentity": {
+      "@id": "payrix:pendingEntriesOnentity",
+      "@container": "@list"
+    },
+    "pinlessDebitConversions": {
+      "@id": "payrix:pinlessDebitConversions",
+      "@container": "@list"
+    },
+    "profitShares": {
+      "@id": "payrix:profitShares",
+      "@container": "@list"
+    },
+    "reserveEntriesOnentity": {
+      "@id": "payrix:reserveEntriesOnentity",
+      "@container": "@list"
+    },
+    "reserves": {
+      "@id": "payrix:reserves",
+      "@container": "@list"
+    },
+    "revenueBoosts": {
+      "@id": "payrix:revenueBoosts",
+      "@container": "@list"
+    },
+    "revShareSchedulesEntity": {
+      "@id": "payrix:revShareSchedulesEntity",
+      "@container": "@list"
+    },
+    "revShareSchedulesForentity": {
+      "@id": "payrix:revShareSchedulesForentity",
+      "@container": "@list"
+    },
+    "revShareStatementsEntity": {
+      "@id": "payrix:revShareStatementsEntity",
+      "@container": "@list"
+    },
+    "revShareStatementsForentity": {
+      "@id": "payrix:revShareStatementsForentity",
+      "@container": "@list"
+    },
+    "secrets": {
+      "@id": "payrix:secrets",
+      "@container": "@list"
+    },
+    "statementEntriesOnentity": {
+      "@id": "payrix:statementEntriesOnentity",
+      "@container": "@list"
+    },
+    "statementEntriesForentity": {
+      "@id": "payrix:statementEntriesForentity",
+      "@container": "@list"
+    },
+    "subscriptions": {
+      "@id": "payrix:subscriptions",
+      "@container": "@list"
+    },
+    "statementsEntity": {
+      "@id": "payrix:statementsEntity",
+      "@container": "@list"
+    },
+    "statementsForentity": {
+      "@id": "payrix:statementsForentity",
+      "@container": "@list"
+    },
+    "saferPayments": {
+      "@id": "payrix:saferPayments",
+      "@container": "@list"
+    },
+    "vendor": {
+      "@id": "payrix:vendor",
+      "@container": "@list"
+    },
+    "merchant": {
+      "@id": "payrix:merchant",
+      "@type": "@id"
+    },
+    "decisionsPeriod": "payrix:decisionsPeriod",
+    "terminalTxnsHsaFsaCardIndicator": "payrix:terminalTxnsHsaFsaCardIndicator",
+    "disbursementsDisbursementEntriesStatus": "payrix:disbursementsDisbursementEntriesStatus",
+    "terminalRefsResponse": "payrix:terminalRefsResponse",
+    "terminal": {
+      "@id": "payrix:terminal",
+      "@type": "xsd:string"
+    },
+    "stage": {
+      "@id": "payrix:stage"
+    },
+    "processor": {
+      "@id": "payrix:processor"
+    },
+    "payoutFlowTrigger": "payrix:payoutFlowTrigger",
+    "terminalType": "payrix:terminalType",
+    "feeCollection": "payrix:feeCollection",
+    "merchantsPassTokenEnabled": "payrix:merchantsPassTokenEnabled",
+    "configurationStageOutput": "payrix:configurationStageOutput",
+    "parametersTxnDecisionMicroserviceEnabled": "payrix:parametersTxnDecisionMicroserviceEnabled",
+    "merchantLocationType": "payrix:merchantLocationType",
+    "orgFlowActionsResponse": "payrix:orgFlowActionsResponse",
+    "action": {
+      "@id": "payrix:action"
+    },
+    "resource": "payrix:resource",
+    "fundingParametersResponse": "payrix:fundingParametersResponse",
+    "paymentMethods": {
+      "@id": "payrix:paymentMethods"
+    },
+    "locked": {
+      "@id": "payrix:locked"
+    },
+    "pendingEntriesResponse": "payrix:pendingEntriesResponse",
+    "onentity": {
+      "@id": "payrix:onentity"
+    },
+    "fromentity": {
+      "@id": "payrix:fromentity"
+    },
+    "fund": {
+      "@id": "payrix:fund"
+    },
+    "opposingEntry": {
+      "@id": "payrix:opposingEntry",
+      "@type": "xsd:string"
+    },
+    "entry": {
+      "@id": "payrix:entry"
+    },
+    "adjustment": {
+      "@id": "payrix:adjustment"
+    },
+    "chargeback": {
+      "@id": "payrix:chargeback"
+    },
+    "fee": {
+      "@id": "payrix:fee"
+    },
+    "refund": {
+      "@id": "payrix:refund"
+    },
+    "event": {
+      "@id": "payrix:event"
+    },
+    "eventId": {
+      "@id": "payrix:eventId",
+      "@type": "xsd:string"
+    },
+    "pending": {
+      "@id": "payrix:pending"
+    },
+    "profitShare": {
+      "@id": "payrix:profitShare"
+    },
+    "originalCurrency": {
+      "@id": "payrix:originalCurrency"
+    },
+    "currencyRate": {
+      "@id": "payrix:currencyRate",
+      "@type": "xsd:decimal"
+    },
+    "terminalTxn": {
+      "@id": "payrix:terminalTxn"
+    },
+    "isFee": {
+      "@id": "payrix:isFee"
+    },
+    "entityDebt": {
+      "@id": "payrix:entityDebt"
+    },
+    "statement": {
+      "@id": "payrix:statement"
+    },
+    "settlement": {
+      "@id": "payrix:settlement"
+    },
+    "originalEventId": {
+      "@id": "payrix:originalEventId",
+      "@type": "xsd:string"
+    },
+    "originalEvent": {
+      "@id": "payrix:originalEvent"
+    },
+    "revShareStatement": {
+      "@id": "payrix:revShareStatement"
+    },
+    "isEFE": {
+      "@id": "payrix:isEFE"
+    },
+    "lastNegativeOfDisbursement": {
+      "@id": "payrix:lastNegativeOfDisbursement",
+      "@type": "@id"
+    },
+    "lastPositiveOfDisbursement": {
+      "@id": "payrix:lastPositiveOfDisbursement",
+      "@type": "@id"
+    },
+    "opposingPendingEntry": {
+      "@id": "payrix:opposingPendingEntry",
+      "@type": "@id"
+    },
+    "parametersDecisionMicroserviceEnabled": "payrix:parametersDecisionMicroserviceEnabled",
+    "decisionsResponse": "payrix:decisionsResponse",
+    "decision": {
+      "@id": "payrix:decision",
+      "@type": "xsd:string"
+    },
+    "application": {
+      "@id": "payrix:application"
+    },
+    "target": {
+      "@id": "payrix:target"
+    },
+    "additionalOptions": {
+      "@id": "payrix:additionalOptions",
+      "@type": "xsd:integer"
+    },
+    "errorMessage": {
+      "@id": "payrix:errorMessage",
+      "@type": "xsd:string"
+    },
+    "sequence": {
+      "@id": "payrix:sequence",
+      "@type": "xsd:integer"
+    },
+    "period": {
+      "@id": "payrix:period"
+    },
+    "periodFactor": {
+      "@id": "payrix:periodFactor",
+      "@type": "xsd:integer"
+    },
+    "low": {
+      "@id": "payrix:low",
+      "@type": "xsd:integer"
+    },
+    "high": {
+      "@id": "payrix:high",
+      "@type": "xsd:integer"
+    },
+    "useCache": {
+      "@id": "payrix:useCache"
+    },
+    "cacheTime": {
+      "@id": "payrix:cacheTime",
+      "@type": "xsd:integer"
+    },
+    "decisionActions": {
+      "@id": "payrix:decisionActions",
+      "@container": "@list"
+    },
+    "decisionRules": {
+      "@id": "payrix:decisionRules",
+      "@container": "@list"
+    },
+    "watchlist": {
+      "@id": "payrix:watchlist",
+      "@container": "@list"
+    },
+    "parametersVisa3dsEnabled": "payrix:parametersVisa3dsEnabled",
+    "invoiceItemsResponse": "payrix:invoiceItemsResponse",
+    "item": {
+      "@id": "payrix:item",
+      "@type": "xsd:string"
+    },
+    "commodityCode": {
+      "@id": "payrix:commodityCode",
+      "@type": "xsd:string"
+    },
+    "productCode": {
+      "@id": "payrix:productCode",
+      "@type": "xsd:string"
+    },
+    "price": {
+      "@id": "payrix:price",
+      "@type": "xsd:integer"
+    },
+    "invoiceLineItems": {
+      "@id": "payrix:invoiceLineItems",
+      "@container": "@list"
+    },
+    "secretsPlatform": "payrix:secretsPlatform",
+    "disbursementRefPlatform": "payrix:disbursementRefPlatform",
+    "accountPrimary": "payrix:accountPrimary",
+    "accountsResponseItem": "payrix:accountsResponseItem",
+    "data": {
+      "@id": "payrix:data",
+      "@container": "@list"
+    },
+    "errors": {
+      "@id": "payrix:errors",
+      "@container": "@list"
+    },
+    "watchlistsDefault": "payrix:watchlistsDefault",
+    "terminalTxnsDatasResponse": "payrix:terminalTxnsDatasResponse",
+    "signature": {
+      "@id": "payrix:signature",
+      "@type": "xsd:string"
+    },
+    "txnResultsCode": "payrix:txnResultsCode",
+    "txnsCopyReasons": "payrix:txnsCopyReasons",
+    "accountsPutRequest": "payrix:accountsPutRequest",
+    "account": {
+      "@id": "payrix:account"
+    },
+    "primary": {
+      "@id": "payrix:primary"
+    },
+    "expiration": {
+      "@id": "payrix:expiration",
+      "@type": "xsd:string"
+    },
+    "mask": {
+      "@id": "payrix:mask",
+      "@type": "xsd:string"
+    },
+    "membersResponse": "payrix:membersResponse",
+    "title": {
+      "@id": "payrix:title",
+      "@type": "xsd:string"
+    },
+    "first": {
+      "@id": "payrix:first",
+      "@type": "xsd:string"
+    },
+    "middle": {
+      "@id": "payrix:middle",
+      "@type": "xsd:string"
+    },
+    "last": {
+      "@id": "payrix:last",
+      "@type": "xsd:string"
+    },
+    "ssn": {
+      "@id": "payrix:ssn",
+      "@type": "xsd:string"
+    },
+    "citizenship": {
+      "@id": "payrix:citizenship"
+    },
+    "dob": {
+      "@id": "payrix:dob",
+      "@type": "xsd:integer"
+    },
+    "gender": {
+      "@id": "payrix:gender"
+    },
+    "dl": {
+      "@id": "payrix:dl",
+      "@type": "xsd:string"
+    },
+    "dlstate": {
+      "@id": "payrix:dlstate",
+      "@type": "xsd:string"
+    },
+    "ownership": {
+      "@id": "payrix:ownership",
+      "@type": "xsd:integer"
+    },
+    "creditScore": {
+      "@id": "payrix:creditScore",
+      "@type": "xsd:integer"
+    },
+    "creditScoreDate": {
+      "@id": "payrix:creditScoreDate",
+      "@type": "xsd:string"
+    },
+    "significantResponsibility": {
+      "@id": "payrix:significantResponsibility"
+    },
+    "politicallyExposed": {
+      "@id": "payrix:politicallyExposed"
+    },
+    "mailingAddress1": {
+      "@id": "payrix:mailingAddress1",
+      "@type": "xsd:string"
+    },
+    "treasuryPrimeRoles": {
+      "@id": "payrix:treasuryPrimeRoles",
+      "@type": "xsd:string"
+    },
+    "mailingAddress2": {
+      "@id": "payrix:mailingAddress2",
+      "@type": "xsd:string"
+    },
+    "mailingCity": {
+      "@id": "payrix:mailingCity",
+      "@type": "xsd:string"
+    },
+    "mailingState": {
+      "@id": "payrix:mailingState",
+      "@type": "xsd:string"
+    },
+    "mailingPostalCode": {
+      "@id": "payrix:mailingPostalCode",
+      "@type": "xsd:string"
+    },
+    "mailingCountry": {
+      "@id": "payrix:mailingCountry"
+    },
+    "facilitator": {
+      "@id": "payrix:facilitator"
+    },
+    "shareableUrl": {
+      "@id": "payrix:shareableUrl",
+      "@type": "xsd:string"
+    },
+    "createdAt": {
+      "@id": "payrix:createdAt",
+      "@type": "xsd:integer"
+    },
+    "completedAt": {
+      "@id": "payrix:completedAt",
+      "@type": "xsd:integer"
+    },
+    "plaidIdvId": {
+      "@id": "payrix:plaidIdvId",
+      "@type": "xsd:string"
+    },
+    "templateId": {
+      "@id": "payrix:templateId",
+      "@type": "xsd:string"
+    },
+    "verifications": {
+      "@id": "payrix:verifications",
+      "@container": "@list"
+    },
+    "divisionsResponse": "payrix:divisionsResponse",
+    "saferPaymentNonComplianceFeeManaged": {
+      "@id": "payrix:saferPaymentNonComplianceFeeManaged"
+    },
+    "changeManagementEnabled": {
+      "@id": "payrix:changeManagementEnabled"
+    },
+    "minPasswordLength": {
+      "@id": "payrix:minPasswordLength",
+      "@type": "xsd:integer"
+    },
+    "minPasswordComplexity": {
+      "@id": "payrix:minPasswordComplexity"
+    },
+    "canUsePlaidWrapperMicroservice": {
+      "@id": "payrix:canUsePlaidWrapperMicroservice"
+    },
+    "simplifiedDepositEnabled": {
+      "@id": "payrix:simplifiedDepositEnabled"
+    },
+    "configurations": {
+      "@id": "payrix:configurations",
+      "@container": "@list"
+    },
+    "currencyRates": {
+      "@id": "payrix:currencyRates",
+      "@container": "@list"
+    },
+    "entityRoutes": {
+      "@id": "payrix:entityRoutes",
+      "@container": "@list"
+    },
+    "feeModifiers": {
+      "@id": "payrix:feeModifiers",
+      "@container": "@list"
+    },
+    "fundingParameters": {
+      "@id": "payrix:fundingParameters",
+      "@container": "@list"
+    },
+    "hosts": {
+      "@id": "payrix:hosts",
+      "@container": "@list"
+    },
+    "logins": {
+      "@id": "payrix:logins",
+      "@container": "@list"
+    },
+    "mccs": {
+      "@id": "payrix:mccs",
+      "@container": "@list"
+    },
+    "parameters": {
+      "@id": "payrix:parameters",
+      "@container": "@list"
+    },
+    "vendors": {
+      "@id": "payrix:vendors",
+      "@container": "@list"
+    },
+    "statementStatus": "payrix:statementStatus",
+    "feesTxnFee": "payrix:feesTxnFee",
+    "fundOriginPlatform": "payrix:fundOriginPlatform",
+    "parametersDeclineNotificationEmail": "payrix:parametersDeclineNotificationEmail",
+    "entryOriginsResponse": "payrix:entryOriginsResponse",
+    "cancellation": {
+      "@id": "payrix:cancellation"
+    },
+    "funding": {
+      "@id": "payrix:funding"
+    },
+    "fbo": {
+      "@id": "payrix:fbo",
+      "@type": "xsd:string"
+    },
+    "terminalTxnsUnattended": "payrix:terminalTxnsUnattended",
+    "secretLocked": "payrix:secretLocked",
+    "terminalTxnResultType": "payrix:terminalTxnResultType",
+    "entityRefStage": "payrix:entityRefStage",
+    "configurationStageInput": "payrix:configurationStageInput",
+    "reservesLevel": "payrix:reservesLevel",
+    "configurationStagesResponse": "payrix:configurationStagesResponse",
+    "configuration": {
+      "@id": "payrix:configuration"
+    },
+    "input": {
+      "@id": "payrix:input"
+    },
+    "output": {
+      "@id": "payrix:output"
+    },
+    "credential": {
+      "@id": "payrix:credential"
+    },
+    "url": {
+      "@id": "payrix:url",
+      "@type": "xsd:string"
+    },
+    "dir": {
+      "@id": "payrix:dir",
+      "@type": "xsd:string"
+    },
+    "restId": {
+      "@id": "payrix:restId",
+      "@type": "xsd:string"
+    },
+    "mapToData": {
+      "@id": "payrix:mapToData",
+      "@type": "xsd:string"
+    },
+    "file": {
+      "@id": "payrix:file",
+      "@type": "xsd:string"
+    },
+    "filter": {
+      "@id": "payrix:filter",
+      "@type": "xsd:string"
+    },
+    "extension": {
+      "@id": "payrix:extension"
+    },
+    "namespace": {
+      "@id": "payrix:namespace",
+      "@type": "xsd:string"
+    },
+    "dynamicStage": {
+      "@id": "payrix:dynamicStage",
+      "@type": "xsd:string"
+    },
+    "curlOptions": {
+      "@id": "payrix:curlOptions",
+      "@type": "xsd:string"
+    },
+    "headers": {
+      "@id": "payrix:headers",
+      "@type": "xsd:string"
+    },
+    "callDelay": {
+      "@id": "payrix:callDelay",
+      "@type": "xsd:integer"
+    },
+    "connectTimeout": {
+      "@id": "payrix:connectTimeout",
+      "@type": "xsd:integer"
+    },
+    "fileConfigFilter": {
+      "@id": "payrix:fileConfigFilter",
+      "@type": "xsd:string"
+    },
+    "disbursementsSameDay": "payrix:disbursementsSameDay",
+    "credentialType": "payrix:credentialType",
+    "parametersAmex3dsEnabled": "payrix:parametersAmex3dsEnabled",
+    "decisionActionsApplication": "payrix:decisionActionsApplication",
+    "tokensResponse": "payrix:tokensResponse",
+    "customer": {
+      "@id": "payrix:customer"
+    },
+    "track": {
+      "@id": "payrix:track",
+      "@type": "xsd:string"
+    },
+    "cvv": {
+      "@id": "payrix:cvv",
+      "@type": "xsd:string"
+    },
+    "authTokenCustomer": {
+      "@id": "payrix:authTokenCustomer",
+      "@type": "xsd:string"
+    },
+    "origin": {
+      "@id": "payrix:origin",
+      "@type": "xsd:string"
+    },
+    "entryMode": {
+      "@id": "payrix:entryMode",
+      "@type": "xsd:integer"
+    },
+    "omnitoken": {
+      "@id": "payrix:omnitoken",
+      "@type": "xsd:string"
+    },
+    "accountUpdaterEligible": {
+      "@id": "payrix:accountUpdaterEligible"
+    },
+    "paymentUpdates": {
+      "@id": "payrix:paymentUpdates",
+      "@container": "@list"
+    },
+    "subscriptionTokens": {
+      "@id": "payrix:subscriptionTokens",
+      "@container": "@list"
+    },
+    "adjustmentsResponse": "payrix:adjustmentsResponse",
+    "entryOrigins": {
+      "@id": "payrix:entryOrigins",
+      "@container": "@list"
+    },
+    "pendingEntry": {
+      "@id": "payrix:pendingEntry",
+      "@type": "@id"
+    },
+    "merchantAutoBoarded": "payrix:merchantAutoBoarded",
+    "txnsPlatform": "payrix:txnsPlatform",
+    "entitiesPublic": "payrix:entitiesPublic",
+    "chargebackStatusesResponse": "payrix:chargebackStatusesResponse",
+    "chargebackMessage": {
+      "@id": "payrix:chargebackMessage"
+    },
+    "orgFlowRulesType": "payrix:orgFlowRulesType",
+    "customersResponse": "payrix:customersResponse",
+    "company": {
+      "@id": "payrix:company",
+      "@type": "xsd:string"
+    },
+    "shippingFirst": {
+      "@id": "payrix:shippingFirst",
+      "@type": "xsd:string"
+    },
+    "shippingMiddle": {
+      "@id": "payrix:shippingMiddle",
+      "@type": "xsd:string"
+    },
+    "shippingLast": {
+      "@id": "payrix:shippingLast",
+      "@type": "xsd:string"
+    },
+    "shippingCompany": {
+      "@id": "payrix:shippingCompany",
+      "@type": "xsd:string"
+    },
+    "shippingAddress1": {
+      "@id": "payrix:shippingAddress1",
+      "@type": "xsd:string"
+    },
+    "shippingAddress2": {
+      "@id": "payrix:shippingAddress2",
+      "@type": "xsd:string"
+    },
+    "shippingCity": {
+      "@id": "payrix:shippingCity",
+      "@type": "xsd:string"
+    },
+    "shippingState": {
+      "@id": "payrix:shippingState",
+      "@type": "xsd:string"
+    },
+    "shippingZip": {
+      "@id": "payrix:shippingZip",
+      "@type": "xsd:string"
+    },
+    "shippingCountry": {
+      "@id": "payrix:shippingCountry"
+    },
+    "shippingPhone": {
+      "@id": "payrix:shippingPhone",
+      "@type": "xsd:string"
+    },
+    "shippingFax": {
+      "@id": "payrix:shippingFax",
+      "@type": "xsd:string"
+    },
+    "invoices": {
+      "@id": "payrix:invoices",
+      "@container": "@list"
+    },
+    "tokens": {
+      "@id": "payrix:tokens",
+      "@container": "@list"
+    },
+    "configurationIntegration": "payrix:configurationIntegration",
+    "chargebackMessageResponse": "payrix:chargebackMessageResponse",
+    "date": {
+      "@id": "payrix:date",
+      "@type": "xsd:string"
+    },
+    "fromQueue": {
+      "@id": "payrix:fromQueue",
+      "@type": "xsd:string"
+    },
+    "toQueue": {
+      "@id": "payrix:toQueue",
+      "@type": "xsd:string"
+    },
+    "contact": {
+      "@id": "payrix:contact",
+      "@type": "xsd:string"
+    },
+    "note": {
+      "@id": "payrix:note",
+      "@type": "xsd:string"
+    },
+    "imported": {
+      "@id": "payrix:imported"
+    },
+    "chargebackMessageResults": {
+      "@id": "payrix:chargebackMessageResults",
+      "@container": "@list"
+    },
+    "merchantResultsResponse": "payrix:merchantResultsResponse",
+    "boardingProcessID": {
+      "@id": "payrix:boardingProcessID",
+      "@type": "xsd:string"
+    },
+    "parametersPortalAccessEnabled": "payrix:parametersPortalAccessEnabled"
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Payrix API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Payrix's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-09-21) from openapi/payrix-accounts-api-openapi.yml, openapi/payrix-accounts-verifications-api-openapi.yml, openapi/payrix-adjustments-api-openapi.yml.",
+  "dcterms:created": "2026-09-21",
+  "dcterms:source": [
+    "openapi/payrix-accounts-api-openapi.yml",
+    "openapi/payrix-accounts-verifications-api-openapi.yml",
+    "openapi/payrix-adjustments-api-openapi.yml",
+    "openapi/payrix-aggregation-result-groups-api-openapi.yml",
+    "openapi/payrix-aggregation-results-api-openapi.yml"
+  ]
+}

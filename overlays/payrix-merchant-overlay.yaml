@@ -1,0 +1,43 @@
+overlay: 1.0.0
+info:
+  title: "Payrix Pro Merchant API \u2014 API Evangelist overlay"
+  version: 1.0.0
+extends: ../openapi/_original/payrix-merchant-openapi.yml
+x-generated: '2026-09-20'
+x-method: generated
+x-source: Get Started with the Payrix Pro API (https://docs.worldpay.com/api-specification/payrix/merchant)
+actions:
+- target: $.info
+  update:
+    title: Payrix Pro Merchant API
+    x-provider: Payrix (Worldpay for Platforms)
+    x-api-specification-version: '1.18'
+  description: The provider spec is titled only "Payrix" for both audiences; disambiguate merchant vs partner.
+- target: $.servers
+  update:
+  - url: https://api.payrix.com
+    description: Production (documented in Base URLs; the provider export lists sandbox hosts only)
+  - url: https://api.payrixcanada.com
+    description: Canada production
+  description: Add the documented production base URLs alongside the sandbox servers.
+- target: $.paths.*[post,put,delete].responses
+  update:
+    '401':
+      description: "Unauthorized \u2014 an invalid authentication key was provided."
+    '429':
+      description: "Too Many Requests \u2014 rate limit exceeded (1,000 requests in 10 seconds; error code 64, C_RATE_LIMIT_EXCEEDED_TEMP_BLOCK; 10 second block)."
+  description: The spec declares only 200 and 400; the guide documents 401 and 429.
+- target: $.paths.*.get.responses
+  update:
+    '401':
+      description: "Unauthorized \u2014 an invalid authentication key was provided."
+    '429':
+      description: "Too Many Requests \u2014 rate limit exceeded."
+- target: $.paths['/txns'].post
+  update:
+    x-idempotency:
+      header: REQUEST-TOKEN
+      docs: https://docs.worldpay.com/api-specification/payrix/merchant
+    x-reversal:
+      void: type 4 with fortxn while Approved
+      refund: type 5 (card) / type 8 (eCheck) with fortxn once Captured or Settled

@@ -1,0 +1,7 @@
+generated: '2026-09-20'
+method: none
+source: https://platforms.worldpay.com/ ; https://resource.payrix.com/llms.txt
+signals: {}
+note: Conventional paths on platforms.worldpay.com (/accessibility, /legal/subprocessors, /legal/dpa, /privacy/requests, /transparency, /security/sbom, /security,
+  /trust) all returned 404 on 2026-09-20; the docs index (resource.payrix.com/llms.txt) lists no data-residency, SBOM, subprocessors or DSR page. Privacy center lives
+  with the parent at https://privacy.worldpay.com/policies/.

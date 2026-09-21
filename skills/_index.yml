@@ -1,0 +1,42 @@
+generated: '2026-09-20'
+method: generated
+source: openapi/payrix-partner-openapi.yml
+skills:
+- file: skills/payrix-process-payment.md
+  name: payrix-process-payment
+  api: openapi/payrix-partner-openapi.yml
+  operations:
+  - postCustomers
+  - postTokens
+  - postTxns
+  - getTxnsId
+- file: skills/payrix-reverse-or-refund.md
+  name: payrix-reverse-or-refund
+  api: openapi/payrix-partner-openapi.yml
+  operations:
+  - getTxnsId
+  - postTxns
+- file: skills/payrix-board-merchant.md
+  name: payrix-board-merchant
+  api: openapi/payrix-partner-openapi.yml
+  operations:
+  - postEntities
+  - getEntitiesId
+  - getMerchants
+  - getMerchantsId
+- file: skills/payrix-subscribe-webhooks.md
+  name: payrix-subscribe-webhooks
+  api: openapi/payrix-partner-openapi.yml
+  operations:
+  - postAlerts
+  - postAlertTriggers
+  - postAlertActions
+  - getAlerts
+- file: skills/payrix-recurring-billing.md
+  name: payrix-recurring-billing
+  api: openapi/payrix-partner-openapi.yml
+  operations:
+  - postPlans
+  - postTokens
+  - postSubscriptions
+  - getSubscriptionsId

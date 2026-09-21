@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/payrix/main/json-schema/payrix-confirm-codes-post-request-schema.json",
+  "title": "confirmCodesPostRequest",
+  "x-generated": "2026-09-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/payrix-confirmation-codes-api-openapi.yml#/components/schemas/confirmCodesPostRequest",
+  "required": [
+    "login",
+    "type",
+    "key"
+  ],
+  "type": "object",
+  "properties": {
+    "login": {
+      "type": "string",
+      "description": "The identifier of the Login resource that this confirmation code relates to."
+    },
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/confirmCodeType"
+        },
+        {
+          "description": "The type of this confirmCode.\n\n<details>\n<summary>Valid Values</summary>\n\n- `password` - **Forgot Password**\n- `email` - **Verify Email**\n\n</details>"
+        }
+      ]
+    },
+    "key": {
+      "type": "string",
+      "description": "The cryptographically secure, randomly generated key to be used for verification."
+    },
+    "email": {
+      "type": "string",
+      "description": "If the 'type' of this confirmation code is '2' (email), then this field represents the email address that requires verification."
+    },
+    "inactive": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/inactive"
+        },
+        {
+          "description": "Whether this resource is marked as inactive.\n\n<details>\n<summary>Valid Values</summary>\n\n- `0` - **Active**\n- `1` - **Inactive**\n\n</details>"
+        }
+      ]
+    },
+    "frozen": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/frozen"
+        },
+        {
+          "description": "Whether this resource is marked as frozen.\n\n<details>\n<summary>Valid Values</summary>\n\n- `0` - **Not Frozen**\n- `1` - **Frozen**\n\n</details>"
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "confirmCodeType": {
+      "title": "confirmCodeType",
+      "enum": [
+        "password",
+        "email"
+      ],
+      "type": "string"
+    },
+    "frozen": {
+      "title": "frozen",
+      "enum": [
+        0,
+        1
+      ],
+      "type": "integer"
+    },
+    "inactive": {
+      "title": "inactive",
+      "enum": [
+        0,
+        1
+      ],
+      "type": "integer"
+    }
+  }
+}

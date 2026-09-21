@@ -1,0 +1,48 @@
+generated: '2026-09-20'
+method: derived
+source: openapi/payrix-partner-openapi.yml
+status: candidate
+deployment:
+  mode: none
+  auth: unknown
+  verified: probed
+note: No MCP server is published. POST tools/list to https://api.payrix.com/mcp and https://test-api.payrix.com/mcp returns HTTP 401 with body errors invalid_resource
+  ("No such action and/or resource") + invalid_auth — the API authenticates before routing, and names the path as a non-resource. The pre-flight "gated" verdict is
+  therefore a false lead. Candidate tools below are derived from real operationIds only.
+tools:
+- name: create_transaction
+  operationId: postTxns
+  description: Create a sale, auth, capture, reverse or refund transaction.
+- name: get_transaction
+  operationId: getTxnsId
+  description: Retrieve one transaction.
+- name: list_transactions
+  operationId: getTxns
+  description: List/search transactions.
+- name: create_merchant_entity
+  operationId: postEntities
+  description: Create an entity (merchant boarding).
+- name: list_merchants
+  operationId: getMerchants
+  description: List merchants.
+- name: get_merchant
+  operationId: getMerchantsId
+  description: Retrieve one merchant.
+- name: create_customer
+  operationId: postCustomers
+  description: Create a customer.
+- name: create_token
+  operationId: postTokens
+  description: Create a payment token.
+- name: create_subscription
+  operationId: postSubscriptions
+  description: Create a subscription to a plan.
+- name: list_disbursements
+  operationId: getDisbursements
+  description: List disbursements (payouts).
+- name: list_chargebacks
+  operationId: getChargebacks
+  description: List chargebacks.
+- name: create_alert
+  operationId: postAlerts
+  description: Create an alert (webhook/email).

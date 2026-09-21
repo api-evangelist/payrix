@@ -1,0 +1,159 @@
+generated: '2026-09-20'
+method: derived
+source: openapi/payrix-partner-openapi.yml (components.schemas.alertTriggerEvent) ; https://resource.payrix.com/docs/set-up-webhooks
+description: 'Payrix Pro webhooks are "alerts": an Alert owns Alert Triggers (resource + event) and Alert Actions (delivery endpoint, optional header name/value,
+  content type, retries). No AsyncAPI document is published; the event catalog below is the alertTriggerEvent enum from the provider OpenAPI.'
+docs:
+- https://resource.payrix.com/docs/set-up-webhooks
+- https://resource.payrix.com/docs/webhooks-partners
+- https://resource.payrix.com/docs/webhooks-merchants
+management_operations:
+- postAlerts
+- getAlerts
+- putAlertsId
+- deleteAlertsId
+- postAlertTriggers
+- getAlertTriggers
+- postAlertActions
+- getAlertActions
+delivery:
+  auth: optional static header name/value configured on the alert action
+  signature: null
+  note: No payload-signing scheme is documented.
+events:
+- event: create
+  description: Triggers when the associated resource is created
+- event: update
+  description: Triggers when the associated resource is updated
+- event: delete
+  description: Triggers when the associated resource is deleted
+- event: ownership
+  description: Triggers when the ownership of the associated resource changes
+- event: batch
+  description: Triggers when Transactions are captured in a batch
+- event: account
+  description: Triggers when the Account associated with a Merchant is updated
+- event: account.created
+  description: Triggers when the Account is created
+- event: account.updated
+  description: Triggers when the Account is updated
+- event: payout
+  description: Triggers when a Payout occurs
+- event: fee
+  description: Triggers when an Entity is charged a Fee
+- event: changerequest.declined
+  description: Triggers when change request declined
+- event: changerequest.created
+  description: Triggers when change request created
+- event: changerequest.approved
+  description: Triggers when change request approved
+- event: changerequest.manualReview
+  description: Triggers when change request reviewed manually
+- event: chargeback
+  description: Triggers alert when Chargeback Reports are created
+- event: chargeback.opened
+  description: Triggers alert when Chargeback opened
+- event: chargeback.closed
+  description: Triggers alert when Chargeback closed
+- event: chargeback.created
+  description: Triggers alert when a Chargeback is created
+- event: chargeback.lost
+  description: Triggers alert when a Chargeback dispute was lost
+- event: chargeback.won
+  description: Triggers alert when a Chargeback dispute was won
+- event: chargebackdocument.uploaded
+  description: Triggers alert when Chargeback document uploaded
+- event: debit.disbursement.recovery
+  description: Triggers when the entity recovers from a negative balance and now has a positive balance again and the debtorEntity record is deleted
+- event: disbursement.requested
+  description: Triggers alert when a Disbursement is requested
+- event: disbursement.processing
+  description: Triggers alert when a Disbursement is processing
+- event: disbursement.processed
+  description: Triggers alert when a Disbursement has been processed
+- event: disbursement.failed
+  description: Triggers alert when a Disbursement has failed
+- event: disbursement.denied
+  description: Triggers alert when a Disbursement has been denied
+- event: disbursement.report
+  description: Triggers alert when Disbursements are processed
+- event: disbursement.returned
+  description: Triggers alert when Disbursement has returned
+- event: disbursementEntries.processed
+  description: Triggers alert when Disbursement Entries have been processed
+- event: invoice.created
+  description: Triggers alert when an invoice has been created
+- event: invoice.cancelled
+  description: Triggers alert when an invoice has been cancelled
+- event: invoice.emailed
+  description: Triggers alert when an invoice has been emailed
+- event: invoice.expired
+  description: Triggers alert when an invoice has expired
+- event: invoice.paid
+  description: Triggers alert when an invoice has been paid
+- event: invoice.refunded
+  description: Triggers alert when an invoice has been refunded
+- event: invoice.viewed
+  description: Triggers alert when an invoice has been viewed
+- event: invoiceResult.failure
+  description: Triggers alert when an invoice result has failed
+- event: merchant.created
+  description: Triggers alert when a Merchant has been created
+- event: merchant.boarding
+  description: Triggers alert when a Merchant is boarding
+- event: merchant.boarded
+  description: Triggers alert when a Merchant has been boarded
+- event: merchant.closed
+  description: Triggers alert when a Merchant is closed
+- event: merchant.conditionally.approved
+  description: Triggers alert when a Merchant is conditionally approved
+- event: merchant.fully.boarded
+  description: Triggers alert when a Merchant is fully boarded after being conditionally approved
+- event: merchant.pending
+  description: Triggers alert when a Merchant is pending
+- event: merchant.reserved
+  description: Triggers alert when a Merchant is reserved after being conditionally approved
+- event: merchant.incomplete
+  description: Triggers alert when a Merchant is incomplete
+- event: merchant.failed
+  description: Triggers alert when Merchant boarding has failed
+- event: merchant.held
+  description: Triggers alert when a Merchant boarding requires manual review
+- event: message.created
+  description: Triggers alert when a Message was created
+- event: paymentupdate.report
+  description: Triggers when a report for a paymentUpdate is generated
+- event: resource.created
+  description: Triggers alert when a Resource was created
+- event: resource.updated
+  description: Triggers alert when a Resource was updated
+- event: subscription.created
+  description: Triggers alert when a Subscription was created
+- event: subscription.approved
+  description: Triggers alert when a Subscription was approved
+- event: subscription.failed
+  description: Triggers alert when a Subscription has failed
+- event: terminalTxn.created
+  description: Triggers alert when Terminal Transaction has been created
+- event: terminalTxn.approved
+  description: Triggers alert when Terminal Transaction has been approved
+- event: terminalTxn.failed
+  description: Triggers alert when Terminal Transaction has failed
+- event: txn.created
+  description: Triggers alert when a Transaction is created
+- event: txn.approved
+  description: Triggers alert when a Transaction has been approved
+- event: txn.failed
+  description: Triggers alert when a Transaction has failed
+- event: txn.captured
+  description: Triggers alert when a Transaction has been captured
+- event: txn.settled
+  description: Triggers alert when a Transaction has been settled
+- event: txn.returned
+  description: Triggers alert when a Transaction has been returned
+- event: txn.echeck.funded
+  description: Triggers alert when a Transaction has been eCheck funded
+- event: txn.delayed.funding
+  description: Triggers alert when a Transaction delayed funding
+- event: upcoming.debit.disbursement
+  description: Triggers alert for upcoming debit disbursement

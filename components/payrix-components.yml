@@ -1,0 +1,21 @@
+generated: '2026-09-20'
+method: searched
+source: https://resource.payrix.com/docs/hosted-payments
+description: Hosted, PCI-scope-reducing payment UI for Payrix Pro.
+docs:
+- https://resource.payrix.com/docs/hosted-payments
+- https://docs.worldpay.com/apis/payrix/dev-int-guide/hosted-payment-fields/payfields
+- https://docs.worldpay.com/apis/payrix/dev-int-guide/hosted-payment-form/payframe
+libraries:
+- name: payFieldsScript
+  url: https://test-api.payrix.com/payFieldsScript
+  purpose: PayFields loader script served from the API host (sandbox URL shown in docs)
+families:
+  hosted_fields:
+    description: Customizable iframe-based hosted payment fields embedded in the merchant checkout.
+    components:
+    - PayFields
+  hosted_form:
+    description: All-in-one hosted payment form embedded with minimal development and basic branding.
+    components:
+    - PayFrame

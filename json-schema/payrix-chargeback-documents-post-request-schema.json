@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/payrix/main/json-schema/payrix-chargeback-documents-post-request-schema.json",
+  "title": "chargebackDocumentsPostRequest",
+  "x-generated": "2026-09-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/payrix-chargeback-documents-api-openapi.yml#/components/schemas/chargebackDocumentsPostRequest",
+  "required": [
+    "chargeback"
+  ],
+  "type": "object",
+  "properties": {
+    "chargeback": {
+      "type": "string",
+      "description": "The identifier of the Chargeback resource that this chargebackDocument relates to."
+    },
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/chargebackDocumentType"
+        },
+        {
+          "description": "The type of the file that holds this chargebackDocument. \nThe value is set when the file is properly integrated, otherwise will be null.\n\n<details>\n<summary>Valid Values</summary>\n\n- `jpg` - **JPG file**\n- `jpeg` - **JPEG file**\n- `gif` - **GIF file**\n- `png` - **PNG file**\n- `pdf` - **PDF file**\n- `tiff` - **TIFF file**\n- `tif` - **TIF file**\n\n</details>"
+        }
+      ]
+    },
+    "ref": {
+      "type": "string",
+      "description": "The reference of this chargeback document is stored as a text string and must be between 1 and 100 characters long, with the value being set when the file is properly integrated, otherwise it will be null."
+    },
+    "description": {
+      "type": "string",
+      "description": "The description of this chargebackDocument. \nThis field is stored as a text string and must be between 1 and 100 characters long."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of this chargeback document holds the real file name used by the user, stored as a text string and must be between 1 and 100 characters long."
+    },
+    "documentSource": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/chargebackDocumentsDocumentSource"
+        },
+        {
+          "description": "The source of the document.\n<details>\n<summary>Valid Values</summary>\n- `merchant` - **Merchant.** \n- `issuer` - **Issuer.** \n</details>"
+        }
+      ]
+    },
+    "inactive": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/inactive"
+        },
+        {
+          "description": "Whether this resource is marked as inactive.\n\n<details>\n<summary>Valid Values</summary>\n\n- `0` - **Active**\n- `1` - **Inactive**\n\n</details>"
+        }
+      ]
+    },
+    "frozen": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/frozen"
+        },
+        {
+          "description": "Whether this resource is marked as frozen.\n\n<details>\n<summary>Valid Values</summary>\n\n- `0` - **Not Frozen**\n- `1` - **Frozen**\n\n</details>"
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "chargebackDocumentType": {
+      "title": "chargebackDocumentType",
+      "enum": [
+        "jpg",
+        "jpeg",
+        "gif",
+        "png",
+        "pdf",
+        "tiff",
+        "tif"
+      ],
+      "type": "string"
+    },
+    "chargebackDocumentsDocumentSource": {
+      "title": "chargebackDocumentsDocumentSource",
+      "enum": [
+        "merchant",
+        "issuer"
+      ],
+      "type": "string"
+    },
+    "frozen": {
+      "title": "frozen",
+      "enum": [
+        0,
+        1
+      ],
+      "type": "integer"
+    },
+    "inactive": {
+      "title": "inactive",
+      "enum": [
+        0,
+        1
+      ],
+      "type": "integer"
+    }
+  }
+}

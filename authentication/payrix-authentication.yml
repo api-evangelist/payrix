@@ -1,0 +1,44 @@
+generated: '2026-09-20'
+method: derived
+source: openapi/payrix-merchant-openapi.yml, openapi/payrix-partner-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: apiKey
+  type: apiKey
+  in: header
+  parameter: APIKEY
+  sources:
+  - openapi/payrix-merchant-openapi.yml
+  - openapi/payrix-partner-openapi.yml
+- name: sessionKey
+  type: apiKey
+  in: header
+  parameter: SESSIONKEY
+  sources:
+  - openapi/payrix-merchant-openapi.yml
+  - openapi/payrix-partner-openapi.yml
+- name: txnSessionKey
+  type: apiKey
+  in: header
+  parameter: TXNSESSIONKEY
+  sources:
+  - openapi/payrix-merchant-openapi.yml
+  - openapi/payrix-partner-openapi.yml
+- name: username
+  type: apiKey
+  in: header
+  parameter: USERNAME
+  sources:
+  - openapi/payrix-merchant-openapi.yml
+  - openapi/payrix-partner-openapi.yml
+- name: password
+  type: apiKey
+  in: header
+  parameter: PASSWORD
+  sources:
+  - openapi/payrix-merchant-openapi.yml
+  - openapi/payrix-partner-openapi.yml

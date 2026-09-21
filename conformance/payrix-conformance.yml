@@ -1,0 +1,28 @@
+generated: '2026-09-20'
+method: derived
+source: openapi/payrix-partner-openapi.yml ; https://docs.worldpay.com/assets/matic/payrix/partner/current/static/docs/payrix-HTTP_CURL_V1.json
+standards:
+- id: openapi-3.1
+  conforms: true
+  evidence: 'https://docs.worldpay.com/assets/matic/payrix/partner/current/static/exports/payrix-openapi31json.json declares openapi: 3.1.0'
+- id: oauth2
+  conforms: false
+  evidence: components.securitySchemes are all apiKey headers (APIKEY, SESSIONKEY, TXNSESSIONKEY, USERNAME, PASSWORD); no oauth2 scheme
+- id: rfc9457
+  conforms: false
+  evidence: 400 responses use a proprietary {errors:[{code,severity,msg,field,errorCode}]} envelope (components.schemas.errorItem), not application/problem+json
+- id: idempotency
+  conforms: true
+  evidence: REQUEST-TOKEN header documented in the Get Started guide (Idempotency section) and declared as request-token on 216 of 231 write operations
+    in the spec
+- id: pagination
+  conforms: true
+  evidence: page[number]/page[limit] query parameters with response.details.page{current,last,hasMore} documented in the Get Started guide (Pagination
+    section)
+- id: pci-dss
+  conforms: true
+  evidence: https://resource.payrix.com/docs/pci-compliance-and-information-security — PCI DSS requirements for integrators; hosted PayFields/PayFrame
+    reduce SAQ scope
+- id: openapi-3.2
+  conforms: true
+  evidence: the document declares 3.2.0

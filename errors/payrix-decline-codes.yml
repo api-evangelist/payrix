@@ -1,0 +1,2259 @@
+generated: '2026-09-20'
+method: searched
+source: https://resource.payrix.com/docs/processor-response-codes
+description: Processor response codes published by Payrix Pro, grouped by processing platform; includes approvals and informational codes as well as soft/hard declines
+  (see reason_type).
+docs: https://resource.payrix.com/docs/processor-response-codes
+decline_codes:
+- code: '001'
+  meaning: Transaction Received
+  action: 'This is sent to acknowledge that the submitted transaction has been received. Note: This response applies only to V10.x versions of the API.'
+  reason_type: Info
+  processor: Vantiv (VAP)
+- code: '000'
+  meaning: Approved
+  action: No action required.
+  reason_type: Approved
+  processor: Vantiv (VAP)
+- code: '010'
+  meaning: Partially Approved
+  action: The authorized amount is less than the requested amount.
+  reason_type: Approved
+  processor: Vantiv (VAP)
+- code: '011'
+  meaning: Offline Approval
+  action: Offline approval issued while the terminal is unable to communicate with the issuer.
+  reason_type: Approved
+  processor: Vantiv (VAP)
+- code: '013'
+  meaning: Offline Approval (unable to go online)
+  action: Offline approval issued while the terminal is unable to communicate with the issuer.
+  reason_type: Approved
+  processor: Vantiv (VAP)
+- code: '100'
+  meaning: Processing Network Unavailable
+  action: There is a problem with the card or PIN-less Debit network. Contact the network for more information.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '101'
+  meaning: Issuer Unavailable
+  action: There is a problem with the issuer network. Please contact the issuing bank.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '102'
+  meaning: Re-submit Transaction
+  action: There is a temporary problem with your submission. Please re-submit the transaction.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '103'
+  meaning: Merchant not configured for processing at this site
+  action: You submitted the transaction to a Hot-Hot URL, but are not configured for multi-site processing.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '108'
+  meaning: Try again later
+  action: We were unable to process the transaction due to a transitory communication issue to an internal or external service. Please try submitting the transaction
+    again.
+  reason_type: Soft
+  processor: Vantiv (VAP)
+- code: '110'
+  meaning: Insufficient Funds
+  action: The card does not have enough funds to cover the transaction.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '111'
+  meaning: Authorization amount has already been depleted
+  action: The total amount of the original Authorization has been used. Appears in Declined Transaction report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '112'
+  meaning: Insufficient Funds, Retry after 1 hour
+  action: You should retry the transaction after waiting 1 hour.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '113'
+  meaning: Insufficient Funds, Retry after 24 hour
+  action: You should retry the transaction after waiting 24 hours.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '114'
+  meaning: Insufficient Funds, Retry after 2 days
+  action: You should retry the transaction after waiting 2 days.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '115'
+  meaning: Insufficient Funds, Retry after 4 days
+  action: You should retry the transaction after waiting 4 days.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '116'
+  meaning: Insufficient Funds, Retry after 6 days
+  action: You should retry the transaction after waiting 6 days.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '117'
+  meaning: Insufficient Funds, Retry after 8 days
+  action: You should retry the transaction after waiting 8 days.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '118'
+  meaning: Insufficient Funds, Retry after 10 days
+  action: You should retry the transaction after waiting 10 days.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '120'
+  meaning: Call Issuer
+  action: There is an unspecified problem, contact the issuing bank.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '121'
+  meaning: Call AMEX
+  action: There is an unspecified problem; contact AMEX.
+  reason_type: Referral
+  processor: Vantiv (VAP)
+- code: '122'
+  meaning: Call Diners Club
+  action: There is an unspecified problem; contact Diners Club.
+  reason_type: Referral
+  processor: Vantiv (VAP)
+- code: '123'
+  meaning: Call Discover
+  action: There is an unspecified problem; contact Discover.
+  reason_type: Referral
+  processor: Vantiv (VAP)
+- code: '124'
+  meaning: Call JBS
+  action: There is an unspecified problem; contact JBS.
+  reason_type: Referral
+  processor: Vantiv (VAP)
+- code: '125'
+  meaning: Call Visa/Mastercard
+  action: There is an unspecified problem; contact Visa or Mastercard.
+  reason_type: Referral
+  processor: Vantiv (VAP)
+- code: '126'
+  meaning: Call Issuer - Update Cardholder Data
+  action: Some data is out of date; contact the issuer to update this information.
+  reason_type: Referral
+  processor: Vantiv (VAP)
+- code: '127'
+  meaning: Exceeds Approval Amount Limit
+  action: This transaction exceeds the daily approval limit for the card.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '130'
+  meaning: Call Indicated Number
+  action: There is an unspecified problem; contact the phone number provided.
+  reason_type: Referral
+  processor: Vantiv (VAP)
+- code: '131'
+  meaning: Unacceptable PIN - Transaction declined - Retry
+  action: There is an unspecified problem with the submitted PIN. Confirm value and retry.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '132'
+  meaning: PIN not changed
+  action: The PIN did not change. Please retry.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '137'
+  meaning: Consumer, Multi-use virtual card number, Soft Decline
+  action: Mastercard identified the card number as belonging to a multi-use virtual card and generated a soft decline (MAC code of 43).
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '140'
+  meaning: Update Cardholder Data
+  action: Cardholder data is incorrect; contact the issuing bank.
+  reason_type: Referral
+  processor: Vantiv (VAP)
+- code: '141'
+  meaning: Consumer non-reloadable prepaid card, Approved
+  action: The submitted card number indicates a non-reloadable, prepaid card. Returned when the transaction approved and has a MAC code of 40.
+  reason_type: Approved
+  processor: Vantiv (VAP)
+- code: '142'
+  meaning: Consumer single-use virtual card number, Approved
+  action: The submitted card number indicates a single-use virtual card. Returned when the transaction approved and has a MAC code of 41.
+  reason_type: Approved
+  processor: Vantiv (VAP)
+- code: '143'
+  meaning: Merchant doesn't qualify for product code
+  action: Merchant doesn't qualify for product code
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '145'
+  meaning: Lifecycle
+  action: This is a Mastercard specific decline code associated with the MAC (Merchant Advice Code). The MAC value is either unknown or null. Contact the issuing
+    bank for additional information.
+  reason_type: Hard or Soft Decline
+  processor: Vantiv (VAP)
+- code: '146'
+  meaning: Policy
+  action: This is a Mastercard specific decline code associated with the MAC (Merchant Advice Code). The MAC value is either unknown or null. Contact the issuing
+    bank for additional information.
+  reason_type: Hard or Soft Decline
+  processor: Vantiv (VAP)
+- code: '147'
+  meaning: Fraud/Security
+  action: This is a Mastercard specific decline code associated with the MAC (Merchant Advice Code). The MAC value is either unknown or null. Contact the issuing
+    bank for additional information.
+  reason_type: Hard or Soft Decline
+  processor: Vantiv (VAP)
+- code: '148'
+  meaning: Invalid or expired card; contact cardholder to update
+  action: The card is invalid or expired. Contact cardholder to update information.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '149'
+  meaning: Invalid transaction or card restriction; verify information and resubmit
+  action: The transaction is not permitted, or the card is not available for use. Verify the information and resubmit the transaction.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '150'
+  meaning: Original transaction found.
+  action: A Query transaction response indicating that the original transaction was found.
+  reason_type: Info
+  processor: Vantiv (VAP)
+- code: '151'
+  meaning: Original transaction not found.
+  action: A Query transaction response indicating that the original transaction was not found.
+  reason_type: Info
+  processor: Vantiv (VAP)
+- code: '152'
+  meaning: Original transaction found, but response not yet available.
+  action: A Query transaction response indicating that the original transaction was found, but the final response information is not yet available.
+  reason_type: Info
+  processor: Vantiv (VAP)
+- code: '153'
+  meaning: Query transaction not enabled.
+  action: A Query transaction response indicating that you are not enabled for use of the Query transaction.
+  reason_type: Info
+  processor: Vantiv (VAP)
+- code: '154'
+  meaning: At least one of origId or origCnpTxnId is required
+  action: When submitting a Query transaction, you must include either the origId or origCnpTxnId.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '155'
+  meaning: origCnpTxnId is required when showStatusOnly is used
+  action: When submitting a Query transaction with the showStatusOnly flag set to Y, you must include the origCnpTxnId element.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '156'
+  meaning: Incremental Auth not supported
+  action: This method of payment does not support incremental auths.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '157'
+  meaning: Set authIndicator to Incremental
+  action: You set the authIndicator in the initial auth to Estimated. You must set the authIndicator in any subsequent auths to Incremental.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '158'
+  meaning: Incremental value for authIndicator not allowed in this auth structure
+  action: You used the message structure for an initial auth. Resubmit the transaction using the message structure for an incremental auth.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '159'
+  meaning: Cannot request an Incremental auth if original auth not set to Estimated
+  action: You cannot submit an incremental auth if the initial auth did not include an authIndicator value of Estimated.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '161'
+  meaning: Transaction must reference the Estimated auth
+  action: Resubmit the transaction using the cnpTxnId from the initial, estimated auth.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '162'
+  meaning: Incremented auth exceeds max transaction amount
+  action: The incremental auth increased the transaction total to a value above the maximum transaction amount allowed.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '170'
+  meaning: Submitted MCC not allowed
+  action: The allowed MCC white list does not include the submitted MCC. Resubmit the transaction with an allowed MCC, or ask your Partner Experience Manager about
+    adding the submitted MCC to the white list.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '191'
+  meaning: The merchant is not registered in the update program.
+  action: This is an Account Updater response indicating a set-up problem that must be resolved prior to submitting another request file. Escalate this to your Partner
+    Experience Manager.
+  reason_type: N/A
+  processor: Vantiv (VAP)
+- code: '192'
+  meaning: Merchant not certified/enabled for IIAS
+  action: Your organization is not certified or enabled for IIAS/FSA transactions.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '206'
+  meaning: Issuer Generated Error
+  action: An unspecified error was returned by the issuer. Please retry the transaction and if the problem persist, contact the issuing bank.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '207'
+  meaning: Pickup card - Other than Lost/Stolen
+  action: The issuer indicated that the gift card should be removed from use.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '209'
+  meaning: Invalid Amount
+  action: The specified amount is invalid for this transaction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '211'
+  meaning: Reversal Unsuccessful
+  action: The reversal transaction was unsuccessful.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '212'
+  meaning: Missing Data
+  action: Contact your Partner Experience Manager.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '213'
+  meaning: Pickup Card - Lost Card
+  action: The submitted card was reported as lost and should be removed from use.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '214'
+  meaning: Pickup Card - Stolen Card
+  action: The submitted card was reported as stolen and should be removed from use.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '215'
+  meaning: Restricted Card
+  action: The specified Gift Card is not available for use.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '216'
+  meaning: Invalid Deactivate
+  action: The Deactivate transaction is invalid for the specified card.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '217'
+  meaning: Card Already Active
+  action: The submitted card is already active.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '218'
+  meaning: Card Not Active
+  action: The submitted card has not been activated.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '219'
+  meaning: Card Already Deactivate
+  action: The submitted card has already been deactivated.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '221'
+  meaning: Over Max Balance
+  action: The activate or load amount exceeds the maximum allowed for the specified gift Card.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '222'
+  meaning: Invalid Activate
+  action: The activate transaction is not valid or can no longer be reversed.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '223'
+  meaning: No transaction Found for Reversal
+  action: The transaction referenced in the reversal transaction does not exist.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '226'
+  meaning: Incorrect CVV
+  action: The transaction was declined because it was submitted with the incorrect security code.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '229'
+  meaning: Illegal Transaction
+  action: The transaction would violate the law.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '251'
+  meaning: Duplicate Transaction
+  action: The transaction is a duplicate of a previously submitted transaction. Appears in Declined Transaction report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '252'
+  meaning: System Error
+  action: Contact your Partner Experience Manager.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '253'
+  meaning: Deconverted BIN
+  action: The bank identification number (BIN) is no longer valid.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '254'
+  meaning: Merchant Depleted
+  action: No balance remains on gift Card.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '255'
+  meaning: Gift Card Escheated
+  action: The Gift Card has been seized by the government while resolving an estate.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '256'
+  meaning: Invalid Reversal Type for Credit Card Transaction
+  action: You attempted to use a Closed Loop Gift Card reversal transaction to reverse a credit card transaction. For example, you cannot use a Deposit Reversal transaction
+    to reverse a Capture. To reverse a credit card Capture transaction, use a Credit transaction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '257'
+  meaning: System Error (message format error)
+  action: Issuer reported message format is incorrect. Contact your Partner Experience Manager.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '258'
+  meaning: System Error (cannot process)
+  action: Issuer reported transaction could not be processed. Contact your Partner Experience Manager.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '271'
+  meaning: Refund rejected due to pending deposit status
+  action: The refund is tied to a deposit that is still in pending state or the state is in doubt. You can retry the refund at a later time.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '272'
+  meaning: Refund rejected due to declined deposit status
+  action: The refund is tied to a deposit that failed.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '273'
+  meaning: Refund rejected by the processing network
+  action: The refund is tied to a deposit that succeeded, but was declined by PayPro.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '284'
+  meaning: Capture, Credit and AuthReversal tags cannot be used for Gift Card Transactions
+  action: You must use the Gift Card version of these transactions for Gift Cards (i.e., giftCardCapture, giftCardCredit, and giftCardAuthReversal).
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '301'
+  meaning: Invalid Account Number
+  action: The account number is not valid; contact the cardholder to confirm information or inquire about another form of payment.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '302'
+  meaning: Account Number Does Not Match Payment Type
+  action: The payment type was selected as one card type (e.g. Visa), but the card number indicates a different card type (e.g. Mastercard).
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '303'
+  meaning: Pick Up Card
+  action: This is a card present response, but in a card not present environment. Do not process the transaction and contact the issuing bank.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '304'
+  meaning: Lost/Stolen Card
+  action: The card has been designated as lost or stolen; contact the issuing bank.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '305'
+  meaning: Expired Card
+  action: The card is expired.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '306'
+  meaning: Authorization has expired; no need to reverse
+  action: The original Authorization is no longer valid, because it has expired. You can not perform an Authorization Reversal for an expired Authorization. Appears
+    in Declined Transaction report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '307'
+  meaning: Restricted Card
+  action: The card has a restriction preventing approval for this transaction. Please contact the issuing bank for a specific reason. You may also receive this code
+    if the transaction was declined due to FraudSight Prior Fraud Advice Filtering and you are using a schema version V8.10 or older.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '308'
+  meaning: Restricted Card - Chargeback
+  action: This transaction is being declined due the operation of the FraudSight Prior Chargeback Card Filtering Service or the card has a restriction preventing
+    approval if there are any chargebacks against it.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '309'
+  meaning: Restricted Card - Prepaid Card Filtering Service
+  action: This transaction is being declined due the operation of the FraudSight Prepaid Card Filtering service.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '310'
+  meaning: Invalid track data
+  action: The track data is not valid.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '311'
+  meaning: Deposit is already referenced by a chargeback
+  action: The deposit is already referenced by a chargeback; therefore, a refund cannot be processed against the original transaction. Appears in Declined Transaction
+    report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '312'
+  meaning: Restricted Card - International Card Filtering Service
+  action: This transaction is being declined due the operation of the FraudSight International Card Filtering Service.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '313'
+  meaning: International filtering for issuing card country  (where  is the 3-character country code)
+  action: This is returned when the transaction involves a US based merchant processing Canadian transactions has a transaction that uses a US card.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '315'
+  meaning: Restricted Card - Auth Fraud Velocity Filtering Service
+  action: This transaction is being declined due the operation of the FraudSight Auth Fraud Velocity Filtering Service.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '316'
+  meaning: Automatic Refund Already Issued
+  action: This refund transaction is a duplicate for one already processed automatically by the Fraud Chargeback Prevention Service (FCPS). Appears in Declined Transaction
+    report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '317'
+  meaning: Restricted Card - card under sanction
+  action: The submitted card is under sanction and cannot be processed.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '318'
+  meaning: Restricted Card - Auth Fraud Advice Filtering Service
+  action: This transaction is being declined due the operation of the Auth Fraud Advice Filtering Service.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '319'
+  meaning: Restricted Card - Fraud AVS Filtering Service
+  action: This transaction is being declined due the operation of the FraudSight Auth Fraud AVS Filtering Service.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '320'
+  meaning: Invalid Expiration Date
+  action: The expiration date is invalid
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '321'
+  meaning: Invalid Merchant
+  action: The card is not allowed to make purchases from this merchant (e.g. a Travel only card trying to purchase electronics).
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '322'
+  meaning: 'Invalid Transaction Note: If you are enabled for Transaction Filtering, but have not upgraded to use schema version 8.3 or above, the system returns this
+    code for transactions filtered by the Prepaid or International Card Filtering Service. If you are enabled for Velocity Fraud Filtering, but have not upgraded
+    to V8.9, you will receive this code for filtered transactions. If you are enabled for AVS Fraud Filtering, but have not upgraded to V8.13, you will receive this
+    code for filtered transactions.'
+  action: The transaction is not permitted; contact the issuing bank. The system also returns this code if you attempt to use a Void transaction to cancel a Gift
+    Card transaction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '323'
+  meaning: No such issuer
+  action: The card number references an issuer that does not exist. Do not process the transaction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '324'
+  meaning: Invalid Pin
+  action: The PIN provided is invalid. Appears in Declined Transaction report
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '325'
+  meaning: Transaction not allowed at terminal
+  action: The transaction is not permitted; contact the issuing bank.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '326'
+  meaning: Exceeds number of PIN entries
+  action: (Referring to a debit card) The incorrect PIN has been entered excessively and the card is locked.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '327'
+  meaning: Cardholder transaction not permitted
+  action: Merchant does not allow that card type or specific transaction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '328'
+  meaning: Cardholder requested that recurring or installment payment be stopped
+  action: Recurring/Installment Payments no longer accepted by the card issuing bank.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '330'
+  meaning: Invalid Payment Type
+  action: This payment type is not accepted by the issuer.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '331'
+  meaning: Invalid POS Capability for Cardholder Authorized Terminal Transaction
+  action: For a Cardholder Authorized Terminal Transaction the POS capability must be set to magstripe.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '332'
+  meaning: Invalid POS Cardholder ID for Cardholder Authorized Terminal Transaction
+  action: For a Cardholder Authorized Terminal Transaction the POS Cardholder ID must be set to nopin.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '335'
+  meaning: This method of payment does not support authorization reversals
+  action: You can not perform an Authorization Reversal transaction for this payment type.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '336'
+  meaning: Reversal amount does not match Authorization amount.
+  action: For a merchant initiated reversal against an American Express authorization, the reversal amount must match the authorization amount exactly.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '337'
+  meaning: Transaction did not convert to Pinless
+  action: Retry the transaction.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '340'
+  meaning: Invalid Amount
+  action: The transaction amount is invalid (too high or too low). For example, less than 0 for an authorization, or less than .01 for other payment types.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '341'
+  meaning: Invalid Healthcare Amounts
+  action: The amount submitted with this FSA/Healthcare transaction is invalid. The FSA amount must be greater than 0, and cannot be greater than the transaction
+    amount.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '346'
+  meaning: Invalid billing descriptor prefix
+  action: The billing descriptor prefix submitted is not valid. Appears in Declined Transaction report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '347'
+  meaning: Invalid billing descriptor
+  action: The billing descriptor is not valid because you are not authorized to send transactions with custom billing fields. Appears in Declined Transaction report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '348'
+  meaning: Invalid Report Group
+  action: The Report Group specified in the transaction is invalid, because it is either not in the defined list of acceptable Report Groups or there is a mis-match
+    between the Report Group and the defined Billing Descriptor.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '349'
+  meaning: Do Not Honor
+  action: The issuing bank has put a temporary hold on the card.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '350'
+  meaning: Generic Decline
+  action: 'There is an unspecified problem; contact the issuing bank for more details. Note: This code can be a hard or soft decline, depending on the method of payment,
+    and other variables.'
+  reason_type: Soft or Hard Decline
+  processor: Vantiv (VAP)
+- code: '351'
+  meaning: Decline - Request Positive ID
+  action: Card Present transaction that requires a picture ID match.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '352'
+  meaning: Decline CVV2/CID Fail
+  action: The CVV2/CID is invalid.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '354'
+  meaning: 3-D Secure transaction not supported by merchant
+  action: You are not certified to submit 3-D Secure transactions.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '356'
+  meaning: Invalid purchase level III, the transaction contained bad or missing data
+  action: Submitted Level III data is bad or missing.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '357'
+  meaning: Missing healthcareIIAS tag for an FSA transaction
+  action: The FSA Transactions submitted does not contain the  data element.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '358'
+  meaning: Restricted by Vantiv due to security code mismatch.
+  action: The transaction was declined due to the security code (CVV2, CID, etc) not matching.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '360'
+  meaning: No transaction found with specified Transaction Id
+  action: There were no transactions found with the specified Transaction Id. Appears in Declined Transaction report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '361'
+  meaning: Authorization no longer available
+  action: The authorization for this transaction is no longer available. Either the authorization has already been consumed by another capture, the authorization
+    has expired, or the cardholder revoked the authorization. Appears in Declined Transaction report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '362'
+  meaning: Transaction Not Voided - Already Settled
+  action: This transaction cannot be voided; it has already been delivered. Appears in Declined Transaction report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '363'
+  meaning: Auto-void on refund
+  action: This transaction (both capture and refund) has been voided. Appears in Declined Transaction report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '364'
+  meaning: Invalid Account Number - original or NOC updated eCheck account required
+  action: The submitted account number is invalid. Confirm the original account number or check NOC for new account number.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '365'
+  meaning: Total credit amount exceeds capture amount
+  action: The amount of the credit is greater than the capture, or the amount of this credit plus other credits already referencing this capture are greater than
+    the capture amount. Appears in Declined Transaction report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '366'
+  meaning: Exceed the threshold for sending redeposits
+  action: NACHA rules allow two redeposit attempts within 180 days of the settlement date of the initial deposit attempt. This threshold has been exceeded. Appears
+    in Declined Transaction report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '367'
+  meaning: Deposit has not been returned for insufficient/non-sufficient funds
+  action: NACHA rules only allow redeposit attempts against deposits returned for Insufficient or Uncollected Funds. Appears in Declined Transaction report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '368'
+  meaning: Invalid check number
+  action: The check number is invalid.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '369'
+  meaning: Redeposit against invalid transaction type
+  action: The redeposit attempted against an invalid transaction type. Appears in Declined Transaction report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '370'
+  meaning: Internal System Error - Call Vantiv
+  action: There is a problem with the system. Contact your partner Experience Manager.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '371'
+  meaning: Original Transaction has been Processed - Future Redeposits Canceled
+  action: Do not send additional redeposit transactions, since the original transaction was processed. Appears in Declined Transaction report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '372'
+  meaning: Soft Decline - Auto Recycling In Progress
+  action: The transaction was intercepted because it is being auto recycled by the Recycling Engine. While designated a Soft Decline, the system always intercepts
+    submitted transactions, while the Recycling Engine is active.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '373'
+  meaning: Hard Decline - Auto Recycling Complete
+  action: The transaction was intercepted because auto recycling has completed with a final decline.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '375'
+  meaning: Merchant is not enabled for surcharging
+  action: The submitted transaction contained a surcharge and the merchant is not enabled for surcharging.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '376'
+  meaning: This method of payment does not support surcharging
+  action: The use of a surcharge is only allowed for Visa and Mastercard methods of payment.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '377'
+  meaning: Surcharge is not valid for debit or prepaid cards
+  action: You cannot apply a surcharge to a transaction using a debit or prepaid card.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '378'
+  meaning: The submitted surcharge exceeds the maximum allowed limit.
+  action: The surcharge in the submitted transaction exceeded the maximum allowed for a surcharge.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '379'
+  meaning: Transaction declined by the processing network
+  action: 'The SEPA Direct Debit processing network declined the transaction for unspecified reasons. Some possible reasons are: insufficient funds, IBAN/Name disagreement,
+    red flag on account, etc.'
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '380'
+  meaning: Secondary amount cannot exceed the sale amount
+  action: The secondary amount exceeded the sale amount in the submitted transaction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '381'
+  meaning: This method of payment does not support secondary amount
+  action: The submitted method of payment does not allow the use of Convenience Fees.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '382'
+  meaning: Secondary amount cannot be less than zero
+  action: The secondary amount must be a positive integer.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '383'
+  meaning: Partial transaction is not supported when including a secondary amount
+  action: Transactions set to allow partial authorizations cannot include a secondary amount.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '384'
+  meaning: Secondary amount required on partial refund when used on deposit
+  action: If the associated sale or capture transaction included a secondary amount, an associated partial refund must include a secondary amount.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '385'
+  meaning: Secondary amount not allowed on refund if not included on deposit
+  action: If the associated sale or capture transaction did not included a secondary amount, you cannot include a secondary amount on an associated refund.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '386'
+  meaning: Processing Network Error
+  action: Worldpay is experiencing issues communicating with the SEPA Direct Debit network. Please retry the transaction.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '401'
+  meaning: Invalid E-mail
+  action: The e-mail address provided is not valid. Verify that it was entered correctly.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '469'
+  meaning: Invalid Recurring Request - See Recurring Response for Details
+  action: The Recurring Request was invalid, which invalidated the transaction. The Response Code and Message in the Recurring Response contains additional information.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '470'
+  meaning: Approved - Recurring Subscription Created
+  action: The recurring request was processed successfully.
+  reason_type: Approved
+  processor: Vantiv (VAP)
+- code: '471'
+  meaning: Parent Transaction Declined - Recurring Subscription Not Created
+  action: The original payment transaction was declined, so the recurring payments have not been scheduled. Appears in Declined Transaction report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '472'
+  meaning: Invalid Plan Code
+  action: The plan specified in the recurring request was invalid.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '473'
+  meaning: Scheduled Recurring Payment Processed
+  action: The scheduled recurring payment has been processed successfully.
+  reason_type: Approved
+  processor: Vantiv (VAP)
+- code: '475'
+  meaning: Invalid Subscription Id
+  action: The referenced subscription Id does not exist. Appears in Declined Transaction report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '476'
+  meaning: Add On Code Already Exists
+  action: The specified Add On code already exists. Appears in Declined Transaction report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '477'
+  meaning: Duplicate Add On Codes in Requests
+  action: Multiple createAddOn requests submitted with the same Add On Code.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '478'
+  meaning: No Matching Add On Code for the Subscription
+  action: The Add On code specified does not exist. Appears in Declined Transaction report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '480'
+  meaning: No Matching Discount Code for the Subscription
+  action: The Discount Code supplied in the updateDiscount or deleteDiscount transaction does not exist. Appears in Declined Transaction report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '481'
+  meaning: Duplicate Discount Codes in Request
+  action: Multiple createDiscount requests submitted with the same Discount Code.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '482'
+  meaning: Invalid Start Date
+  action: The supplied Start Date is invalid.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '483'
+  meaning: Merchant Not Registered for Recurring Engine
+  action: You are not registered for the use of the Recurring Engine.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '484'
+  meaning: Insufficient data to update subscription
+  action: The transaction did not include data needed for update operation.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '485'
+  meaning: Invalid Billing Date
+  action: The submitted billing date is either before the current date or otherwise invalid.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '486'
+  meaning: Discount Code Already Exists
+  action: The specified Discount code already exists.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '487'
+  meaning: Plan Code already exists
+  action: The specified Plan Code already exists.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '500'
+  meaning: The account number was changed
+  action: An Account Updater response indicating the Account Number changed from the original number.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '501'
+  meaning: The account was closed
+  action: The account was closed. Contact the cardholder directly for updated information.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '502'
+  meaning: The expiration date was changed
+  action: An Account Updater response indicating the Expiration date for the card has changed.
+  reason_type: N/A
+  processor: Vantiv (VAP)
+- code: '503'
+  meaning: The issuing bank does not participate in the update program
+  action: An Account Updater response indicating the issuing bank does not participate in the update program
+  reason_type: N/A
+  processor: Vantiv (VAP)
+- code: '504'
+  meaning: Contact the cardholder for updated information
+  action: An Account Updater response indicating you should contact the cardholder directly for updated information.
+  reason_type: N/A
+  processor: Vantiv (VAP)
+- code: '505'
+  meaning: No match found
+  action: An Account Updater response indicating no match was found in the updated information.
+  reason_type: N/A
+  processor: Vantiv (VAP)
+- code: '506'
+  meaning: No changes found
+  action: An Account Updater response indicating there have been no changes to the account information.
+  reason_type: N/A
+  processor: Vantiv (VAP)
+- code: '507'
+  meaning: The cardholder has opted out of the update program
+  action: The cardholder requested that no updates be included for their account.
+  reason_type: N/A
+  processor: Vantiv (VAP)
+- code: '521'
+  meaning: Soft Decline - Card reader decryption service is not available
+  action: The connection to the decryption service is currently unavailable. Please retry the transaction and/or contact your Partner Experience Manager.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '523'
+  meaning: Soft Decline - Decryption failed
+  action: Our attempt to decrypt the card information failed. Please retry the transaction.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '524'
+  meaning: Hard Decline - Input data is invalid.
+  action: The submitted data is invalid.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '530'
+  meaning: Apple Pay Key Mismatch
+  action: The submitted publicKeyHash element does not match any configured entries. Contact your Implementation Consultant.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '531'
+  meaning: Apple Pay Decryption Failed
+  action: Worldpay was unable to decrypt the submitted information.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '540'
+  meaning: Hard Decline - Decryption Failed
+  action: Worldpay was unable to decrypt the submitted card number and/or CVV.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '550'
+  meaning: Advanced Fraud Filter Score Below Threshold
+  action: The transaction was declined because the resulting FraudSight Fraud Filter Score was below the acceptable threshold set in the merchant’s policy.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '555'
+  meaning: Suspected Fraud
+  action: The issuing bank declined the transaction as suspected fraud.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '560'
+  meaning: System Error - Contact Worldpay representative
+  action: There was an unspecified problem with the transaction. Please contact your Partner Experience Manager.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '561'
+  meaning: Amazon Pay - Amazon Unavailable
+  action: Amazon was unavailable. Please retry the transaction.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '562'
+  meaning: Amazon Pay - Amazon Declined
+  action: Amazon declined the transaction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '563'
+  meaning: Amazon Pay - Invalid Token
+  action: The submitted Amazon token is invalid or you do not have access to this token. Please correct the token value before resubmitting the transaction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '564'
+  meaning: Merchant not enabled for Amazon Pay
+  action: Your organization is not enabled for the use of Amazon Pay. Please contact your Partner Experience Manager.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '565'
+  meaning: Transaction not supported by issuer
+  action: The issuing bank does not support the submitted transaction.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '566'
+  meaning: Blocked by cardholder/contact cardholder
+  action: The cardholder blocked this transaction. Contact the cardholder to resolve the issue.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '601'
+  meaning: Soft Decline - Primary Funding Source Failed
+  action: A PayPal response indicating the transaction failed due to an issue with primary funding source (e.g. expired Card, insufficient funds, etc.).
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '602'
+  meaning: Soft Decline - Buyer has alternate funding source
+  action: 'The transaction could not be completed for one of the following reasons: - The billing address associated with the financial Instrument could not be confirmed.
+    - The transaction exceeds the card limit. - The transaction was denied by the card issuer. You should establish error handling logic that directs the customer
+    to contact PayPal to resolve the issue with their account.'
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '610'
+  meaning: Hard Decline - Invalid Billing Agreement Id
+  action: A PayPal response indicating the Billing Agreement ID is invalid.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '611'
+  meaning: Hard Decline - Primary Funding Source Failed
+  action: A PayPal response indicating the issuer is unavailable.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '612'
+  meaning: Hard Decline - Issue with Paypal Account
+  action: A PayPal response indicating the transaction failed due to an issue with the buyer account.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '613'
+  meaning: Hard Decline - PayPal authorization ID missing
+  action: A PayPal response indicating the need to correct the authorization ID before resubmitting.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '614'
+  meaning: Hard Decline - confirmed email address is not available
+  action: A PayPal response indicating your account is configured to decline transactions without a confirmed address. request another payment method or contact [eCommerceSupport@vantiv.com](mailto:eCommerceSupport@vantiv.com)
+    to modify your account settings.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '615'
+  meaning: Hard Decline - PayPal buyer account denied
+  action: A PayPal response indicating account unauthorized payment risk.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '616'
+  meaning: Hard Decline - PayPal buyer account restricted
+  action: A PayPal response indicating PayPal is unable to process the payment. Buyer should contact PayPal with questions.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '617'
+  meaning: Hard Decline - PayPal order has been voided, expired, or completed
+  action: A PayPal response indicating no further authorizations/captures can be processed against this order. A new order must be created.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '618'
+  meaning: Hard Decline - issue with PayPal refund
+  action: 'A PayPal response indicating one of these potential refund related issues: duplicate partial refund must be less than or equal to original or remaining
+    amount, past time limit, not allowed for transaction type, consumer account locked/inactive, or complaint exists - only a full refund of total/remaining amount
+    allowed. Contact [eCommerceSupport@vantiv.com](mailto:eCommerceSupport@vantiv.com) for specific details.'
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '619'
+  meaning: Hard Decline - PayPal credentials issue
+  action: A PayPal response indicating you do not have permissions to make this API call.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '620'
+  meaning: Hard Decline - PayPal authorization voided or expired
+  action: A PayPal response indicating you cannot capture against this authorization. You need to perform a brand new authorization for the transaction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '621'
+  meaning: Hard Decline - required PayPal parameter missing
+  action: A PayPal response indicating missing parameters are required. Contact [eCommerceSupport@vantiv.com](mailto:eCommerceSupport@vantiv.com) for specific details.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '622'
+  meaning: Hard Decline - PayPal transaction ID or auth ID is invalid
+  action: A PayPal response indicating the need to check the validity of the authorization ID prior to reattempting the transaction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '623'
+  meaning: Hard Decline - Exceeded maximum number of PayPal authorization attempts
+  action: A PayPal response indicating you should capture against a previous authorization.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '624'
+  meaning: Hard Decline - Transaction amount exceeds merchant’s PayPal account limit.
+  action: A PayPal response indicating the transaction amount exceeds the merchant’s account limit. Contact [eCommerceSupport@vantiv.com](mailto:eCommerceSupport@vantiv.com)
+    to modify your account settings.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '625'
+  meaning: Hard Decline - PayPal funding sources unavailable.
+  action: A PayPal response indicating the buyer needs to add another funding sources to their account.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '626'
+  meaning: Hard Decline - issue with PayPal primary funding source.
+  action: A PayPal response indicating there are issues with the buyer’s primary funding source.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '627'
+  meaning: Hard Decline - PayPal profile does not allow this transaction type.
+  action: Contact your Partner Experience Manager to adjust your PayPal merchant profile preferences.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '628'
+  meaning: Internal System Error with PayPal - Contact Vantiv
+  action: There is a problem with your username and password. Contact [eCommerceSupport@vantiv.com.](mailto:eCommerceSupport@vantiv.com)
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '629'
+  meaning: Hard Decline - Contact PayPal consumer for another payment method
+  action: A PayPal response indicating you should contact the consumer for another payment method.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '637'
+  meaning: Invalid terminal Id
+  action: The terminal Id submitted with the POS transaction is invalid.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '640'
+  meaning: PINless Debit processing not supported for non-recurring transactions
+  action: At this time, we support PINless Debit transaction only for recurring transactions.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '641'
+  meaning: PINless Debit processing not supported for partial auths
+  action: PINless Debit does not support partial authorizations. You can resubmit the transaction without using the partial auth flag.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '642'
+  meaning: Merchant not configured for PINless Debit processing
+  action: You are not enabled for PINless Debit processing. Please consult your Partner Experience Manager for additional information about this feature.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '651'
+  meaning: Decline - Customer Cancellation
+  action: The customer has cancelled the transaction or recurring payment.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '652'
+  meaning: Decline - Re-try transaction
+  action: Unspecified decline. Please re-try the transaction.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '653'
+  meaning: Decline - Unable to locate record on file
+  action: We are unable to locate the referenced file. Please verify the submitted information.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '654'
+  meaning: Decline - file update field edit error
+  action: Decline - file update field edit error
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '655'
+  meaning: Remote function unknown
+  action: Remote function unknown
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '656'
+  meaning: Declined - Exceeds withdrawal frequency limit
+  action: The transaction exceeded the allowed activity on the account. You can retry the transaction later.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '657'
+  meaning: Decline - Card record not available
+  action: Decline - Card record not available
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '658'
+  meaning: Invalid Authorization Code
+  action: Invalid Authorization Code
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '659'
+  meaning: Reconciliation error
+  action: Reconciliation error
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '660'
+  meaning: 'Preferred Debit Routing Denial: Credit transaction can be debit'
+  action: 'Preferred Debit Routing Denial: Credit transaction can be debit'
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '661'
+  meaning: Declined - Currency Conversion Complete, No Auth Performed
+  action: Declined - Currency Conversion Complete, No Auth Performed
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '662'
+  meaning: Declined - Multi-Currency DCC Fail
+  action: Declined - Multi-Currency DCC Fail
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '663'
+  meaning: Declined - Multi-Currency Invert Fail
+  action: Declined - Multi-Currency Invert Fail
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '664'
+  meaning: Invalid 3-D Secure Password
+  action: Invalid 3-D Secure Password
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '665'
+  meaning: Invalid Social Security Number
+  action: Invalid Social Security Number
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '666'
+  meaning: Invalid Mother's Maiden Name
+  action: Invalid Mother's Maiden Name
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '667'
+  meaning: Enrollment Inquiry Declined
+  action: Enrollment Inquiry Declined
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '668'
+  meaning: Social Security Number Not Available
+  action: Social Security Number Not Available
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '669'
+  meaning: Mother's Maiden Name Not Available
+  action: Mother's Maiden Name Not Available
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '670'
+  meaning: PIN Already Exists on Database
+  action: PIN Already Exists on Database
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '701'
+  meaning: Under 18 years old
+  action: A PayPal Credit response indicating the customer is under 18 years of age based upon the date of birth.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '702'
+  meaning: Bill to outside USA
+  action: A PayPal Credit response indicating the billing address is outside the United States.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '703'
+  meaning: Bill to address is not equal to ship to address
+  action: A PayPal Credit response indicating that the billing address does not match the shipping address.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '704'
+  meaning: Declined, foreign currency, must be USD
+  action: A PayPal Credit or PINless Debit response indicating the transaction is declined, because it is not in US dollars.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '705'
+  meaning: On negative file
+  action: A PayPal Credit response indicating the account is on the negative file.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '706'
+  meaning: Blocked agreement
+  action: A PayPal Credit response indicating a blocked agreement account status.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '707'
+  meaning: Insufficient buying power
+  action: A PayPal Credit response indicating that the account holder does not have sufficient credit available for the transaction amount.
+  reason_type: Other
+  processor: Vantiv (VAP)
+- code: '708'
+  meaning: Invalid Data
+  action: A PayPal Credit response indicating that there are one or more problems with the submitted data.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '709'
+  meaning: Invalid Data - data elements missing
+  action: A PayPal Credit response indicating one or more required data elements are missing. Also, returned for a Direct Debit transaction that is missing a required
+    data element. For example, failure to include the name element in an echeckSale or echeckCredit transaction would result in this code being returned.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '710'
+  meaning: Invalid Data - data format error
+  action: A PayPal Credit response indicating that some data was formatted incorrectly.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '711'
+  meaning: Invalid Data - Invalid T&C version
+  action: A PayPal Credit response indicating the T&C version is invalid.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '712'
+  meaning: Duplicate transaction
+  action: A PayPal Credit response indicating that the transaction is a duplicate.
+  reason_type: Soft Decline-
+  processor: Vantiv (VAP)
+- code: '713'
+  meaning: Verify billing address
+  action: A PayPal Credit response indicating that you should verify the billing address.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '714'
+  meaning: Inactive Account
+  action: A PayPal Credit response indicating the customer account is inactive.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '716'
+  meaning: Invalid Auth
+  action: A PayPal Credit response indicating that the referenced authorization is invalid.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '717'
+  meaning: Authorization already exists for the order
+  action: A PayPal Credit response indicating that an authorization already exists for the transaction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '730'
+  meaning: Lodging transactions are not allowed for this MCC
+  action: Your current MCC does not allow lodging transactions. Please consult your Partner Experience Manager.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '731'
+  meaning: Duration cannot be negative
+  action: You submitted a negative value for the  element. Correct the error and resubmit the transaction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '732'
+  meaning: Hotel Folio Number cannot be blank
+  action: Although the schema does not require the submission of the  element, if you do include it, you must specify a value (i.e., null not allowed). Please either
+    add a valid value or remove the element and resubmit the transaction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '733'
+  meaning: Invalid check in date
+  action: There is a problem with the submitted check-in date (for example, 2018-02-32). Please correct the date and resubmit the transaction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '734'
+  meaning: Invalid check out date
+  action: There is a problem with the submitted check-out date (for example, 2018-02-32). Please correct the date and resubmit the transaction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '735'
+  meaning: Invalid check in or check out date
+  action: There is a problem with the submitted check-in or check-out date (for example, 2018-02-32). Please correct the date(s) and resubmit the transaction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '736'
+  meaning: Check out date cannot be before check in date
+  action: The check-out date you submitted was before the check-in date. Correct the error and resubmit the transaction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '737'
+  meaning: Number of adults cannot be negative
+  action: You submitted a negative value for the  element. Correct the error and resubmit the transaction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '738'
+  meaning: Room rate cannot be negative
+  action: You submitted a negative value for the  element. Correct the error and resubmit the transaction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '739'
+  meaning: Room tax cannot be negative
+  action: You submitted a negative value for the  element. Correct the error and resubmit the transaction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '740'
+  meaning: Duration can only be from 0 to 99 for Visa
+  action: For Visa the maximum duration is 99 (2-digits).
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '801'
+  meaning: Account number was successfully registered
+  action: The card number was successfully registered and a token number was returned.
+  reason_type: Approved
+  processor: Vantiv (VAP)
+- code: '802'
+  meaning: Account number was previously registered
+  action: 'The card number was previously registered for tokenization. Note: You also receive this response code when using a low value token in a transaction, because
+    the system registers the PAN at the time it creates the LVT.'
+  reason_type: Approved
+  processor: Vantiv (VAP)
+- code: '803'
+  meaning: Valid Token
+  action: The token is valid.
+  reason_type: Approved
+  processor: Vantiv (VAP)
+- code: '805'
+  meaning: Card Validation Number Updated
+  action: The stored value for CVV2/CVC2/CID has been successfully updated.
+  reason_type: Approved
+  processor: Vantiv (VAP)
+- code: '820'
+  meaning: Credit card number was invalid
+  action: The card number submitted for tokenization is invalid.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '821'
+  meaning: Merchant is not authorized for tokens
+  action: Your organization is not authorized to use tokens.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '822'
+  meaning: Token was not found
+  action: The token number submitted with this transaction was not found.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '823'
+  meaning: Token Invalid
+  action: The submitted token is invalid.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '825'
+  meaning: Merchant not authorized for eCheck tokens
+  action: Your organization is not authorized for Direct Debit tokenization.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '826'
+  meaning: Checkout Id was invalid
+  action: The submitted checkoutId is invalid.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '827'
+  meaning: Checkout Id was not found
+  action: The submitted checkoutId was not found. The low value token is only good for 24 hours and may have expired.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '828'
+  meaning: Generic Checkout Id error
+  action: An unknown error caused the use of checkoutId to fail.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '835'
+  meaning: Capture amount can not be more than authorized amount
+  action: The amount in the submitted Capture exceeds 115% of the authorized amount. Appears in Declined Transaction report.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '850'
+  meaning: Tax Billing only allowed for MCC 9311
+  action: Tax Billing elements are allowed only for MCC 9311.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '851'
+  meaning: MCC 9311 requires taxType element
+  action: Missing taxType element
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '852'
+  meaning: Debt Repayment only allowed for VI transactions on MCCs 6012 and 6051
+  action: You must be either MCC 6012 or 6051 to designate a Visa transaction as Debt Repayment (debtRepayment element set to true).
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '861'
+  meaning: Routing Number did not match one on file for token
+  action: The routing number submitted does not match the number submitted when the token was created. Verify the routing number and resubmit the transaction.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '877'
+  meaning: Invalid Pay Page Registration Id
+  action: An eProtect response indicating that the Registration ID submitted is invalid.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '878'
+  meaning: Expired Pay Page Registration Id
+  action: An eProtect response indicating that the Registration ID has expired (Registration IDs expire 24 hours after being issued).
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '879'
+  meaning: Merchant is not authorized for Pay Page
+  action: Your organization is not authorized to use eProtect.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '890'
+  meaning: Maximum number of updates for this token exceeded
+  action: You have submitted the maximum number of update token requests within a rolling 30 day period.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '891'
+  meaning: Too many tokens created for existing namespace
+  action: You exceeded the maximum number of tokens (16) allowed for this shopper.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '895'
+  meaning: PIN validation not possible
+  action: PIN validation not possible
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '898'
+  meaning: Generic token registration error
+  action: There is an unspecified token registration error; contact your Partner Experience Manager
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '899'
+  meaning: Generic token use error
+  action: There is an unspecified token use error; contact your Partner Experience Manager.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '900'
+  meaning: Invalid Bank Routing Number
+  action: The Direct Debit routing number submitted with this transaction has failed validation.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '901'
+  meaning: Missing Name
+  action: The customer name is required for SEPA transactions.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '902'
+  meaning: Invalid Name
+  action: The customer name must be a minimum of two characters for SEPA transactions.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '903'
+  meaning: Missing Billing Country Code
+  action: The Billing Country code is required for SEPA transactions.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '904'
+  meaning: Invalid IBAN
+  action: The submitted International Bank Account number is invalid. Please correct the number and resubmit the traction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '905'
+  meaning: Missing Email Address
+  action: The customer email address is required for SEPA transactions.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '906'
+  meaning: Missing mandate reference
+  action: You must provide a Mandate reference for standard and BYOM recurring SEPA deposit transactions.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '907'
+  meaning: Invalid mandate reference
+  action: 'The Mandate reference is invalid. It must conform to the following format: 1 to 35 characters consisting of alphanumeric, colon, question mark, forward
+    slash, plus, parenthesis, comas, period, space, and dash. The applicable regular expression is: ^[A-Za-z0-9:?/+(),. -]{1,35}$'
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '908'
+  meaning: Missing mandate URL
+  action: You must provide a Mandate URL for SEPA Bring Your Own Mandate deposit transactions (both one-time and recurring).
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '909'
+  meaning: Invalid mandate URL
+  action: 'The Mandate URL must start with https and be followed by 5 to 120 characters adhering to the following regular expression: ^https://.{5,120}$'
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '911'
+  meaning: Missing mandate signature date
+  action: You must provide a Mandate signature date for SEPA Bring Your Own Mandate deposit transactions (both one-time and recurring).
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '912'
+  meaning: Invalid mandate signature date
+  action: 'You must provide a Mandate signature date earlier than or the same as the current date with the following format: YYYY-MM-DD.'
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '913'
+  meaning: Recurring mandate already exists
+  action: Worldpay returns this message when you submit multiple first Bring Your Own Mandate recurring transactions with the same mandate reference. The mandate
+    references among the recurring transactions for a single merchant must be unique.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '914'
+  meaning: Recurring mandate was not found
+  action: Worldpay returns this message when you submit a subsequent or final standard recurring transaction before a first standard recurring is processed and confirmed.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '915'
+  meaning: Final recurring was already received using this mandate
+  action: Worldpay returns this message when you submit a first or subsequent recurring transaction after we received a final recurring. The life cycle of a recurring
+    mandate ends after the processing of a final recurring deposit transaction. This applies to both standard and Bring Your Own Mandate recurring transactions.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '916'
+  meaning: IBAN did not match one on file for mandate
+  action: 'Worldpay returns this message when you submit a subsequent or final recurring with a different IBAN than the IBAN used in the first recurring transaction.
+    This applies to both standard and Bring Your Own Mandate recurring transactions. Note: If a customer wants to use a different IBAN for a recurring SEPA mandate,
+    they must use a request for another mandate reference using this new IBAN.'
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '917'
+  meaning: Invalid Billing Country
+  action: Some of the alternative payment methods restrict the allowed consumer's billing country codes. For example, iDEAL only allows country code NL.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '922'
+  meaning: Expiration date required for Interac transaction
+  action: The submitted transaction uses the Canadian Interac network and requires the inclusion of an expiration date.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '923'
+  meaning: Transaction type is not supported with this Method of Payment
+  action: This transaction type is not support for the Canadian Interac network.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '924'
+  meaning: Unreferenced (orphan) refunds are not allowed
+  action: We do not support refunds for Interac transaction unless we also processed the capture.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '939'
+  meaning: Unable to void a transaction with a Held state
+  action: The transaction you tried to void is in a Held state. You can not void a transaction in this state. You must first resolve the hold.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '940'
+  meaning: This Funding Instruction results in a negative account balance
+  action: There are insufficient funds in the account balance to cover the Funding Instruction. Wait for additional funds to settle to the account and then resubmit
+    the transaction.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '941'
+  meaning: Account balance information unavailable at this time.
+  action: Typically, this response occurs only for new accounts that do not yet have any settled transactions and were not pre-funded (i.e., no balance yet recorded
+    for the account). Wait for additional funds to settle to the account or pre-fund the account and then resubmit the transaction.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '942'
+  meaning: The submitted card is not eligible for Fast Access Funding.
+  action: The card you submitted in the Fast Access Funding instruction cannot receive funds using this method.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '943'
+  meaning: Transaction cannot use both ccdPaymentInformation and ctxPaymentInformation
+  action: A transaction can not contain both the ccdPaymentInformation and ctxPaymentInformation elements.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '944'
+  meaning: Processing Error
+  action: Please retry the transaction.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '945'
+  meaning: This Funding Instruction type is invalid for Canadian merchants
+  action: 'We do not support the following Funding Instructions in Canada: - Physical Check Credit/Debit - Reserve Credit/Debit - Vendor Credit/Debit'
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '947'
+  meaning: Canadian account number cannot exceed 12 digits
+  action: You submitted a Canadian account number using more than 12 digits, which is not allowed. Check the account number and resubmit using 12 or less digits.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '948'
+  meaning: This funding instruction type is invalid
+  action: The submitted finding instruction transaction is not supported.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '950'
+  meaning: Decline - Negative Information on File
+  action: A Direct Debit response indicating the account is on the negative file.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '951'
+  meaning: Absolute Decline
+  action: A Direct Debit response indicating that this transaction was declined.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '952'
+  meaning: The Merchant Profile does not allow the requested operation
+  action: A Direct Debit response indicating that your Merchant Profile does not allow the requested operation. Contact your Partner Experience Manager for additional
+    information.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '953'
+  meaning: The account cannot accept ACH transactions
+  action: A Direct Debit response indicating the customer’s checking account does not accept ACH transactions.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '954'
+  meaning: The account cannot accept ACH transactions or site drafts
+  action: A Direct Debit response indicating the customer’s checking account does not accept ACH transactions or site drafts.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '955'
+  meaning: Amount greater than limit specified in the Merchant Profile
+  action: A Direct Debit response indicating that the dollar amount of this transaction exceeds the maximum amount specified in your Merchant Profile. Contact your
+    Partner Experience Manager for additional information.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '956'
+  meaning: Merchant is not authorized to perform eCheck Verification transactions
+  action: A Direct Debit response indicating that your organization is not authorized to perform eCheck verifications. Contact your Partner Experience Manager for
+    additional information.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '957'
+  meaning: First Name and Last Name required for eCheck Verifications
+  action: A Direct Debit response indicating that the first and last name of the customer is required for eCheck verifications.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '958'
+  meaning: Company Name required for corporate account for eCheck Verifications
+  action: A Direct Debit response indicating that the company name is required for verifications on corporate accounts.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '959'
+  meaning: Phone number required for eCheck Verifications
+  action: A Direct Debit response indicating that the phone number of the customer is required for echeck verifications.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '961'
+  meaning: Card Brand token not supported
+  action: This code is returned if the merchant submits a Visa generated token.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '962'
+  meaning: Private Label Card not supported
+  action: This code is returned if the transaction involves a Visa Private Label card.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '965'
+  meaning: Allowed daily Direct Debit capture (eCheckSale) limit exceeded.
+  action: If processed, the rejected transaction would exceed the daily limit (amount) for Direct Debit captures. Please resubmit the transaction tomorrow.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '966'
+  meaning: Allowed daily Direct Debit credit (eCheckCredit) limit exceeded.
+  action: If processed, the rejected transaction would exceed the daily limit (amount) for Direct Debit credits. Please resubmit the transaction tomorrow.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '980'
+  meaning: Soft Decline - Customer Authentication Required
+  action: The submitted transaction requires Customer Authentication.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '981'
+  meaning: Transaction Not Reversed - Void Workflow need to be invoked
+  action: Use a Void transaction.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '982'
+  meaning: Transaction Reversal not supported for the Core Merchants
+  action: This transaction originated on the Core platform, which does not support this transaction type.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '983'
+  meaning: No valid Parent Deposit or Parent Refund found
+  action: The referenced (by the cnpTxnId) parent transaction does not exist. Verify the Id and resubmit with correct value.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '984'
+  meaning: Transaction Reversal not enabled for Visa
+  action: This transaction type has not been enabled for Visa.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '985'
+  meaning: Transaction Reversal not enabled for Mastercard
+  action: This transaction type has not been enabled for Mastercard.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '986'
+  meaning: Transaction Reversal not enabled for AmEx
+  action: This transaction type has not been enabled for American Express.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '987'
+  meaning: Transaction Reversal not enabled for Discover
+  action: This transaction type has not been enabled for Discover.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '988'
+  meaning: Transaction Reversal not supported
+  action: This transaction type is not supported.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '990'
+  meaning: Funding Instruction held. Please contact your Partner Experience Manager.
+  action: The transaction is held. You must contact your Partner Experience Manager for information about the reason.
+  reason_type: Hard Decline
+  processor: Vantiv (VAP)
+- code: '991'
+  meaning: Missing address information
+  action: Add the missing address information and resubmit the transaction.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '992'
+  meaning: Cryptographic failure
+  action: Cryptographic error found in PIN or CVV.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '995'
+  meaning: Invalid Credit Account
+  action: The referenced credit card account is invalid.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '996'
+  meaning: Invalid Checking Account
+  action: The referenced checking account is invalid.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '997'
+  meaning: Invalid Savings Account
+  action: The referenced savings account is invalid.
+  reason_type: Soft Decline
+  processor: Vantiv (VAP)
+- code: '0'
+  meaning: Approved / Success
+  action: Approved
+  processor: Vantiv Core (VCore) - Express
+- code: '5'
+  meaning: Partial Approval
+  action: Info
+  processor: Vantiv Core (VCore) - Express
+- code: '7'
+  meaning: DCC Requested
+  action: Info
+  processor: Vantiv Core (VCore) - Express
+- code: '8'
+  meaning: Non-Financial Card
+  action: Hard Decline
+  processor: Vantiv Core (VCore) - Express
+- code: '20'
+  meaning: Declined
+  action: Hard Decline
+  processor: Vantiv Core (VCore) - Express
+- code: '21'
+  meaning: Expired Card
+  action: Hard Decline
+  processor: Vantiv Core (VCore) - Express
+- code: '22'
+  meaning: Duplicate Approved
+  action: Hard Decline
+  processor: Vantiv Core (VCore) - Express
+- code: '23'
+  meaning: Duplicate
+  action: Hard Decline
+  processor: Vantiv Core (VCore) - Express
+- code: '24'
+  meaning: Pick Up Card
+  action: Hard Decline
+  processor: Vantiv Core (VCore) - Express
+- code: '25'
+  meaning: Referral / Call Issuer
+  action: Soft Decline
+  processor: Vantiv Core (VCore) - Express
+- code: '30'
+  meaning: Balance Not Available
+  action: Soft Decline
+  processor: Vantiv Core (VCore) - Express
+- code: '90'
+  meaning: Not Defined
+  action: Soft Decline
+  processor: Vantiv Core (VCore) - Express
+- code: '101'
+  meaning: Invalid Data
+  action: Hard Decline
+  processor: Vantiv Core (VCore) - Express
+- code: '102'
+  meaning: Invalid Account
+  action: Hard Decline
+  processor: Vantiv Core (VCore) - Express
+- code: '103'
+  meaning: Invalid Request
+  action: Hard Decline
+  processor: Vantiv Core (VCore) - Express
+- code: '104'
+  meaning: Authorization Failed
+  action: Hard Decline
+  processor: Vantiv Core (VCore) - Express
+- code: '105'
+  meaning: Not Authorized
+  action: Hard Decline
+  processor: Vantiv Core (VCore) - Express
+- code: '120'
+  meaning: Out of Balance
+  action: Soft Decline
+  processor: Vantiv Core (VCore) - Express
+- code: '1001'
+  meaning: Communication Error
+  action: Soft Decline
+  processor: Vantiv Core (VCore) - Express
+- code: '1002'
+  meaning: Host Error
+  action: Soft Decline
+  processor: Vantiv Core (VCore) - Express
+- code: '1009'
+  meaning: Error
+  action: Soft Decline
+  processor: Vantiv Core (VCore) - Express
+- code: '001'
+  meaning: AUTH DOWN
+  action: This is the TPS response when no external authorizer is available.
+  processor: Vantiv Core (VCore) - RAFT
+- code: '307'
+  meaning: CONVERSION TRAN ERR
+  action: 'Token/De-token conversion transaction not allowed Action: Check Host tokenization configuration settings and request message'
+  processor: Vantiv Core (VCore) - RAFT
+- code: '307'
+  meaning: PAYMENT TYPE ERROR
+  action: 'Host payment type setup configured to decline token transaction request Action: Check Host tokenization configuration settings and request message'
+  processor: Vantiv Core (VCore) - RAFT
+- code: '307'
+  meaning: ADDITIONAL TRAN ERR
+  action: 'Transaction not allowed to use token Action: Check Host tokenization configuration settings and request message'
+  processor: Vantiv Core (VCore) - RAFT
+- code: '307'
+  meaning: RESTRICT TRAN ERROR
+  action: 'Restricted transactions not allowed to process Action: Check Host tokenization configuration settings and request message'
+  processor: Vantiv Core (VCore) - RAFT
+- code: '307'
+  meaning: INVALID TRACK DATA
+  action: 'Track data is blank, unable to tokenize transaction request Action: Verify values for clear PAN or Track data - retry transaction'
+  processor: Vantiv Core (VCore) - RAFT
+- code: '307'
+  meaning: INV POS COND CODE
+  action: 'POS condition code is invalid for request message Action: Verify values for POS condition code field - retry transaction'
+  processor: Vantiv Core (VCore) - RAFT
+- code: '307'
+  meaning: INV ORIG DATE TIME
+  action: 'Invalid token original date or time values, not numeric or format issue Action: Verify POS values for token original date and time fields - retry transaction'
+  processor: Vantiv Core (VCore) - RAFT
+- code: '307'
+  meaning: TRAN NOT ALLOWED
+  action: 'Transaction requesting or using token is not allowed Action: Verify POS request message - retry transaction'
+  processor: Vantiv Core (VCore) - RAFT
+- code: '307'
+  meaning: POS ENTRY MODE ERROR
+  action: 'Transaction request using token must set manual POS entry mode Action: Verify POS request message - retry transaction'
+  processor: Vantiv Core (VCore) - RAFT
+- code: '307'
+  meaning: PAN OR TRACK ERROR
+  action: 'Transaction using token must initialize track and/or PAN to spaces Action: Verify POS request message - retry transaction'
+  processor: Vantiv Core (VCore) - RAFT
+- code: '416'
+  meaning: REGISTRATION-ID NOT FOUND
+  action: 'DThe transaction’s Registration-ID is not found in the ES data base. It may have expired. Action: Check the Registration-ID and retry the transaction.'
+  processor: Vantiv Core (VCore) - RAFT
+- code: '550'
+  meaning: FRAUDSIGHT DENIED
+  action: Transaction declined by FraudSight
+  processor: Vantiv Core (VCore) - RAFT
+- code: '701'
+  meaning: CALL OPER
+  action: Refer to card issuer
+  processor: Vantiv Core (VCore) - RAFT
+- code: '702'
+  meaning: CALL OPER
+  action: Refer to card issuer - special condition
+  processor: Vantiv Core (VCore) - RAFT
+- code: '703'
+  meaning: INV MERCHANT
+  action: Invalid merchant
+  processor: Vantiv Core (VCore) - RAFT
+- code: '704'
+  meaning: PICK UP CARD
+  action: Pick up card
+  processor: Vantiv Core (VCore) - RAFT
+- code: '705'
+  meaning: TRANS DENIED
+  action: Do not honor
+  processor: Vantiv Core (VCore) - RAFT
+- code: '706'
+  meaning: TRANS DENIED
+  action: One or more errors in message
+  processor: Vantiv Core (VCore) - RAFT
+- code: '707'
+  meaning: PICK UP CARD
+  action: Pick up card (special condition)
+  processor: Vantiv Core (VCore) - RAFT
+- code: '708'
+  meaning: INVALID ID
+  action: Invalid format in identification data
+  processor: Vantiv Core (VCore) - RAFT
+- code: '712'
+  meaning: INV TRANS
+  action: Invalid transaction
+  processor: Vantiv Core (VCore) - RAFT
+- code: '713'
+  meaning: INV DOLLAR AMT
+  action: Invalid amount
+  processor: Vantiv Core (VCore) - RAFT
+- code: '714'
+  meaning: INV CARD NUMBER
+  action: This is the TPS response code that will most commonly be presented when a transaction fails to locate a viable routing option.
+  processor: Vantiv Core (VCore) - RAFT
+- code: '715'
+  meaning: INV ISSUER
+  action: No such issuer
+  processor: Vantiv Core (VCore) - RAFT
+- code: '716'
+  meaning: VOUCHER EXPIRED
+  action: Voucher expired
+  processor: Vantiv Core (VCore) - RAFT
+- code: '717'
+  meaning: PAN RETRIES EXCEDED
+  action: 'Allowable # of PAN tries exceeded'
+  processor: Vantiv Core (VCore) - RAFT
+- code: '718'
+  meaning: INV SECURITY COD
+  action: 'Invalid Security Code NOTE: The actual return code from Telecheck is 88.'
+  processor: Vantiv Core (VCore) - RAFT
+- code: '719'
+  meaning: RE-ENTER TRANSACTION
+  action: Re-enter transaction
+  processor: Vantiv Core (VCore) - RAFT
+- code: '721'
+  meaning: NO ACTION TAKEN
+  action: No action taken - unable to back out prior transaction
+  processor: Vantiv Core (VCore) - RAFT
+- code: '722'
+  meaning: UNMATCHED VOUCHER
+  action: Unmatched voucher information
+  processor: Vantiv Core (VCore) - RAFT
+- code: '723'
+  meaning: UNDEFINED TRANS
+  action: Transaction not defined
+  processor: Vantiv Core (VCore) - RAFT
+- code: '724'
+  meaning: DOB MISMATCH
+  action: ID or Date of Birth Mismatch
+  processor: Vantiv Core (VCore) - RAFT
+- code: '725'
+  meaning: TRANS DENIED
+  action: Unable to locate record in file
+  processor: Vantiv Core (VCore) - RAFT
+- code: '726'
+  meaning: ID RESTRICTIONS
+  action: ID Restrictions
+  processor: Vantiv Core (VCore) - RAFT
+- code: '728'
+  meaning: TRANS DENIED
+  action: File is unavailable
+  processor: Vantiv Core (VCore) - RAFT
+- code: '729'
+  meaning: TRANS DENIED
+  action: Hard Negative Information on File
+  processor: Vantiv Core (VCore) - RAFT
+- code: '730'
+  meaning: FORMAT ERROR
+  action: Format error
+  processor: Vantiv Core (VCore) - RAFT
+- code: '731'
+  meaning: OVER LIMITS
+  action: Over Daily, Periodic, Maximum Limits
+  processor: Vantiv Core (VCore) - RAFT
+- code: '732'
+  meaning: INVALID STATION ID
+  action: Invalid Station ID
+  processor: Vantiv Core (VCore) - RAFT
+- code: '734'
+  meaning: TRANS DENIED
+  action: Enter DL/Date of Birth
+  processor: Vantiv Core (VCore) - RAFT
+- code: '735'
+  meaning: CALL OPER
+  action: Refer to Call Center
+  processor: Vantiv Core (VCore) - RAFT
+- code: '739'
+  meaning: TRANS DENIED
+  action: No credit account
+  processor: Vantiv Core (VCore) - RAFT
+- code: '740'
+  meaning: FUNCTION NOT AVAIL
+  action: Requested function not supported
+  processor: Vantiv Core (VCore) - RAFT
+- code: '741'
+  meaning: PICK UP CARD
+  action: Lost card - pick up
+  processor: Vantiv Core (VCore) - RAFT
+- code: '743'
+  meaning: PICK UP CARD
+  action: Stolen card - pick up
+  processor: Vantiv Core (VCore) - RAFT
+- code: '747'
+  meaning: TRAN UNDELIVERABLE
+  action: Undeliverable transaction
+  processor: Vantiv Core (VCore) - RAFT
+- code: '751'
+  meaning: TRANS DENIED
+  action: Insufficient funds
+  processor: Vantiv Core (VCore) - RAFT
+- code: '752'
+  meaning: TRANS DENIED
+  action: No checking account
+  processor: Vantiv Core (VCore) - RAFT
+- code: '753'
+  meaning: TRANS DENIED
+  action: No savings account
+  processor: Vantiv Core (VCore) - RAFT
+- code: '754'
+  meaning: CARD EXPIRED
+  action: Expired card
+  processor: Vantiv Core (VCore) - RAFT
+- code: '755'
+  meaning: INVALID PIN
+  action: Incorrect PIN
+  processor: Vantiv Core (VCore) - RAFT
+- code: '756'
+  meaning: CANNOT PROCESS
+  action: Cannot process
+  processor: Vantiv Core (VCore) - RAFT
+- code: '757'
+  meaning: TRANS NOT ALLOW
+  action: Transactions not allowed to cardholder
+  processor: Vantiv Core (VCore) - RAFT
+- code: '758'
+  meaning: TRANS NOT ALLOW
+  action: Transactions not allowed to terminal
+  processor: Vantiv Core (VCore) - RAFT
+- code: '761'
+  meaning: EXCEEDS MAX AMT
+  action: Exceeds withdrawal/approval amount limits
+  processor: Vantiv Core (VCore) - RAFT
+- code: '762'
+  meaning: TRANS DENIED
+  action: Restricted card
+  processor: Vantiv Core (VCore) - RAFT
+- code: '763'
+  meaning: TRANS DENIED
+  action: Security violation
+  processor: Vantiv Core (VCore) - RAFT
+- code: '765'
+  meaning: TRANS DENIED
+  action: Activity count limit exceeded
+  processor: Vantiv Core (VCore) - RAFT
+- code: '766'
+  meaning: CARD ESCHEATED
+  action: Card Escheated (Gift Card)
+  processor: Vantiv Core (VCore) - RAFT
+- code: '767'
+  meaning: PICK UP CARD
+  action: Pick up card
+  processor: Vantiv Core (VCore) - RAFT
+- code: '768'
+  meaning: MERCHANT DEPLETED
+  action: Merchant Depleted (Gift Card)
+  processor: Vantiv Core (VCore) - RAFT
+- code: '769'
+  meaning: BAD CLOSE
+  action: Bad close (Gift Card)
+  processor: Vantiv Core (VCore) - RAFT
+- code: '770'
+  meaning: CARD ALREADY ACTIVE
+  action: Card already active (Gift Card)
+  processor: Vantiv Core (VCore) - RAFT
+- code: '771'
+  meaning: CARD INACTIVE
+  action: Card not active (Gift Card)
+  processor: Vantiv Core (VCore) - RAFT
+- code: '772'
+  meaning: CARD CLOSED
+  action: Card already closed (Gift Card)
+  processor: Vantiv Core (VCore) - RAFT
+- code: '773'
+  meaning: OVER MAX BALANCE
+  action: Over maximum balance (Gift Card)
+  processor: Vantiv Core (VCore) - RAFT
+- code: '774'
+  meaning: INVALID ACTIVATE
+  action: Invalid activate (Gift Card)
+  processor: Vantiv Core (VCore) - RAFT
+- code: '775'
+  meaning: TRANS DENIED
+  action: Allowable number of PIN entry tries exceeded
+  processor: Vantiv Core (VCore) - RAFT
+- code: '776'
+  meaning: INV REF NUMBER
+  action: Unable to locate previous message
+  processor: Vantiv Core (VCore) - RAFT
+- code: '777'
+  meaning: DATA INCONSISTENT
+  action: Previous message located for repeat/reversal, but data inconsistent
+  processor: Vantiv Core (VCore) - RAFT
+- code: '778'
+  meaning: NO 'TO'ACCT
+  action: No "to" account specified
+  processor: Vantiv Core (VCore) - RAFT
+- code: '779'
+  meaning: TRANS DENIED
+  action: Already reversed by switch
+  processor: Vantiv Core (VCore) - RAFT
+- code: '780'
+  meaning: INVALID DATE
+  action: Invalid date
+  processor: Vantiv Core (VCore) - RAFT
+- code: '781'
+  meaning: TRANS DENIED
+  action: Cryptographic error found in PIN or CVV
+  processor: Vantiv Core (VCore) - RAFT
+- code: '782'
+  meaning: TRANS DENIED
+  action: Incorrect CVV
+  processor: Vantiv Core (VCore) - RAFT
+- code: '783'
+  meaning: INCORRECT PIN
+  action: Unable to verify PIN
+  processor: Vantiv Core (VCore) - RAFT
+- code: '784'
+  meaning: TRANS DENIED
+  action: Time limit for a pre-authorization is too long
+  processor: Vantiv Core (VCore) - RAFT
+- code: '786'
+  meaning: TRANS DENIED
+  action: Cannot verify PIN
+  processor: Vantiv Core (VCore) - RAFT
+- code: '787'
+  meaning: RECON TOTAL STOPPED
+  action: Reconciliation totaling has stopped for current settlement day
+  processor: Vantiv Core (VCore) - RAFT
+- code: '788'
+  meaning: NO TOTALS TRY LATER
+  action: Switch cannot provide totals now; try again in 30 minutes
+  processor: Vantiv Core (VCore) - RAFT
+- code: '789'
+  meaning: GIV TRANS DENIED
+  action: Ineligible to receive financial position information (GIV)
+  processor: Vantiv Core (VCore) - RAFT
+- code: '790'
+  meaning: EXCEEDS LIMIT
+  action: Exceeds approval/daily limit. ECHO Override optional.
+  processor: Vantiv Core (VCore) - RAFT
+- code: '791'
+  meaning: AUTH DOWN
+  action: Issuer/switch inoperative
+  processor: Vantiv Core (VCore) - RAFT
+- code: '792'
+  meaning: AUTH DOWN
+  action: Financial Inst facility cannot be found for routing
+  processor: Vantiv Core (VCore) - RAFT
+- code: '793'
+  meaning: TRANS NOT ALLOW
+  action: Illegal transaction - violation of law
+  processor: Vantiv Core (VCore) - RAFT
+- code: '794'
+  meaning: DUPL TRAN
+  action: Duplicate transaction
+  processor: Vantiv Core (VCore) - RAFT
+- code: '795'
+  meaning: AUTH DOWN
+  action: Issuer/switch inoperative POSA Prepaid Network SAF
+  processor: Vantiv Core (VCore) - RAFT
+- code: '796'
+  meaning: AUTH DOWN
+  action: There is a system malfunction.
+  processor: Vantiv Core (VCore) - RAFT
+- code: '798'
+  meaning: DUPLICATE TRANSACTION
+  action: Duplicate Transaction
+  processor: Vantiv Core (VCore) - RAFT

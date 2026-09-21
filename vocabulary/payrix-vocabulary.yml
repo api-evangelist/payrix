@@ -1,0 +1,466 @@
+generated: '2026-09-21'
+method: derived
+generator: derive-vocabulary.py
+source:
+- openapi/payrix-accounts-api-openapi.yml
+- openapi/payrix-accounts-verifications-api-openapi.yml
+- openapi/payrix-adjustments-api-openapi.yml
+- openapi/payrix-aggregation-result-groups-api-openapi.yml
+- openapi/payrix-aggregation-results-api-openapi.yml
+vocabulary:
+  name: Payrix Domain Vocabulary
+  description: 'Terms declared by Payrix''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-09-21'
+  terms:
+  - term: Accounts
+    definition: Accounts deals with payment account details for merchant boarding and entity funding. Ultimately, all the business performed within
+      Payrix Pro (be it merchant transactions, vendor income, or facilitator fees) must end up in the entity's payment account.
+    tags:
+    - Resource Group
+    source: openapi/payrix-accounts-api-openapi.yml
+  - term: Accounts Verifications
+    definition: Accounts Verification represents an attempt to verify the ownership of a particular bank account by verifying a known deposit
+      amount or credential.
+    tags:
+    - Resource Group
+    source: openapi/payrix-accounts-verifications-api-openapi.yml
+  - term: Adjustments
+    definition: A way to make monetary adjustments to an entity's funds.
+    tags:
+    - Resource Group
+    source: openapi/payrix-adjustments-api-openapi.yml
+  - term: Aggregation Result Groups
+    definition: Aggregation Result Groups Holds data regarding a processed aggregation.
+    tags:
+    - Resource Group
+    source: openapi/payrix-aggregation-result-groups-api-openapi.yml
+  - term: Aggregation Results
+    definition: Aggregation Results Holds a field totals calculated when processing an aggregation.
+    tags:
+    - Resource Group
+    source: openapi/payrix-aggregation-results-api-openapi.yml
+  - term: Aggregations
+    definition: Aggregations acts as a scheduler that contains the needed parameters to properly generate results containing the calculated totals
+      and keep such records in the aggregation results resource.
+    tags:
+    - Resource Group
+    source: openapi/payrix-aggregations-api-openapi.yml
+  - term: Alert Actions
+    definition: Alert Actions deals with specific action that occurs following a triggered web alert.
+    tags:
+    - Resource Group
+    source: openapi/payrix-alert-actions-api-openapi.yml
+  - term: Alert Triggers
+    definition: Alert Trigger deals with triggers associated with web alerts
+    tags:
+    - Resource Group
+    source: openapi/payrix-alert-triggers-api-openapi.yml
+  - term: Alerts
+    definition: Web alerts, also known as webhooks, are automated notifications sent from the API server when triggered by a specific action that
+      occurs in your portfolio. You can configure the actions that trigger the alerts to notify you of any event that's important to your business
+      model.
+    tags:
+    - Resource Group
+    source: openapi/payrix-alerts-api-openapi.yml
+  - term: API Keys
+    definition: Interaction with the API requires authentication. For application integration and persistent authentication, an API key is required.
+    tags:
+    - Resource Group
+    source: openapi/payrix-api-keys-api-openapi.yml
+  - term: Apple Domains
+    definition: An Apple Domains resource represents the status of Apple Pay registration for a specific merchant and domain.
+    tags:
+    - Resource Group
+    source: openapi/payrix-apple-domains-api-openapi.yml
+  - term: Apple Domains Mass Enablement
+    definition: An Apple Domains Mass Enablement resource represents the bulk registration of multiple merchants, each associated with a respective
+      domain, to enable the Apple Pay service.
+    tags:
+    - Resource Group
+    source: openapi/payrix-apple-domains-mass-enablement-api-openapi.yml
+  - term: Assessments
+    definition: Assessments represents a record of fees charged by processors or other third-parties to Entities or Orgs. These can represent
+      either charges that are levied on a one-off, regularly scheduled, or event-driven basis.
+    tags:
+    - Resource Group
+    source: openapi/payrix-assessments-api-openapi.yml
+  - term: Authentication Tokens
+    definition: Tokens provide the means through which to safely and securely store payment methods (e.g. credit cards or bank accounts) for later
+      use. A transaction may be initiated for a customer by providing the token as the source of payment data. Similarly, a subscription may be
+      associated with a token for automated recurring billing on that payment instrument.
+    tags:
+    - Resource Group
+    source: openapi/payrix-authentication-tokens-api-openapi.yml
+  - term: Batches (Settlements)
+    definition: Batches are a container for transactions that enables batch processing to the processor for a merchant (to settle customer sales).
+      Processing transactions for settlement to the processor is done in batches.
+    tags:
+    - Resource Group
+    source: openapi/payrix-batches-settlements-api-openapi.yml
+  - term: Billing
+    definition: The billing deals with billing configuration for an entity, org, division or partition. A billing configuration determines how
+      an entity is billed for their payables within Payrix Pro.
+    tags:
+    - Resource Group
+    source: openapi/payrix-billing-api-openapi.yml
+  - term: Billing Events
+    definition: A conditional logic that determines the events that will be billed and the configuration for each event.
+    tags:
+    - Resource Group
+    source: openapi/payrix-billing-events-api-openapi.yml
+  - term: Billing Modifiers
+    definition: Billing Modifiers means to change the total amount of the billing or whoever will pay it.
+    tags:
+    - Resource Group
+    source: openapi/payrix-billing-modifiers-api-openapi.yml
+  - term: Bins
+    definition: Bins Holds information about the issuer of a card. (Bank Issuer Number).
+    tags:
+    - Resource Group
+    source: openapi/payrix-bins-api-openapi.yml
+  - term: Change Requests
+    definition: Change Requests Accounts Verification deals with payment account details for merchant boarding and entity funding. Ultimately,
+      all the business performed within Payrix Pro (be it merchant transactions, vendor income or facilitator fees) must end up in the entity's
+      payment account.
+    tags:
+    - Resource Group
+    source: openapi/payrix-change-requests-api-openapi.yml
+  - term: Chargeback Documents
+    definition: Represents a file related to the Chargeback.
+    tags:
+    - Resource Group
+    source: openapi/payrix-chargeback-documents-api-openapi.yml
+  - term: Chargeback Message Results
+    definition: Chargeback Message Results represents a message that is received from the processor in relation to a Chargeback message.
+    tags:
+    - Resource Group
+    source: openapi/payrix-chargeback-message-results-api-openapi.yml
+  - term: Chargeback Messages
+    definition: Resources that deal with chargebacks. A chargeback is a dispute of a purchase that has already been charged to an account that
+      can result in a return of funds.
+    tags:
+    - Resource Group
+    source: openapi/payrix-chargeback-messages-api-openapi.yml
+  - term: Chargeback Statuses
+    definition: The logged status changes of a Chargeback.
+    tags:
+    - Resource Group
+    source: openapi/payrix-chargeback-statuses-api-openapi.yml
+  - term: Chargebacks
+    definition: Resources that deal with chargebacks. A chargeback is a dispute of a purchase that has already been charged to an account that
+      can result in a return of funds.
+    tags:
+    - Resource Group
+    source: openapi/payrix-chargebacks-api-openapi.yml
+  - term: Confirmation Codes
+    definition: Represents a unique confirmation code issued to an email address, either when a user indicates that they have forgotten their
+      password, or when the system needs to verify the email address associated with a login.
+    tags:
+    - Resource Group
+    source: openapi/payrix-confirmation-codes-api-openapi.yml
+  - term: Contacts
+    definition: A contact reflects a known, valid individual registered as a contact for the entity. It is purely informational and not a required
+      record.
+    tags:
+    - Resource Group
+    source: openapi/payrix-contacts-api-openapi.yml
+  - term: Credentials
+    definition: Represents an authorization that a given Entity has to connect to an integration to perform a particular action, such as send
+      Transactions to the processor, or board a Merchant with the processor.
+    tags:
+    - Resource Group
+    source: openapi/payrix-credentials-api-openapi.yml
+  - term: Customers
+    definition: Customers deals with merchant customer information. Customers may be associated with tokens to create a stored method of payment
+      or with invoices for billing.
+    tags:
+    - Resource Group
+    source: openapi/payrix-customers-api-openapi.yml
+  - term: Decision Actions
+    definition: A piece of conditional logic that makes a Verification Result change the application and the decision action in certain circumstance.
+    tags:
+    - Resource Group
+    source: openapi/payrix-decision-actions-api-openapi.yml
+  - term: Decision Rules
+    definition: A piece of conditional logic that makes a Decision apply only in certain circumstances.
+    tags:
+    - Resource Group
+    source: openapi/payrix-decision-rules-api-openapi.yml
+  - term: Decisions
+    definition: Decisions deal with the schedule and rules for a check done on Transactions.
+    tags:
+    - Resource Group
+    source: openapi/payrix-decisions-api-openapi.yml
+  - term: Disbursement Entries
+    definition: A record of disbursement amount come from.
+    tags:
+    - Resource Group
+    source: openapi/payrix-disbursement-entries-api-openapi.yml
+  - term: Disbursement Reference
+    definition: Disbursement Reference Represents a reference code issued by the Payout facilitator when a Disbursement is paid.
+    tags:
+    - Resource Group
+    source: openapi/payrix-disbursement-reference-api-openapi.yml
+  - term: Disbursement Results
+    definition: Disbursement Results Represents the results of a Disbursement and and any follow-ups actions (confirmations, returns, etc.).
+    tags:
+    - Resource Group
+    source: openapi/payrix-disbursement-results-api-openapi.yml
+  - term: Disbursements
+    definition: A disbursement represents a movement of funds in an entity's payment account. Records of an occasion where money is either paid
+      to a bank account or received from a bank account.
+    tags:
+    - Resource Group
+    source: openapi/payrix-disbursements-api-openapi.yml
+  - term: Divisions
+    definition: Divisions contains a list of user divisions associated with an account. It allows for an additional and optional layer of separation
+      within a partition.
+    tags:
+    - Resource Group
+    source: openapi/payrix-divisions-api-openapi.yml
+  - term: Embedded Finance
+    definition: Embedded Finance stores information related to the activation of the resource for an entity. EmbeddedFinance's Valued Added Service
+      provides access to new products and services related to Embedded Finance.
+    tags:
+    - Resource Group
+    source: openapi/payrix-embedded-finance-api-openapi.yml
+  - term: Entities
+    definition: Entities are portion of a single facilitator, vendor or merchant. Common business-related details for each type of entity are
+      stored here (like name and address) as well as management details (like which login the entity belongs to). ny kind of business within the
+      Payrix Pro API (like board merchants as a facilitator, capture fees as a vendor or accept payments as a merchant) an entity record is r
+    tags:
+    - Resource Group
+    source: openapi/payrix-entities-api-openapi.yml
+  - term: EntitiesCustomFields
+    definition: the Entity Custom Fields feature, designed to empower partners to send identifiers and Risk-requested items using unlimited custom
+      fields. By leveraging this feature, partners can ensure that their software works seamlessly, leading to increased Boarding Rates. Additionally,
+      partners can avoid waiting for Risk to request information manually, streamlining their operations.
+    tags:
+    - Resource Group
+    source: openapi/payrix-entitiescustomfields-api-openapi.yml
+  - term: Entity Debts
+    definition: Entity Debts represents a record of a debt between entities or an entity and the System.
+    tags:
+    - Resource Group
+    source: openapi/payrix-entity-debts-api-openapi.yml
+  - term: Entity Reserves
+    definition: Entity Reserves Represents funds held by an Entity in reserve. The funds are held separately from amounts in any entity Funds.
+    tags:
+    - Resource Group
+    source: openapi/payrix-entity-reserves-api-openapi.yml
+  - term: Entity Returns
+    definition: Represents an ACH transaction or disbursement that has been rejected. The Entity Return will block ACH creations or send out related
+      to its entity and payment.
+    tags:
+    - Resource Group
+    source: openapi/payrix-entity-returns-api-openapi.yml
+  - term: Entity Terms
+    definition: EntityTerms resource represent the different agreed terms and condition agreed to by merchants during the signup.
+    tags:
+    - Resource Group
+    source: openapi/payrix-entity-terms-api-openapi.yml
+  - term: EntityData
+    definition: An entityData record is used to store a signature image for an entity's acceptance of terms and conditions. This is stored in
+      a separate table so as not to bloat the entities table with signature images that use a lot of space. Additionally, the signatures are not
+      included in API requests for the entities themselves, instead they are requested separately via the entityDatas resource.
+    tags:
+    - Resource Group
+    source: openapi/payrix-entitydata-api-openapi.yml
+  - term: EntityRefs
+    definition: An entityRef may be used to store referential IDs for merchants, facilitators and even vendors. For a merchant, at least a mid
+      and funding entityRef is required for proper transacting and funding. For a facilitator, at least the entity and funding entityRefs should
+      be defined for proper merchant boarding, transaction processing and funding operations as well as any other references required for op
+    tags:
+    - Resource Group
+    source: openapi/payrix-entityrefs-api-openapi.yml
+  - term: Entries
+    definition: An entry record represents a credit or debit of funds for an entity, possibly part of a transfer of funds between two entities.
+      Any monetary change for an entity in Payrix Pro is recorded in an entry. This serves as a ledger of financial activity for an entity.
+    tags:
+    - Resource Group
+    source: openapi/payrix-entries-api-openapi.yml
+  - term: Entry Origin
+    definition: Entry Origin represents a record of sources for funded activity.
+    tags:
+    - Resource Group
+    source: openapi/payrix-entry-origin-api-openapi.yml
+  - term: Fee Modifiers
+    definition: Fee Modifiers means to change the total amount of the fee or whoever will pay it.
+    tags:
+    - Resource Group
+    source: openapi/payrix-fee-modifiers-api-openapi.yml
+  - term: Fee Refunds
+    definition: Fee Refund is a way to reverse a fee that has been charged to another entity incorrectly.
+    tags:
+    - Resource Group
+    source: openapi/payrix-fee-refunds-api-openapi.yml
+  - term: Fee Rules
+    definition: A piece of conditional logic that makes a Fee apply only in certain circumstances.
+    tags:
+    - Resource Group
+    source: openapi/payrix-fee-rules-api-openapi.yml
+  - term: Fees
+    definition: Fees are costs for specific timeframes elapsing, such as weekly, or monthly; or as actions taking place, such as a transaction
+      authorization, Merchant onboarding, or chargeback management. These fees are assessed by a Partner or Facilitator to their child entities
+      (such as Partner to Merchant, or Facilitator to Partner or Merchant) when specified actions have occurred or a time interval has elapse
+    tags:
+    - Resource Group
+    source: openapi/payrix-fees-api-openapi.yml
+  - term: FraudSight Enablements
+    definition: Monitor and control entity-level access to the FraudSight service, a comprehensive fraud prevention solution for card-present
+      and card-not-present transactions. Track when entities are enabled or disabled for FraudSight and maintain a complete audit trail for proactive
+      fraud management.
+    tags:
+    - Resource Group
+    source: openapi/payrix-fraudsight-enablements-api-openapi.yml
+  - term: FraudSight Results
+    definition: Query fraudSightResults to retrieve information about fraud detection results from the FraudSight service.
+    tags:
+    - Resource Group
+    source: openapi/payrix-fraudsight-results-api-openapi.yml
+  - term: Fund Origins
+    definition: Each fundOrigin represents the sourced amounts of available funds, which are always traceable to a processor and merchant. This
+      ensures accurate recording and compliance with funding rules. The table is used to determine how to cover negative amounts from fees, chargebacks,
+      refunds, and other events. When disbursements are processed, the origins are recorded and reported to the processor as requir
+    tags:
+    - Resource Group
+    source: openapi/payrix-fund-origins-api-openapi.yml
+  - term: Funds
+    definition: Funds deal with aggregate funding amount records. A funds record is a snapshot for funding activity, per entity and currency,
+      and is used to determine available funds for an entity.
+    tags:
+    - Resource Group
+    source: openapi/payrix-funds-api-openapi.yml
+  - term: Host Themes
+    definition: A host themes retrieves the active theme color associated with a specific host.
+    tags:
+    - Resource Group
+    source: openapi/payrix-host-themes-api-openapi.yml
+  - term: Interchange Histories
+    definition: Provides visibility into how a transaction's interchange classification changes after settlement.
+    tags:
+    - Resource Group
+    source: openapi/payrix-interchange-histories-api-openapi.yml
+  - term: Invoice Items
+    definition: A resource that stores line item details for an invoice.
+    tags:
+    - Resource Group
+    source: openapi/payrix-invoice-items-api-openapi.yml
+  - term: Invoice Line Items
+    definition: A resource that relates an invoice item with an invoice. It holds information such as quantity, and price each item.
+    tags:
+    - Resource Group
+    source: openapi/payrix-invoice-line-items-api-openapi.yml
+  - term: Invoice Parameters
+    definition: Invoice Parameters holds a certain configuration used for creating an invoice such as dba, address, API Key.
+    tags:
+    - Resource Group
+    source: openapi/payrix-invoice-parameters-api-openapi.yml
+  - term: Invoice Results
+    definition: Invoice Results represents the result of an invoice processing. In other words, when the customer pays for an invoice it will
+      then generate an invoice result.
+    tags:
+    - Resource Group
+    source: openapi/payrix-invoice-results-api-openapi.yml
+  - term: Invoices
+    definition: Invoices deals with customer invoice details allowing for presenting charges to a customer and for payments to be made related
+      to certain products or services.
+    tags:
+    - Resource Group
+    source: openapi/payrix-invoices-api-openapi.yml
+  - term: IP Address Lists
+    definition: An iplist represents a whitelisted or blacklisted IP address or range. As an additional security measure, it may be useful for
+      users to set specific, known IP addresses to be the only allowed IPs for API interaction.
+    tags:
+    - Resource Group
+    source: openapi/payrix-ip-address-lists-api-openapi.yml
+  - term: Logins
+    definition: Logins resources deal with individual user details like name and email as well as management details like which partition and
+      division the user belongs to.
+    tags:
+    - Resource Group
+    source: openapi/payrix-logins-api-openapi.yml
+  - term: Logins Helpers
+    definition: To view and manage utilities that assist with login-related actions such as password resets.
+    tags:
+    - Resource Group
+    source: openapi/payrix-logins-helpers-api-openapi.yml
+  - term: Mappings
+    definition: Mappings enable the re-mapping of fields in the API for either in or out, using a set of JSON field mappings. For example, if
+      your system uses a different format for out data that it will send to the API, then you can re-map the in fields for the API using a Mapping
+      resource.
+    tags:
+    - Resource Group
+    source: openapi/payrix-mappings-api-openapi.yml
+  - term: Members
+    definition: A member represents a control or beneficiary member of the entity. At least one primary member record is required for merchant
+      boarding.
+    tags:
+    - Resource Group
+    source: openapi/payrix-members-api-openapi.yml
+  - term: Merchant Platform Statuses
+    definition: Merchant Platform Statuses provides access to view the status of a merchant's onboarding process to Payrix Pro, including the
+      activation of individual value-added services.
+    tags:
+    - Resource Group
+    source: openapi/payrix-merchant-platform-statuses-api-openapi.yml
+  - term: Merchant Results
+    definition: Result created after an oboarding attempt, it will contain important information related to the boarding and attempt.
+    tags:
+    - Resource Group
+    source: openapi/payrix-merchant-results-api-openapi.yml
+  - term: Merchants
+    definition: Merchant details for transaction processing entities. Together with the entities table, this table defines a merchant. A merchant
+      is primarily an entity that accepts payments and transacts with customers in Payrix Pro.
+    tags:
+    - Resource Group
+    source: openapi/payrix-merchants-api-openapi.yml
+  - term: Message Threads
+    definition: Represents the sender, receiver, and subject of the Messages resources.
+    tags:
+    - Resource Group
+    source: openapi/payrix-message-threads-api-openapi.yml
+  - term: Messages
+    definition: Represents a message within a Message Thread.
+    tags:
+    - Resource Group
+    source: openapi/payrix-messages-api-openapi.yml
+  - term: Note Documents
+    definition: Note Documents represents a file that is related to a specific note record.
+    tags:
+    - Resource Group
+    source: openapi/payrix-note-documents-api-openapi.yml
+  - term: Notes
+    definition: Notes handles risk management notes, reviews and releases for a Hold, Transaction and Entity specific data.
+    tags:
+    - Resource Group
+    source: openapi/payrix-notes-api-openapi.yml
+  - term: OmniTokens
+    definition: OmniTokens stores information related to the activation of the resource for an entity. OmniToken's Valued Added Service helps
+      protect transactions and reduce transaction risk.
+    tags:
+    - Resource Group
+    source: openapi/payrix-omnitokens-api-openapi.yml
+  - term: Opt Outs
+    definition: Opt Outs provides the ability to disable merchants or entities from participating in specific Value Added Services, such as FraudSight.
+    tags:
+    - Resource Group
+    source: openapi/payrix-opt-outs-api-openapi.yml
+  - term: Org Entities
+    definition: A record of an association between a particular Org and a particular Entity. You can associate Entities with an Org by creating
+      Org Entity resources. One Org can contain and be associated with many Entities.
+    tags:
+    - Resource Group
+    source: openapi/payrix-org-entities-api-openapi.yml
+  - term: Org Flow Actions
+    definition: Org Flow Actions means to add an Entity defined in the associated Org Flow to an Org, or remove an Entity identified in the same
+      way from an Org.
+    tags:
+    - Resource Group
+    source: openapi/payrix-org-flow-actions-api-openapi.yml
+  - term: Org Flow Rules
+    definition: Org Flow Rules Provides access to manage workflows that add or remove merchants from a group based on specific criteria.
+    tags:
+    - Resource Group
+    source: openapi/payrix-org-flow-rules-api-openapi.yml

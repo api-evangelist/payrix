@@ -1,0 +1,33 @@
+generated: '2026-09-20'
+method: searched
+source:
+- openapi/payrix-merchant-openapi.yml
+- openapi/payrix-partner-openapi.yml
+- https://docs.worldpay.com/api-specification/payrix/partner (Get Started > Response and Error Codes; Rate Limiting)
+format: custom
+envelope:
+  media_type: application/json
+  schema: null
+coverage:
+  operations: 851
+  statuses_declared: 1
+problems:
+- status: 400
+  title: Bad Request
+  description: Error
+  operations: 851
+  media_types:
+  - application/json
+  schema: null
+- status: 401
+  title: Unauthorized
+  type: invalid_auth
+  description: 'An invalid authentication key was provided. Body: code 4, severity 3, msg "Invalid authentication", errorCode invalid_auth.'
+  remediation: Send a valid private API key in the APIKEY header for the environment being called.
+- status: 429
+  title: Too Many Requests
+  type: C_RATE_LIMIT_EXCEEDED_TEMP_BLOCK
+  description: 'The rate limit was exceeded. Body: code 64, severity 2, msg "Rate of requests exceeded - Temporary block implemented".'
+  remediation: Stop calling that endpoint for the 10 second temporary block, then retry with backoff; other endpoints are unaffected.
+docs: https://docs.worldpay.com/apis/payrix/dev-int-guide/direct-payments/troubleshoot-payments/transaction-api-error-codes
+envelope_note: '{"errors":[{"code","severity","msg","field","errorCode"}]} — severity 0 informational, 1 warning, 2 error, 4 failure'

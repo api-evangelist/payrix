@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/payrix/main/json-schema/payrix-update-apple-pay-domain-response-result-schema.json",
+  "title": "updateApplePayDomainResponseResult",
+  "x-generated": "2026-09-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/payrix-apple-domains-mass-enablement-api-openapi.yml#/components/schemas/updateApplePayDomainResponseResult",
+  "type": "object",
+  "properties": {
+    "responses": {
+      "type": "array",
+      "items": {},
+      "description": ""
+    }
+  }
+}

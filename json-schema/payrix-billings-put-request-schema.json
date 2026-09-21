@@ -1,0 +1,368 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/payrix/main/json-schema/payrix-billings-put-request-schema.json",
+  "title": "billingsPutRequest",
+  "x-generated": "2026-09-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/payrix-billing-api-openapi.yml#/components/schemas/billingsPutRequest",
+  "type": "object",
+  "properties": {
+    "login": {
+      "type": "string",
+      "description": "The Login that owns this resource."
+    },
+    "entity": {
+      "type": "string",
+      "description": "The alphanumeric identifier of the Entity associated with this Account."
+    },
+    "forentity": {
+      "type": "string",
+      "description": "The alphanumeric identifier of the Entity associated with this Account."
+    },
+    "org": {
+      "type": "string",
+      "description": "The identifier of the Org associated with this invoiceParameter."
+    },
+    "division": {
+      "type": "string",
+      "description": "ID of the division associated with this vendor"
+    },
+    "partition": {
+      "type": "string",
+      "description": "The identifier of the Partition associated with this invoiceParameter."
+    },
+    "description": {
+      "type": "string",
+      "description": "The billing details."
+    },
+    "schedule": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/billingSchedule"
+        },
+        {
+          "description": "The schedule that determines when this Billing is triggered to start collecting data.\n\n<details>\n<summary>Valid Values</summary>\n\n- `days` - **Daily schedule.**\n- `weeks` - **Weekly schedule.**\n- `months` - **Monthly schedule.**\n- `years` - **Annual schedule.**\n\n</details>"
+        }
+      ]
+    },
+    "scheduleFactor": {
+      "type": "integer",
+      "description": "A multiplier that you can use to adjust the schedule set in the 'schedule' field, if it is set to a duration-based trigger, such as daily, weekly, monthly, or annually. \nThis field is specified as an integer and its value determines how the interval is multiplied.",
+      "contentEncoding": "int32"
+    },
+    "start": {
+      "type": "integer",
+      "description": "The date on which this Billing period should start.",
+      "contentEncoding": "int32"
+    },
+    "finish": {
+      "type": "integer",
+      "description": "The date on which this Billing period should end.",
+      "contentEncoding": "int32"
+    },
+    "collection": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/billingCollection"
+        },
+        {
+          "description": "Determines who will be billed.\n\n<details>\n<summary>Valid Values</summary>\n\n- `entity` - **The entity will be billed.**\n\n</details>"
+        }
+      ]
+    },
+    "collectionFactor": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/billingsCollectionFactor"
+        },
+        {
+          "description": "A multiplier that you can use to adjust the set of data to be used in the collection calculation.\n\n<details>\n<summary>Valid Values</summary>\n\n- `days` - **Days.** Multiplier based on days.\n- `weeks` - **Weeks.** Multiplier based on weeks.\n- `months` - **Months.** Multiplier based on months.\n- `years` - **Years.** Multiplier based on years.\n\n</details>"
+        }
+      ]
+    },
+    "collectionOffset": {
+      "type": "integer",
+      "description": "The number of days, weeks, months or years to go back when selecting data for collection calculation.",
+      "contentEncoding": "int32"
+    },
+    "collectionIncludeCurrent": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/billingsCollectionIncludeCurrent"
+        },
+        {
+          "description": "Whether to include the current period in the collection calculation.\n\n<details>\n<summary>Valid Values</summary>\n\n- `0` - **Exclude Current Period.** Do not include the current period in the calculation.\n- `1` - **Include Current Period.** Include the current period in the calculation.\n\n</details>"
+        }
+      ]
+    },
+    "currency": {
+      "allOf": [
+        {
+          "oneOf": [
+            {},
+            {
+              "$ref": "#/$defs/currency"
+            }
+          ]
+        },
+        {
+          "description": "The currency of the amount in this billing. See <a href=\"https://www.iban.com/currency-codes\" target=\"_blank\">Currency codes</a>  for all valid values."
+        }
+      ]
+    },
+    "inactive": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/inactive"
+        },
+        {
+          "description": "Whether this resource is marked as inactive.\n\n<details>\n<summary>Valid Values</summary>\n\n- `0` - **Active**\n- `1` - **Inactive**\n\n</details>"
+        }
+      ]
+    },
+    "frozen": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/frozen"
+        },
+        {
+          "description": "Whether this resource is marked as frozen.\n\n<details>\n<summary>Valid Values</summary>\n\n- `0` - **Not Frozen**\n- `1` - **Frozen**\n\n</details>"
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "billingCollection": {
+      "title": "billingCollection",
+      "const": "entity",
+      "type": "string"
+    },
+    "billingSchedule": {
+      "title": "billingSchedule",
+      "enum": [
+        "days",
+        "weeks",
+        "months",
+        "years"
+      ],
+      "type": "string"
+    },
+    "billingsCollectionFactor": {
+      "title": "billingsCollectionFactor",
+      "enum": [
+        "days",
+        "weeks",
+        "months",
+        "years"
+      ],
+      "type": "string"
+    },
+    "billingsCollectionIncludeCurrent": {
+      "title": "billingsCollectionIncludeCurrent",
+      "enum": [
+        0,
+        1
+      ],
+      "type": "integer"
+    },
+    "currency": {
+      "title": "currency",
+      "enum": [
+        "AED",
+        "AFN",
+        "ALL",
+        "AMD",
+        "ANG",
+        "AOA",
+        "ARS",
+        "AUD",
+        "AWG",
+        "AZN",
+        "BAM",
+        "BBD",
+        "BDT",
+        "BGN",
+        "BHD",
+        "BIF",
+        "BMD",
+        "BND",
+        "BOB",
+        "BOV",
+        "BRL",
+        "BSD",
+        "BTN",
+        "BWP",
+        "BYN",
+        "BZD",
+        "CAD",
+        "CDF",
+        "CHE",
+        "CHF",
+        "CHW",
+        "CLF",
+        "CLP",
+        "CNY",
+        "COP",
+        "COU",
+        "CRC",
+        "CUC",
+        "CUP",
+        "CVE",
+        "CZK",
+        "DJF",
+        "DKK",
+        "DOP",
+        "DZD",
+        "EGP",
+        "ERN",
+        "ETB",
+        "EUR",
+        "FJD",
+        "FKP",
+        "GBP",
+        "GEL",
+        "GHS",
+        "GIP",
+        "GMD",
+        "GNF",
+        "GTQ",
+        "GYD",
+        "HKD",
+        "HNL",
+        "HRK",
+        "HTG",
+        "HUF",
+        "IDR",
+        "ILS",
+        "INR",
+        "IQD",
+        "IRR",
+        "ISK",
+        "JMD",
+        "JOD",
+        "JPY",
+        "KES",
+        "KGS",
+        "KHR",
+        "KMF",
+        "KPW",
+        "KRW",
+        "KWD",
+        "KYD",
+        "KZT",
+        "LAK",
+        "LBP",
+        "LKR",
+        "LRD",
+        "LSL",
+        "LYD",
+        "MAD",
+        "MDL",
+        "MGA",
+        "MKD",
+        "MMK",
+        "MNT",
+        "MOP",
+        "MRU",
+        "MUR",
+        "MVR",
+        "MWK",
+        "MXN",
+        "MXV",
+        "MYR",
+        "MZN",
+        "NAD",
+        "NGN",
+        "NIO",
+        "NOK",
+        "NPR",
+        "NZD",
+        "OMR",
+        "PAB",
+        "PEN",
+        "PGK",
+        "PHP",
+        "PKR",
+        "PLN",
+        "PYG",
+        "QAR",
+        "RON",
+        "RSD",
+        "RUB",
+        "RWF",
+        "SAR",
+        "SBD",
+        "SCR",
+        "SDG",
+        "SEK",
+        "SGD",
+        "SHP",
+        "SLL",
+        "SOS",
+        "SRD",
+        "SSP",
+        "STN",
+        "SVC",
+        "SYP",
+        "SZL",
+        "THB",
+        "TJS",
+        "TMT",
+        "TND",
+        "TOP",
+        "TRY",
+        "TTD",
+        "TWD",
+        "TZS",
+        "UAH",
+        "UGX",
+        "USD",
+        "USN",
+        "UYI",
+        "UYU",
+        "UZS",
+        "VEF",
+        "VND",
+        "VUV",
+        "WST",
+        "XAF",
+        "XAG",
+        "XAU",
+        "XBA",
+        "XBB",
+        "XBC",
+        "XBD",
+        "XCD",
+        "XDR",
+        "XOF",
+        "XPD",
+        "XPF",
+        "XPT",
+        "XSU",
+        "XUA",
+        "YER",
+        "ZAR",
+        "ZMW",
+        "ZWL"
+      ],
+      "type": "string"
+    },
+    "frozen": {
+      "title": "frozen",
+      "enum": [
+        0,
+        1
+      ],
+      "type": "integer"
+    },
+    "inactive": {
+      "title": "inactive",
+      "enum": [
+        0,
+        1
+      ],
+      "type": "integer"
+    }
+  }
+}

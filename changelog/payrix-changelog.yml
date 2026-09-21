@@ -1,0 +1,53 @@
+generated: '2026-09-20'
+method: searched
+source: https://resource.payrix.com/docs/2026-release-notes
+description: Weekly dated Payrix Pro release notes (portal and API). Recent window only; none of these entries flags a breaking change.
+docs: https://resource.payrix.com/docs/release-notes
+api_release_notes: https://docs.worldpay.com/apis/payrix/release-notes
+versioning:
+  scheme: dated weekly releases with a portal version number
+  current: 26.35.0
+entries:
+- version: 26.35.0
+  date: '2026-09-10'
+  component: Portal
+  breaking: false
+  highlights:
+  - Partners with Embedded Finance Engine (EFE) enabled can now access the Marketing Hub to run marketing campaigns for loan products offered to merchants.
+  - Updated the navigation in the main side bar to improve the user experience, reduce visual clutter, and make pages easier to find. No URLs were modified.
+  - Issue resolved where the Create permission for the Vendors role subresource was not displayed for Referrer Admin roles.
+  url: https://resource.payrix.com/docs/release-notes-september-10-2026
+- version: 26.34.0
+  date: '2026-09-03'
+  component: Portal
+  breaking: false
+  highlights:
+  - 'Partners can now generate reports for specific merchants instead of being limited to division-wide reporting. Updated reports include the following:'
+  url: https://resource.payrix.com/docs/release-notes-september-3-2026
+- version: 26.33.0
+  date: '2026-08-27'
+  component: Portal
+  breaking: false
+  highlights:
+  - Restricted the ability to modify American Express configuration fields on the merchants’ profile pages to mitigate financial and compliance risks.
+  - Added a tooltip to the **Amex** field on the Merchant Profile and Merchant Details pages to instruct partners and merchants to contact support to make any updates.
+  - Issue resolved where FraudSight events were hidden on the Disbursement History page. Disbursement totals now accurately include all FraudSight disbursement entries
+    and ensure that the **Withdrawal Amount** and **Total** fields match for mer
+  - Issue resolved where **Refund Partner Fees** in the Revenue Summary report were reported as negative values. Refund Partner Fee amounts are now displayed as positive
+    values.
+  - Issue resolved where the **Transaction originates from** fee type rule was not displayed for partners.
+  url: https://resource.payrix.com/docs/release-notes-august-27-2026
+- version: 26.32.1
+  date: '2026-08-20'
+  component: Portal
+  breaking: false
+  highlights:
+  - Standardized date boundary logic between Opportunity Dashboard aggregate tiles and their corresponding drill-down dialogs to ensure consistent data across the
+    dashboard.
+  - Reordered the Opportunity Dashboard tiles at the top of the page to better align with the Payrix Pro boarding workflow.
+  - Issue resolved where the **Boarded/Closed**, **Manual Review** and **Declined/Withdrawn** tiles and drill-down dialogs in the Opportunity Dashboard overcounted
+    merchants by including historical underwriting records from previous stages. The
+  - Issue resolved where the Revenue Summary Report displayed incorrect values in the **Partner Net Revenue** column. The report now reflects the correct Partner
+    Net Revenue data.
+  - Issue resolved where some transactions from the Transaction tables were not included in the New Reports. All transactions now display as expected.
+  url: https://resource.payrix.com/docs/release-notes-august-20-2026

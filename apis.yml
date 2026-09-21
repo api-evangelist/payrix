@@ -1,23 +1,2221 @@
 aid: payrix
+
 name: Payrix
-description: 'Payrix is a company surfaced via the API Evangelist harvest backlog (source: payments) and
-  added to the network as a stub for full-pipeline profiling.'
+
+description: 'Payrix, now operating as Worldpay for Platforms, is an embedded payments provider for vertical SaaS platforms. Its Payrix Pro product
+  is a white-label payment facilitation platform: a REST API and portal for merchant boarding and underwriting, card and eCheck transaction processing,
+  tokenization, recurring billing, fees, disbursements and payouts, chargebacks, risk decisions, embedded finance and reporting, plus hosted PayFields
+  and PayFrame checkout components and mobile/terminal SDKs. Payrix was acquired by FIS/Worldpay, and its API reference and OpenAPI specifications
+  are now published on the Worldpay Developer Hub while api.payrix.com remains the production API host.'
+
 url: https://raw.githubusercontent.com/api-evangelist/payrix/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:payments
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+
+x-tier-reason: enrichment pass 2026-09-20 (local-v5; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-20'
+
 modified: '2026-09-20'
+
 tags:
 - Company
-apis: []
+- Payments
+- Embedded Payments
+- Payment Facilitation
+- Merchant Onboarding
+- Fintech
+- Payouts
+- Chargebacks
+- Subscriptions
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Spectral
+  url: rules/payrix-rules.yml
+- type: JSONLD
+  url: json-ld/payrix-context.jsonld
+- type: Vocabulary
+  url: vocabulary/payrix-vocabulary.yml
+- type: SecurityTxt
+  url: well-known/payrix-status-security.txt
+- type: WellKnown
+  url: well-known/payrix-well-known.yml
+- type: AgenticAccess
+  url: agentic-access/payrix-agentic-access.yml
+- type: RateLimits
+  url: rate-limits/payrix-rate-limits.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Webhooks
+  url: asyncapi/payrix-webhooks.yml
+- type: DataModel
+  url: data-model/payrix-data-model.yml
+- type: Components
+  url: components/payrix-components.yml
+- type: ChangeLog
+  url: changelog/payrix-changelog.yml
+- type: Idempotency
+  url: conventions/payrix-conventions.yml
+- type: Conventions
+  url: conventions/payrix-conventions.yml
+- type: Sandbox
+  url: sandbox/payrix-sandbox.yml
+- type: StatusPage
+  url: https://status.payrix.com/
+- type: Lifecycle
+  url: lifecycle/payrix-lifecycle.yml
+- type: DeclineCodes
+  url: errors/payrix-decline-codes.yml
+- type: ErrorCatalog
+  url: errors/payrix-problem-types.yml
+- type: Conformance
+  url: conformance/payrix-conformance.yml
+- type: Overlay
+  url: overlays/payrix-merchant-overlay.yaml
+- type: LLMsTxt
+  url: llms/payrix-llms.txt
+- type: SDKs
+  url: packages/payrix-packages.yml
+- type: Packages
+  url: packages/payrix-packages.yml
+- type: Authentication
+  url: authentication/payrix-authentication.yml
+- type: DomainSecurity
+  url: security/payrix-domain-security.yml
 - type: Website
   url: https://payrix.com/
+- type: DeveloperPortal
+  url: https://docs.worldpay.com/apis/payrix
+- type: Documentation
+  url: https://resource.payrix.com/
+- type: APIReference
+  url: https://docs.worldpay.com/api-specification/payrix/partner
+- type: GettingStarted
+  url: https://resource.payrix.com/docs/get-started-with-payrix-pro
+- type: Support
+  url: https://resource.payrix.com/docs/partner-support-guide
+- type: Blog
+  url: https://platforms.worldpay.com/blog/
+- type: GitHubOrganization
+  url: https://github.com/payrix
+- type: ChangeLog
+  url: https://resource.payrix.com/docs/release-notes
+- type: SignUp
+  url: https://test-portal.payrix.com/signup/payrixsandbox
+- type: Login
+  url: https://portal.payrix.com/login
+- type: TermsOfService
+  url: https://www.worldpay.com/en/legal/terms-of-use
+- type: PrivacyPolicy
+  url: https://privacy.worldpay.com/policies/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/worldpay-for-platforms/
+
+image: https://platforms.worldpay.com/wp-content/uploads/2025/03/Website-Hero-Image-Option-2.png
+
+apis:
+- aid: payrix:payrix-accounts-api
+  name: Payrix Accounts API
+  description: Accounts deals with  payment account details for merchant boarding and entity funding. Ultimately, all the business performed within
+    Payrix Pro (be it merchant transactions, vendor income, or facilitator fees) must end up in the entity's payment account.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-accounts-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-accounts-put-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-accounts-response-result-schema.json
+- aid: payrix:payrix-accounts-verifications-api
+  name: Payrix Accounts Verifications API
+  description: Accounts Verification represents an attempt to verify the ownership of a particular bank account by verifying a known deposit amount
+    or credential.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Accounts Verifications
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-accounts-verifications-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-account-verifications-response-result-schema.json
+- aid: payrix:payrix-adjustments-api
+  name: Payrix Adjustments API
+  description: A way to make monetary adjustments to an entity's funds.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Adjustments
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-adjustments-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-adjustments-response-result-schema.json
+- aid: payrix:payrix-aggregation-result-groups-api
+  name: Payrix Aggregation Result Groups API
+  description: Aggregation Result Groups Holds data regarding a processed aggregation.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Aggregation Result Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-aggregation-result-groups-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-aggregation-results-groups-response-result-schema.json
+- aid: payrix:payrix-aggregation-results-api
+  name: Payrix Aggregation Results API
+  description: Aggregation Results Holds a field totals calculated when processing an aggregation.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Aggregation Results
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-aggregation-results-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-aggregation-results-response-result-schema.json
+- aid: payrix:payrix-aggregations-api
+  name: Payrix Aggregations API
+  description: Aggregations acts as a scheduler that contains the needed parameters to properly generate results containing the calculated totals
+    and keep such records in the aggregation results resource.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Aggregations
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-aggregations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-aggregations-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-aggregations-put-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-aggregations-response-result-schema.json
+- aid: payrix:payrix-alert-actions-api
+  name: Payrix Alert Actions API
+  description: Alert Actions deals with specific action that occurs following a triggered web alert.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Alert Actions
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-alert-actions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-alert-actions-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-alert-actions-put-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-alert-actions-response-result-schema.json
+- aid: payrix:payrix-alert-triggers-api
+  name: Payrix Alert Triggers API
+  description: Alert Trigger deals with  triggers associated with web alerts
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Alert Triggers
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-alert-triggers-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-alert-triggers-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-alert-triggers-put-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-alert-triggers-response-result-schema.json
+- aid: payrix:payrix-alerts-api
+  name: Payrix Alerts API
+  description: Web alerts, also known as webhooks, are automated notifications sent from the API server when triggered by a specific action that
+    occurs in your portfolio. You can configure the actions that trigger the alerts to notify you of any event that's important to your business
+    model.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Alerts
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-alerts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-alerts-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-alerts-put-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-alerts-response-result-schema.json
+- aid: payrix:payrix-api-keys-api
+  name: Payrix API Keys API
+  description: Interaction with the API requires authentication. For application integration and persistent authentication, an API key is required.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - API Keys
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-api-keys-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-api-keys-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-api-keys-put-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-apikeys-response-result-schema.json
+- aid: payrix:payrix-apple-domains-api
+  name: Payrix Apple Domains API
+  description: An Apple Domains resource represents the status of Apple Pay registration for a specific merchant and domain.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Apple Domains
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-apple-domains-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-apple-domains-response-result-schema.json
+- aid: payrix:payrix-apple-domains-mass-enablement-api
+  name: Payrix Apple Domains Mass Enablement API
+  description: An Apple Domains Mass Enablement resource represents the bulk registration of multiple merchants, each associated with a respective
+    domain, to enable the Apple Pay service.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Apple Domains Mass Enablement
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-apple-domains-mass-enablement-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-update-apple-pay-domain-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-apple-pay-for-merchant-list-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-apple-domains-mass-enablement-for-merchant-list-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-apple-domains-mass-enablement-csv-response-result-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-update-apple-pay-domain-response-result-schema.json
+- aid: payrix:payrix-assessments-api
+  name: Payrix Assessments API
+  description: Assessments represents a record of fees charged by processors or other third-parties to Entities or Orgs. These can represent either
+    charges that are levied on a one-off, regularly scheduled, or event-driven basis.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Assessments
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-assessments-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-assessments-response-result-schema.json
+- aid: payrix:payrix-authentication-tokens-api
+  name: Payrix Authentication Tokens API
+  description: Tokens provide the means through which to safely and securely store payment methods (e.g. credit cards or bank accounts) for later
+    use. A transaction may be initiated for a customer by providing the token as the source of payment data. Similarly, a subscription may be
+    associated with a token for automated recurring billing on that payment instrument.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Authentication Tokens
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-authentication-tokens-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-auth-tokens-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-auth-tokens-put-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-auth-tokens-response-result-schema.json
+- aid: payrix:payrix-batches-settlements-api
+  name: Payrix Batches (Settlements) API
+  description: Batches are a container for transactions that enables batch processing to the processor for a merchant (to settle customer sales).
+    Processing transactions for settlement to the processor is done in batches.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Batches (Settlements)
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-batches-settlements-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-batches-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-batches-put-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-batches-response-result-schema.json
+- aid: payrix:payrix-billing-api
+  name: Payrix Billing API
+  description: The billing deals with billing configuration for an entity, org, division or partition. A billing configuration determines how
+    an entity is billed for their payables within Payrix Pro.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Billing
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-billing-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-billings-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-billings-put-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-billings-response-result-schema.json
+- aid: payrix:payrix-billing-events-api
+  name: Payrix Billing Events API
+  description: A conditional logic that determines the events that will be billed and the configuration for each event.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Billing Events
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-billing-events-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-billing-events-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-billing-events-put-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-billing-events-response-result-schema.json
+- aid: payrix:payrix-billing-modifiers-api
+  name: Payrix Billing Modifiers API
+  description: Billing Modifiers means to change the total amount of the billing or whoever will pay it.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Billing Modifiers
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-billing-modifiers-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-billing-modifiers-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-billing-modifiers-put-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-billing-modifiers-response-result-schema.json
+- aid: payrix:payrix-bins-api
+  name: Payrix Bins API
+  description: Bins Holds information about the issuer of a card. (Bank Issuer Number).
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Bins
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-bins-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-bins-response-result-schema.json
+- aid: payrix:payrix-change-requests-api
+  name: Payrix Change Requests API
+  description: Change Requests Accounts Verification deals with  payment account details for merchant boarding and entity funding. Ultimately,
+    all the business performed within Payrix Pro (be it merchant transactions, vendor income or facilitator fees) must end up in the entity's
+    payment account.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Change Requests
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-change-requests-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-change-requests-response-result-schema.json
+- aid: payrix:payrix-chargeback-documents-api
+  name: Payrix Chargeback Documents API
+  description: Represents a file related to the Chargeback.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Chargeback Documents
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-chargeback-documents-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-chargeback-documents-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-chargebacks-documents-put-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-chargeback-documents-response-result-schema.json
+- aid: payrix:payrix-chargeback-message-results-api
+  name: Payrix Chargeback Message Results API
+  description: Chargeback Message Results represents a message that is received from the processor in relation to a Chargeback message.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Chargeback Message Results
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-chargeback-message-results-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-chargeback-message-results-response-result-schema.json
+- aid: payrix:payrix-chargeback-messages-api
+  name: Payrix Chargeback Messages API
+  description: Resources that deal with chargebacks. A chargeback is a dispute of a purchase that has already been charged to an account that
+    can result in a return of funds.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Chargeback Messages
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-chargeback-messages-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-chargeback-message-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-chargeback-messages-response-result-schema.json
+- aid: payrix:payrix-chargeback-statuses-api
+  name: Payrix Chargeback Statuses API
+  description: The logged status changes of a Chargeback.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Chargeback Statuses
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-chargeback-statuses-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-chargeback-statuses-response-result-schema.json
+- aid: payrix:payrix-chargebacks-api
+  name: Payrix Chargebacks API
+  description: Resources that deal with chargebacks. A chargeback is a dispute of a purchase that has already been charged to an account that
+    can result in a return of funds.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Chargebacks
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-chargebacks-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-chargebacks-response-result-schema.json
+- aid: payrix:payrix-confirmation-codes-api
+  name: Payrix Confirmation Codes API
+  description: Represents a unique confirmation code issued to an email address, either when a user indicates that they have forgotten their password,
+    or when the system needs to verify the email address associated with a login.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Confirmation Codes
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-confirmation-codes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-confirm-codes-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-confirm-codes-response-result-schema.json
+- aid: payrix:payrix-contacts-api
+  name: Payrix Contacts API
+  description: A contact reflects a known, valid individual registered as a contact for the entity. It is purely informational and not a required
+    record.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Contacts
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-contacts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-contacts-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-contacts-put-request-schema.json
+  - type: JSONSchema
+    url: json-schema/payrix-contacts-response-result-schema.json
+- aid: payrix:payrix-credentials-api
+  name: Payrix Credentials API
+  description: Represents an authorization that a given Entity has to connect to an integration to perform a particular action, such as send Transactions
+    to the processor, or board a Merchant with the processor.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Credentials
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-credentials-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+  - type: JSONSchema
+    url: json-schema/payrix-credentials-post-request-schema.json
+- aid: payrix:payrix-customers-api
+  name: Payrix Customers API
+  description: Customers deals with merchant customer information. Customers may be associated with tokens to create a stored method of payment
+    or with invoices for billing.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Customers
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-customers-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-decision-actions-api
+  name: Payrix Decision Actions API
+  description: A piece of conditional logic that makes a Verification Result change the application and the decision action in certain circumstance.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Decision Actions
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-decision-actions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-decision-rules-api
+  name: Payrix Decision Rules API
+  description: A piece of conditional logic that makes a Decision apply only in certain circumstances.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Decision Rules
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-decision-rules-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-decisions-api
+  name: Payrix Decisions API
+  description: Decisions deal with the schedule and rules for a check done on Transactions.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Decisions
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-decisions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-disbursement-entries-api
+  name: Payrix Disbursement Entries API
+  description: A record of disbursement amount come from.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Disbursement Entries
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-disbursement-entries-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-disbursement-reference-api
+  name: Payrix Disbursement Reference API
+  description: Disbursement Reference Represents a reference code issued by the Payout facilitator when a Disbursement is paid.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Disbursement Reference
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-disbursement-reference-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-disbursement-results-api
+  name: Payrix Disbursement Results API
+  description: Disbursement Results Represents the results of a Disbursement and and any follow-ups actions (confirmations, returns, etc.).
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Disbursement Results
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-disbursement-results-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-disbursements-api
+  name: Payrix Disbursements API
+  description: A disbursement represents a movement of funds in an entity's payment account. Records of an occasion where money is either paid
+    to a bank account or received from a bank account.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Disbursements
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-disbursements-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-divisions-api
+  name: Payrix Divisions API
+  description: Divisions contains a list of user divisions associated with an account. It allows for an additional and optional layer of separation
+    within a partition.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Divisions
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-divisions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-embedded-finance-api
+  name: Payrix Embedded Finance API
+  description: Embedded Finance stores information related to the activation of the resource for an entity. EmbeddedFinance's Valued Added Service
+    provides access to new products and services related to Embedded Finance.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Embedded Finance
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-embedded-finance-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-entities-api
+  name: Payrix Entities API
+  description: Entities are portion of a single facilitator, vendor or merchant. Common business-related details for each type of entity are stored
+    here (like name and address) as well as management details (like which login the entity belongs to). ny kind of business within the Payrix
+    Pro API (like board merchants as a facilitator, capture fees as a vendor or accept payments as a merchant) an entity record is required.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Entities
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-entities-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-entitiescustomfields-api
+  name: Payrix Entities Custom Fields API
+  description: the Entity Custom Fields feature, designed to empower partners to send identifiers and Risk-requested items using unlimited custom
+    fields.  By leveraging this feature, partners can ensure that their software works seamlessly, leading to increased Boarding Rates. Additionally,  partners
+    can avoid waiting for Risk to request information manually, streamlining their operations.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - EntitiesCustomFields
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-entitiescustomfields-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-entity-debts-api
+  name: Payrix Entity Debts API
+  description: Entity Debts represents a record of a debt between entities or an entity and the System.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Entity Debts
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-entity-debts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-entity-reserves-api
+  name: Payrix Entity Reserves API
+  description: Entity Reserves Represents funds held by an Entity in reserve. The funds are held separately from amounts in any entity Funds.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Entity Reserves
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-entity-reserves-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-entity-returns-api
+  name: Payrix Entity Returns API
+  description: Represents an ACH transaction or disbursement that has been rejected. The Entity Return will block ACH creations or send out related
+    to its entity and payment.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Entity Returns
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-entity-returns-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-entity-terms-api
+  name: Payrix Entity Terms API
+  description: EntityTerms resource represent the different agreed terms and condition agreed to by merchants during the signup.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Entity Terms
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-entity-terms-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-entitydata-api
+  name: Payrix Entity Data API
+  description: An entityData record is used to store a signature image for an entity's acceptance of terms and conditions.    This is stored in
+    a separate table so as not to bloat the entities table with signature images that use a lot of space.    Additionally, the signatures are
+    not included in API requests for the entities themselves, instead they are requested separately via the entityDatas resource.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - EntityData
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-entitydata-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-entityrefs-api
+  name: Payrix Entity Refs API
+  description: An entityRef may be used to store referential IDs for merchants,  facilitators and even vendors. For a merchant, at least a mid
+    and funding entityRef is required for proper transacting and funding.  For a facilitator, at least the entity and funding entityRefs should
+    be defined for proper merchant boarding,  transaction processing and funding operations as well as any other references required for operating
+    on the selected platform.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - EntityRefs
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-entityrefs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-entries-api
+  name: Payrix Entries API
+  description: An entry record represents a credit or debit of funds for an entity, possibly part of a transfer of funds between two entities.
+    Any monetary change for an entity in Payrix Pro is recorded in an entry. This serves as a ledger of financial activity for an entity.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Entries
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-entries-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-entry-origin-api
+  name: Payrix Entry Origin API
+  description: Entry Origin represents a record of sources for funded activity.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Entry Origin
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-entry-origin-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-fee-modifiers-api
+  name: Payrix Fee Modifiers API
+  description: Fee Modifiers means to change the total amount of the fee or whoever will pay it.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Fee Modifiers
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-fee-modifiers-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-fee-refunds-api
+  name: Payrix Fee Refunds API
+  description: Fee Refund is a way to reverse a fee that has been charged to another entity incorrectly.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Fee Refunds
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-fee-refunds-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-fee-rules-api
+  name: Payrix Fee Rules API
+  description: A piece of conditional logic that makes a Fee apply only in certain circumstances.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Fee Rules
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-fee-rules-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-fees-api
+  name: Payrix Fees API
+  description: Fees are costs for specific timeframes elapsing, such as weekly, or monthly; or as actions taking place, such as a transaction
+    authorization, Merchant onboarding, or chargeback management. These fees are assessed by a Partner or Facilitator to their child entities
+    (such as Partner to Merchant, or Facilitator to Partner or Merchant) when specified actions have occurred or a time interval has elapsed.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Fees
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-fees-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-fraudsight-enablements-api
+  name: Payrix FraudSight Enablements API
+  description: Monitor and control entity-level access to the FraudSight service, a comprehensive fraud prevention solution for card-present and
+    card-not-present transactions. Track when entities are enabled or disabled for FraudSight and maintain a complete audit trail for proactive
+    fraud management.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - FraudSight Enablements
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-fraudsight-enablements-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-fraudsight-results-api
+  name: Payrix FraudSight Results API
+  description: Query fraudSightResults to retrieve information about fraud detection results from the FraudSight service.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - FraudSight Results
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-fraudsight-results-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-fund-origins-api
+  name: Payrix Fund Origins API
+  description: Each fundOrigin represents the sourced amounts of available funds, which are always traceable to a processor and merchant. This
+    ensures accurate recording and compliance with funding rules. The table is used to determine how to cover negative amounts from fees, chargebacks,
+    refunds, and other events. When disbursements are processed, the origins are recorded and reported to the processor as required.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Fund Origins
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-fund-origins-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-funds-api
+  name: Payrix Funds API
+  description: Funds deal with aggregate funding amount records. A funds record is a snapshot for funding activity, per entity and currency, and
+    is used to determine available funds for an entity.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Funds
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-funds-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-host-themes-api
+  name: Payrix Host Themes API
+  description: A host themes retrieves the active theme color associated with a specific host.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Host Themes
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-host-themes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-interchange-histories-api
+  name: Payrix Interchange Histories API
+  description: 'Provides visibility into how a transaction''s interchange classification changes after settlement.
+
+
+    Use this endpoint to track **post-settlement reclassifications**, including updates that may occur up to 14 days after the transaction settles.
+
+
+    This endpoint includes:
+
+    - The original interchange classification assigned at settlement
+
+    - Any subsequent reclassification events and their timing
+
+
+    Use `txnReports` when you only need the initial interchange data at settlement.
+
+    Use `interchangeHistories` when you need to understand how and why interchange values changed over time.'
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Interchange Histories
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-interchange-histories-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-invoice-items-api
+  name: Payrix Invoice Items API
+  description: A resource that stores line item details for an invoice.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Invoice Items
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-invoice-items-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-invoice-line-items-api
+  name: Payrix Invoice Line Items API
+  description: A resource that relates an invoice item with an invoice.  It holds information such as quantity, and price each item.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Invoice Line Items
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-invoice-line-items-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-invoice-parameters-api
+  name: Payrix Invoice Parameters API
+  description: Invoice Parameters holds a certain configuration used for creating an invoice such as dba, address, API Key.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Invoice Parameters
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-invoice-parameters-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-invoice-results-api
+  name: Payrix Invoice Results API
+  description: Invoice Results represents the result of an invoice processing.  In other words, when the customer pays for an invoice it will
+    then generate an invoice result.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Invoice Results
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-invoice-results-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-invoices-api
+  name: Payrix Invoices API
+  description: Invoices deals with  customer invoice details allowing for presenting charges to a customer and for payments to be made related
+    to certain products or services.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Invoices
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-invoices-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-ip-address-lists-api
+  name: Payrix IP Address Lists API
+  description: An iplist represents a whitelisted or blacklisted IP address or range. As an additional security measure, it may be useful for
+    users to set specific, known IP addresses to be the only allowed IPs for API interaction.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - IP Address Lists
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-ip-address-lists-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-logins-api
+  name: Payrix Logins API
+  description: Logins resources deal with individual user details like name and email as well as management details like which partition and division
+    the user belongs to.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Logins
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-logins-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-logins-helpers-api
+  name: Payrix Logins Helpers API
+  description: To view and manage utilities that assist with login-related actions such as password resets.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Logins Helpers
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-logins-helpers-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-mappings-api
+  name: Payrix Mappings API
+  description: Mappings enable the re-mapping of fields in the API for either in or out, using a set of JSON field mappings.  For example, if
+    your system uses a different format for out data that it will send to the API, then you can re-map the in fields for the API using a Mapping
+    resource.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Mappings
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-mappings-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-members-api
+  name: Payrix Members API
+  description: A member represents a control or beneficiary member of the entity. At least one primary member record is required for merchant
+    boarding.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Members
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-members-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-merchant-platform-statuses-api
+  name: Payrix Merchant Platform Statuses API
+  description: Merchant Platform Statuses provides access to view the status of a merchant's onboarding process to Payrix Pro, including the activation
+    of individual value-added services.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Merchant Platform Statuses
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-merchant-platform-statuses-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-merchant-results-api
+  name: Payrix Merchant Results API
+  description: Result created after an oboarding attempt, it will contain important information related to the boarding and attempt.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Merchant Results
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-merchant-results-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-merchants-api
+  name: Payrix Merchants API
+  description: Merchant details for transaction processing entities. Together with the entities table, this table defines a merchant. A merchant
+    is primarily an entity that accepts payments and transacts with customers in Payrix Pro.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Merchants
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-merchants-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-message-threads-api
+  name: Payrix Message Threads API
+  description: Represents the sender, receiver, and subject of the Messages resources.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Message Threads
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-message-threads-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-messages-api
+  name: Payrix Messages API
+  description: Represents a message within a Message Thread.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Messages
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-messages-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-note-documents-api
+  name: Payrix Note Documents API
+  description: Note Documents represents a file that is related to a specific note record.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Note Documents
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-note-documents-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-notes-api
+  name: Payrix Notes API
+  description: Notes handles  risk management notes, reviews and releases for a Hold, Transaction and Entity specific data.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Notes
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-notes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-omnitokens-api
+  name: Payrix Omni Tokens API
+  description: OmniTokens stores information related to the activation of the resource for an entity. OmniToken's Valued Added Service helps protect
+    transactions and reduce transaction risk.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - OmniTokens
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-omnitokens-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-opt-outs-api
+  name: Payrix Opt Outs API
+  description: Opt Outs provides the ability to disable merchants or entities from participating in specific Value Added Services, such as FraudSight.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Opt Outs
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-opt-outs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-org-entities-api
+  name: Payrix Org Entities API
+  description: A record of an association between a particular Org and a particular Entity. You can associate Entities with an Org by creating
+    Org Entity resources.  One Org can contain and be associated with many Entities.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Org Entities
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-org-entities-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-org-flow-actions-api
+  name: Payrix Org Flow Actions API
+  description: Org Flow Actions means to add an Entity defined in the associated Org Flow to an Org,  or remove an Entity identified in the same
+    way from an Org.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Org Flow Actions
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-org-flow-actions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-org-flow-rules-api
+  name: Payrix Org Flow Rules API
+  description: Org Flow Rules Provides access to manage workflows that add or remove merchants from a group based on specific criteria.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Org Flow Rules
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-org-flow-rules-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-org-flows-api
+  name: Payrix Org Flows API
+  description: Org Flows represents a way to trigger the addition or removal of the Merchants associated with a Login to a particular Org.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Org Flows
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-org-flows-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-orgs-api
+  name: Payrix Orgs API
+  description: Resource that deals with records of all orgs. An org is an arbitrary grouping of entity records that can be attached to other resources
+    as a unit for shared functionality.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Orgs
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-orgs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-orgs-vas-efeproducts-api
+  name: Payrix Orgs VAS EfeProducts API
+  description: OrgsVASEfeProducts is a way to automatically enable an entity with the default parameters to embeddedFinance.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Orgs VAS EfeProducts
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-orgs-vas-efeproducts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-orgs-vas-fraudsightenablements-api
+  name: Payrix Orgs VAS fraudSightEnablements API
+  description: Orgs VAS fraudSightEnablements provides access to manage automatic enrollments for merchants within the specified group for the
+    FraudSight fraud prevention Value Added Service.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Orgs VAS fraudSightEnablements
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-orgs-vas-fraudsightenablements-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-orgs-vas-omnitokens-api
+  name: Payrix Orgs VAS OmniTokens API
+  description: Orgs VAS OmniTokens provides access to manage automatic enrollments for merchants within the specified group for the Omnitoken
+    Value Added Service.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Orgs VAS OmniTokens
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-orgs-vas-omnitokens-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-orgs-vas-pinlessdebitconversions-api
+  name: Payrix Orgs VAS PinlessDebitConversions API
+  description: Orgs VAS Pinless Debit Conversion is a new Value-Added Service (VAS) in the Payrix system. This feature is designed to generate
+    additional revenue and will follow the same merchant enablement process as value-added services.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Orgs VAS PinlessDebitConversions
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-orgs-vas-pinlessdebitconversions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-orgs-vas-revenueboosts-api
+  name: Payrix Orgs VAS RevenueBoosts API
+  description: OrgsVasNetworkPaymentManager is a way to automatically enroll an entity associated with a specific org in the networkPaymentManager
+    service.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Orgs VAS RevenueBoosts
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-orgs-vas-revenueboosts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-orgs-vas-saferpayments-api
+  name: Payrix Orgs VAS SaferPayments API
+  description: Orgs VAS SaferPayments provides access to manage automatic enrollments for merchants within the specified group for the Safer Payments
+    Value Added Service.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Orgs VAS SaferPayments
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-orgs-vas-saferpayments-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-orgs-vas-saferpayments-non-compliance-api
+  name: Payrix Orgs VAS SaferPayments Non-compliance API
+  description: Orgs VAS SaferPayments Non-compliance provides access to manage automatic enrollments for fees billing on non-compliant merchants
+    within the specified group for the Safer Payments Value Added Service.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Orgs VAS SaferPayments Non-compliance
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-orgs-vas-saferpayments-non-compliance-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-payment-update-groups-api
+  name: Payrix Payment Update Groups API
+  description: A collection of Payment Updates owned by the merchant's entity.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Payment Update Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-payment-update-groups-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-payment-updates-api
+  name: Payrix Payment Updates API
+  description: Payment Updates Holds information about the payment update - updating a payment method or account. The Payment Update will be related
+    to a Payment, Subscription Token or Account, and owned by a Payment Update Group.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Payment Updates
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-payment-updates-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-payout-flows-api
+  name: Payrix Payout Flows API
+  description: Payout Flows means to set up a Payouts resource automatically for an Entity or Org when it is boarded,  or when a bank account
+    is associated.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Payout Flows
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-payout-flows-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-payouts-api
+  name: Payrix Payouts API
+  description: Resource that tracks details that allow a Disbursement to be paid or debited.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Payouts
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-payouts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-pending-entry-api
+  name: Payrix Pending Entry API
+  description: Pending Entry represents a record of amounts moving in or out of the funds held by an Entity.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Pending Entry
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-pending-entry-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-pinless-debit-conversions-api
+  name: Payrix Pinless Debit Conversions API
+  description: Pinless Debit Conversion is a new Value-Added Service (VAS) in the Payrix system. This feature is designed to generate additional
+    revenue and will follow the same merchant enablement process as value-added services.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Pinless Debit Conversions
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-pinless-debit-conversions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-plans-api
+  name: Payrix Plans API
+  description: Resource that represents a recurring type of payment that charges a certain amount on a weekly, monthly, quarterly, or annual basis.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Plans
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-plans-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-profit-share-results-api
+  name: Payrix Profit Share Results API
+  description: Profit Share Results Holds a message regarding a failed Profit Share process.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Profit Share Results
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-profit-share-results-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-profit-share-rules-api
+  name: Payrix Profit Share Rules API
+  description: A piece of conditional logic that makes a Profit Share apply only in certain circumstances.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Profit Share Rules
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-profit-share-rules-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-profit-shares-api
+  name: Payrix Profit Shares API
+  description: Profit Shares means for an entity to have its earnings expenses shared with another entity.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Profit Shares
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-profit-shares-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-reserve-entry-api
+  name: Payrix Reserve Entry API
+  description: Reserve Entry represents a record of funds moving in or out of reserve. It can be associated with either a Transaction, a Reserve,
+    an Entity Reserve, or another Reserve Entry resource.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Reserve Entry
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-reserve-entry-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-reserves-api
+  name: Payrix Reserves API
+  description: Resources that deals with reserve activity. Reserving means to withhold funds from an entity by removing the ability to extract
+    the funds from the control of the financial institution.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Reserves
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-reserves-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-rev-share-schedules-api
+  name: Payrix Rev Share Schedules API
+  description: Rev Share Schedules table records the rules for income sharing, detailing who receives and who pays, along with the start and end
+    dates of these rules. It also identifies the partners involved in revenue sharing and specifies the amounts per event.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Rev Share Schedules
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-rev-share-schedules-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-rev-share-statements-api
+  name: Payrix Rev Share Statements API
+  description: Rev Share Statements table stores the final calculated revenue share entries that are billed to partners. It applies the revenue
+    sharing schedule to a month's worth of transactions, resulting in the amount to be billed.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Rev Share Statements
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-rev-share-statements-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-revenue-boosts-api
+  name: Payrix Revenue Boosts API
+  description: It captures the entities when they are enabled/disabled/re-enabled with networkPaymentManager
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Revenue Boosts
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-revenue-boosts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-safer-payments-api
+  name: Payrix Safer Payments API
+  description: Safer Payments provides access to create, view, and update SaferPayments Value Added Service records.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Safer Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-safer-payments-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-secrets-api
+  name: Payrix Secrets API
+  description: Keys used to decrypt data or an indicator of which key to be used to decrypt data
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Secrets
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-secrets-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-sessions-api
+  name: Payrix Sessions API
+  description: Resources that deals with secret (private) and public (publishable) user session keys for authentication in API interactions.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Sessions
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-sessions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-statement-entry-api
+  name: Payrix Statement Entry API
+  description: Statement Entry represents a record of funds owed for a billing schedule.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Statement Entry
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-statement-entry-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-statements-api
+  name: Payrix Statements API
+  description: Resources for dealing with billing statements for entities. Statements are generated from billing configurations and represent
+    the amount billed for a given period of time.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Statements
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-statements-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-subscription-tokens-api
+  name: Payrix Subscription Tokens API
+  description: Represents an association between a Subscription and a means of payment (Token) for that Subscription.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Subscription Tokens
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-subscription-tokens-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-subscriptions-api
+  name: Payrix Subscriptions API
+  description: Resources that deal with customer subscriptions to a plan. Customers are subscribed to plans to allow for recurring payments to
+    be made from that customer.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Subscriptions
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-subscriptions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-tax-form-requests-api
+  name: Payrix Tax Form Requests API
+  description: Tax Form Requests provides access to create and view requests for tax documents, returning the PDF of the requested tax document.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Tax Form Requests
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-tax-form-requests-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-team-logins-api
+  name: Payrix Team Logins API
+  description: Represents the link between a Login and a Team as well as the Login's rights on the Team. The Login resource identified in its
+    login field is considered part of the Team.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Team Logins
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-team-logins-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-teams-api
+  name: Payrix Teams API
+  description: A team is an arbitrary grouping of user records that may have access provisioned on each other and can be attached to other resources
+    as a unit for shared functionality.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Teams
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-teams-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-terminal-transaction-reference-api
+  name: Payrix Terminal Transaction Reference API
+  description: Terminal Transaction Reference represents a reference code issued by the Processor in relation to a particular Transaction.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Terminal Transaction Reference
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-terminal-transaction-reference-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-terminal-transaction-results-api
+  name: Payrix Terminal Transaction Results API
+  description: Represents the result of a Transaction from a processor, which can be approved, declined, or raise an error.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Terminal Transaction Results
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-terminal-transaction-results-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-terminal-transactions-api
+  name: Payrix Terminal Transactions API
+  description: Holds all of the information to a related final transaction and is used to reconcile with the actual, final transaction.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Terminal Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-terminal-transactions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-terminal-transactions-datas-api
+  name: Payrix Terminal Transactions Datas API
+  description: The terminal_txn_datas database table stores signature data for a terminal activation request. A terminalTxnData represents a signature
+    image for a customer’s acceptance of terms and conditions for the resulting transaction.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Terminal Transactions Datas
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-terminal-transactions-datas-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-terminal-transactions-metadatas-api
+  name: Payrix Terminal Transactions Metadatas API
+  description: Terminal Transactions Metadatas Represents data from an EMV Transaction and/or returned by the credit card network associated with
+    a Transaction.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Terminal Transactions Metadatas
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-terminal-transactions-metadatas-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-terminals-api
+  name: Payrix Terminals API
+  description: Resources for dealing with transaction that occur on physical terminals, such as a table or register.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Terminals
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-terminals-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-token-results-api
+  name: Payrix Token Results API
+  description: Token Results represent events that occur during the transaction process, specifically related to the usage or creation of tokens.
+    These events are derived from the processor's response and are crucial for tracking and managing token-related activities.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Token Results
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-token-results-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-tokens-api
+  name: Payrix Tokens API
+  description: Tokens provide the means through which to safely and securely store payment methods (e.g. credit cards or bank accounts) for later
+    use.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Tokens
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-tokens-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-transaction-datas-api
+  name: Payrix Transaction Datas API
+  description: Transactions Datas represents data associated with a Transaction - in particular, a Base64 encoded image of a signature captured
+    at the time of entering the Transaction.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Transaction Datas
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-transaction-datas-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-transaction-holds-api
+  name: Payrix Transaction Holds API
+  description: A holds resource represents a reviewable action taken on a Transaction.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Transaction Holds
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-transaction-holds-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-transaction-items-api
+  name: Payrix Transaction Items API
+  description: An Item is a line item that is associated with a particular Transaction.  It allows you to describe the cost, quantity and other
+    details of each line in the Transaction.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Transaction Items
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-transaction-items-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-transaction-metadatas-api
+  name: Payrix Transaction Metadatas API
+  description: Transaction Metadatas represents data from an EMV Transaction and/or returned by the credit card network associated with a Transaction.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Transaction Metadatas
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-transaction-metadatas-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-transactions-results-api
+  name: Payrix Transactions Results API
+  description: Transactions Results represents the result of a Transaction from a processor. For example, the Transaction may be approved, declined,
+    or raise an error.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Transactions Results
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-transactions-results-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-transactions-txns-api
+  name: Payrix Transactions (Txns) API
+  description: Resources for dealing with information relating to a particular credit card transaction, including the merchant, token, subscription,
+    customer and card information.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Transactions (Txns)
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-transactions-txns-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-txn-sessions-api
+  name: Payrix Txn Sessions API
+  description: The txnSessionKey is designed to securely handle transactions within Payrix Pro PayFields/PayFrame integrations. This key aims
+    to prevent misuse by third parties, as it is hosted on the front-end side. Unlike the public apiKey, which is vulnerable to bot attacks and
+    fraudulent activities, the txnSessionKey offers enhanced security. Partners can generate keys with various configurations, including default
+    values or customized settings.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Txn Sessions
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-txn-sessions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-value-added-services-api
+  name: Payrix Value Added Services API
+  description: Value Added Services is a collection of additional services and features beyond the core payment processing functionality that
+    provide additional value to the user.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Value Added Services
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-value-added-services-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-vas-efeoffer-updates-api
+  name: Payrix VAS EfeOffer Updates API
+  description: VAS EfeOffer Updates provides Access to view Embedded Finance offer updates for Referrers. It holds historic data on an offer through
+    the offer life cycle.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - VAS EfeOffer Updates
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-vas-efeoffer-updates-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-vas-efeoffers-api
+  name: Payrix VAS EfeOffers API
+  description: VAS EfeOffers provides Access to view Embedded Finance offers for Referrers and Merchants, including terms, eligibility and application
+    details.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - VAS EfeOffers
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-vas-efeoffers-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+- aid: payrix:payrix-vendors-api
+  name: Payrix Vendors API
+  description: Resources that deal with third-party entities (non-facilitators and non-merchants) that are involved with the merchant processing
+    and provide a service (or set of services) to the merchant, for which they usually take a fee.
+  humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
+  baseURL: https://api.payrix.com
+  tags:
+  - Vendors
+  properties:
+  - type: OpenAPI
+    url: openapi/payrix-vendors-api-openapi.yml
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/merchant
+  - type: Documentation
+    url: https://docs.worldpay.com/api-specification/payrix/partner
+
+x-rebrand:
+  note: payrix.com 301-redirects to https://platforms.worldpay.com/ (Payrix is now Worldpay for Platforms). The Website pointer is kept on payrix.com,
+    the domain the API, docs, status and portal hosts still use; identity/rename is left for a human decision.
+  checked: '2026-09-20'
+
+x-enrichment:
+  date: '2026-09-20'
+  status: enriched
+  artifacts_added: 32
+  pass: local-v5

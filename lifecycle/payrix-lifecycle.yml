@@ -1,0 +1,19 @@
+generated: '2026-09-20'
+method: searched
+source: https://resource.payrix.com/docs/release-notes ; https://docs.worldpay.com/api-specification/payrix/partner
+versioning:
+  scheme: unversioned URL paths; the published OpenAPI carries info.version 1.7.0 and the Developer Hub lists API specification version 1.18; the portal ships weekly
+    dated releases (e.g. Portal Version 26.35.0 on 2026-09-10)
+  docs: https://docs.worldpay.com/apis/payrix/release-notes
+  notes: No version header or path segment is documented.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No deprecation policy or Sunset/Deprecation header documentation found. The legacy API docs page on resource.payrix.com now redirects readers to the Worldpay
+    Developer Hub.
+sla:
+  url: null
+  notes: No public SLA found. Beta SDKs are explicitly "provided as-is without service level agreements (SLAs)".
+status_page: https://status.payrix.com/
+rate_limits: rate-limits/payrix-rate-limits.yml
+deprecated_operations: []

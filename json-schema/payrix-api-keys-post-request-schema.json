@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/payrix/main/json-schema/payrix-api-keys-post-request-schema.json",
+  "title": "apiKeysPostRequest",
+  "x-generated": "2026-09-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/payrix-api-keys-api-openapi.yml#/components/schemas/apiKeysPostRequest",
+  "required": [
+    "login"
+  ],
+  "type": "object",
+  "properties": {
+    "login": {
+      "type": "string",
+      "description": "The login under which to perform this action. If you do not supply a login in this field, then the API defaults to the login that is currently authenticated."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name for the key. An apikey may represent a private (secret) key code that is used internally (server-side) by the application authenticating to the API.\n\n A private key should never be exposed to external/untrusted entities and should be immediately deactivated if compromised. All API resources and actions can be accessed/performed with a private apikey."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of ApiKeys."
+    },
+    "public": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/apiKeyPublic"
+        },
+        {
+          "description": "Whether this API key should have access to only public resources. \nPublic resources include Transactions, Tokens, Customers, and Items. \nAll other resources are private. <details> <summary>Valid Values</summary>\n - `0` - **The key can also access private resources.**\n - `1` - **The key can only access public resources.**\n </details>"
+        }
+      ]
+    },
+    "token": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/apikeysToken"
+        },
+        {
+          "description": "Whether or not an AuthToken is required as part of the authentication when this Apikey is used.\n\n<details>\n<summary>Valid Values</summary>\n\n- `0` - **The authToken mechanism is disabled.**\n- `1` - **The authToken mechanism is required for 'POST' and 'DELETE' requests.**\n\n</details>"
+        }
+      ]
+    },
+    "inactive": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/inactive"
+        },
+        {
+          "description": "Whether this resource is marked as inactive.\n\n<details>\n<summary>Valid Values</summary>\n\n- `0` - **Active**\n- `1` - **Inactive**\n\n</details>"
+        }
+      ]
+    },
+    "frozen": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/frozen"
+        },
+        {
+          "description": "Whether this resource is marked as frozen.\n\n<details>\n<summary>Valid Values</summary>\n\n- `0` - **Not Frozen**\n- `1` - **Frozen**\n\n</details>"
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "apiKeyPublic": {
+      "title": "apiKeyPublic",
+      "enum": [
+        0,
+        1
+      ],
+      "type": "integer"
+    },
+    "apikeysToken": {
+      "title": "apikeysToken",
+      "enum": [
+        0,
+        1
+      ],
+      "type": "integer"
+    },
+    "frozen": {
+      "title": "frozen",
+      "enum": [
+        0,
+        1
+      ],
+      "type": "integer"
+    },
+    "inactive": {
+      "title": "inactive",
+      "enum": [
+        0,
+        1
+      ],
+      "type": "integer"
+    }
+  }
+}

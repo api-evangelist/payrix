@@ -1,0 +1,87 @@
+generated: '2026-09-20'
+method: searched
+source: https://docs.worldpay.com/api-specification/payrix/partner (Get Started with the Payrix Pro API; content at https://docs.worldpay.com/assets/matic/payrix/partner/current/static/docs/payrix-HTTP_CURL_V1.json)
+description: Cross-cutting semantics of the Payrix Pro REST API (Worldpay for Platforms).
+base_url: https://api.payrix.com
+api_style: REST/JSON; endpoint names are case sensitive; all requests over HTTPS
+environments:
+  production: https://api.payrix.com
+  sandbox: https://test-api.payrix.com
+  canada_production: https://api.payrixcanada.com
+  canada_sandbox: https://test-api.payrixcanada.com
+  note: White-labeled partners use their own base URL ({serverUrl}, spec default https://custom.payrix.com).
+authentication:
+  scheme: apiKey header
+  header: APIKEY
+  alternatives:
+  - SESSIONKEY (session keys via POST /sessions)
+  - TXNSESSIONKEY (transaction session keys via POST /txnSessions)
+  - Auth Tokens
+  - USERNAME/PASSWORD headers
+  detail: Public and private API keys are generated in the portal or via POST /apikeys.
+  ref: authentication/payrix-authentication.yml
+idempotency:
+  supported: true
+  coverage: full
+  mechanism: request header / body token declared in the OpenAPI
+  applies_to: optional on write requests; the spec declares the request-token header on 216 of 231 POST/PUT/DELETE operations (89 of 92 POSTs)
+  conflict_behavior: '"When future creation requests for the same resource are received with the same identifier, the API retrieves the original
+    record and returns it along with a field indicating that this request was already made and completed successfully."'
+  retention: null
+  docs: https://docs.worldpay.com/api-specification/payrix/partner
+  header: request-token
+  evidence: request-token on 216 of 231 mutating operations
+  verified: derived
+pagination:
+  style: page-number
+  request_params:
+    page[number]: Page number of results to return
+    page[limit]: Maximum results per page; default 30, maximum 100
+  response_fields:
+    response.details.page.current: current page
+    response.details.page.last: last known page (may increase)
+    response.details.page.hasMore: another page is available
+search_and_sort:
+  mechanism: 'SEARCH request header, e.g. "SEARCH: created[sort]=desc"; basic and advanced search operators plus totals collection operators'
+  default_sort: desc
+field_expansion:
+  supported: true
+  mechanism: expand query parameters ("Expand Related Resources" section)
+response_envelope:
+  shape: '{"response":{"data":[],"details":{"requestId":1,"totals":[],"page":{}},"errors":[]}}'
+request_tracing:
+  field: response.details.requestId
+errors:
+  envelope: '{"errors":[{"code":int,"severity":int,"msg":str,"field":str,"errorCode":str}]}'
+  http_statuses:
+  - 200 OK
+  - 400 Bad Request
+  - 401 Unauthorized
+  - 429 Too Many Requests
+  ref: errors/payrix-problem-types.yml
+rate_limit_signaling:
+  status: 429
+  body_error: code 64, errorCode C_RATE_LIMIT_EXCEEDED_TEMP_BLOCK
+  headers: null
+  ref: rate-limits/payrix-rate-limits.yml
+versioning:
+  ref: lifecycle/payrix-lifecycle.yml
+reversibility:
+  grade: verified
+  docs: https://resource.payrix.com/docs/reverse-and-refund-payments
+  surfaces:
+  - write: postTxns (type 1 Sale / type 2 Auth)
+    reversal: Reverse Authorization — postTxns with type 4 and fortxn = original transaction id
+    operationId: postTxns
+    window: only while the transaction status is Approved (before funds are captured in the settlement batch)
+    window_source: https://resource.payrix.com/docs/reverse-a-payment
+  - write: postTxns (captured or settled sale)
+    reversal: Refund — postTxns with type 5 (card) or type 8 (eCheck), fortxn = original id; total may be specified for a partial refund
+    operationId: postTxns
+    window: transaction status must be Captured or Settled; no day-count limit is stated
+    window_source: https://resource.payrix.com/docs/refund-a-payment
+  - write: cancel of an Approved payment (portal action)
+    reversal: restore the canceled transaction
+    operationId: null
+    window: '"Within three to five days for eCheck payments" / "Within the timeframe set by each card brand for credit card payments"'
+    window_source: https://resource.payrix.com/docs/reverse-a-payment

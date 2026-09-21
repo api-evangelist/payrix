@@ -1,0 +1,24 @@
+generated: '2026-09-20'
+method: searched
+source: https://docs.worldpay.com/api-specification/payrix/partner
+source_content: https://docs.worldpay.com/assets/matic/payrix/partner/current/static/docs/payrix-HTTP_CURL_V1.json
+name: Payrix Pro API rate limits
+limit_count: 1
+note: The Developer Hub is a JavaScript-rendered APIMatic portal; the quoted text lives in the portal content JSON (source_content), section Rate Limiting > Rate
+  Limit Specifications, which refuses non-browser clients (403) — fetched with a headless browser on 2026-09-20.
+limits:
+- name: Per-endpoint request rate
+  limit_text: 1,000 requests in 10 seconds
+  max: 1000
+  window: 10 seconds
+  scope: per source IP address, per path/endpoint, per host; applies to all API endpoints, HTTP methods and portal functions, in sandbox and production
+  block: 'Temporary block period: 10 seconds'
+exhaustion:
+  status: 429
+  error:
+    code: 64
+    severity: 2
+    msg: Rate of requests exceeded - Temporary block implemented
+    errorCode: C_RATE_LIMIT_EXCEEDED_TEMP_BLOCK
+headers: []
+headers_note: No X-RateLimit-*/RateLimit-*/Retry-After headers are documented.

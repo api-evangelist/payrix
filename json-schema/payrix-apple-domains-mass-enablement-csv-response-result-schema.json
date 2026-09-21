@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/payrix/main/json-schema/payrix-apple-domains-mass-enablement-csv-response-result-schema.json",
+  "title": "appleDomainsMassEnablementCsvResponseResult",
+  "x-generated": "2026-09-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/payrix-apple-domains-mass-enablement-api-openapi.yml#/components/schemas/appleDomainsMassEnablementCsvResponseResult",
+  "type": "object",
+  "properties": {
+    "response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/appleDomainsMassEnablementDataPreview"
+      },
+      "description": ""
+    }
+  },
+  "$defs": {
+    "appleDomainsMassEnablementDataPreview": {
+      "title": "appleDomainsMassEnablementDataPreview",
+      "type": "object",
+      "properties": {
+        "dataPreview": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/appleDomainsMassEnablementDataPreviewItem"
+          },
+          "description": ""
+        },
+        "msg": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "appleDomainsMassEnablementDataPreviewItem": {
+      "title": "appleDomainsMassEnablementDataPreviewItem",
+      "type": "object",
+      "properties": {
+        "merchantId": {
+          "type": "string",
+          "description": "The Payrix Pro Merchant ID associated with the domain or domains being verified for Apple Pay."
+        },
+        "domain": {
+          "type": "string",
+          "description": "The Fully Qualified Domain Name (FQDN) associated with the registered Merchant."
+        }
+      }
+    }
+  }
+}
