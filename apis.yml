@@ -33,6 +33,16 @@ tags:
 - Fintech
 - Payouts
 - Chargebacks
+- Subscription
+tags_raw:
+- Company
+- Payments
+- Embedded Payments
+- Payment Facilitation
+- Merchant Onboarding
+- Fintech
+- Payouts
+- Chargebacks
 - Subscriptions
 
 maintainers:
@@ -133,6 +143,8 @@ apis:
   humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
   baseURL: https://api.payrix.com
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
@@ -301,6 +313,8 @@ apis:
   humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
   baseURL: https://api.payrix.com
   tags:
+  - APIKeys
+  tags_raw:
   - API Keys
   properties:
   - type: OpenAPI
@@ -363,6 +377,8 @@ apis:
   humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
   baseURL: https://api.payrix.com
   tags:
+  - Assessment
+  tags_raw:
   - Assessments
   properties:
   - type: OpenAPI
@@ -897,6 +913,8 @@ apis:
   humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
   baseURL: https://api.payrix.com
   tags:
+  - Entity Data
+  tags_raw:
   - EntityData
   properties:
   - type: OpenAPI
@@ -1062,6 +1080,8 @@ apis:
   humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
   baseURL: https://api.payrix.com
   tags:
+  - Fund
+  tags_raw:
   - Funds
   properties:
   - type: OpenAPI
@@ -1310,6 +1330,8 @@ apis:
   humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
   baseURL: https://api.payrix.com
   tags:
+  - Message threads
+  tags_raw:
   - Message Threads
   properties:
   - type: OpenAPI
@@ -1324,6 +1346,8 @@ apis:
   humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
   baseURL: https://api.payrix.com
   tags:
+  - Message
+  tags_raw:
   - Messages
   properties:
   - type: OpenAPI
@@ -1381,6 +1405,8 @@ apis:
   humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
   baseURL: https://api.payrix.com
   tags:
+  - Opt-Outs
+  tags_raw:
   - Opt Outs
   properties:
   - type: OpenAPI
@@ -1454,6 +1480,8 @@ apis:
   humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
   baseURL: https://api.payrix.com
   tags:
+  - Organization
+  tags_raw:
   - Orgs
   properties:
   - type: OpenAPI
@@ -1875,6 +1903,8 @@ apis:
   humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
   baseURL: https://api.payrix.com
   tags:
+  - Subscription
+  tags_raw:
   - Subscriptions
   properties:
   - type: OpenAPI
@@ -1919,6 +1949,8 @@ apis:
   humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
   baseURL: https://api.payrix.com
   tags:
+  - Team
+  tags_raw:
   - Teams
   properties:
   - type: OpenAPI
@@ -2005,6 +2037,8 @@ apis:
   humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
   baseURL: https://api.payrix.com
   tags:
+  - Terminal
+  tags_raw:
   - Terminals
   properties:
   - type: OpenAPI
