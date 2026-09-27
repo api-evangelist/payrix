@@ -423,6 +423,27 @@ paths:
       deprecated: false
 components:
   schemas:
+    updateApplePayDomainResponseResult:
+      title: updateApplePayDomainResponseResult
+      type: object
+      properties:
+        responses:
+          type: array
+          items: {}
+          description: ''
+    appleDomainsMassEnablementDataPreview:
+      title: appleDomainsMassEnablementDataPreview
+      type: object
+      properties:
+        dataPreview:
+          type: array
+          items:
+            $ref: '#/components/schemas/appleDomainsMassEnablementDataPreviewItem'
+          description: ''
+        msg:
+          type: string
+        status:
+          type: string
     appleDomainsMassEnablementDataPreviewItem:
       title: appleDomainsMassEnablementDataPreviewItem
       type: object
@@ -433,32 +454,6 @@ components:
         domain:
           type: string
           description: The Fully Qualified Domain Name (FQDN) associated with the registered Merchant.
-    updateApplePayDomainResponseResult:
-      title: updateApplePayDomainResponseResult
-      type: object
-      properties:
-        responses:
-          type: array
-          items: {}
-          description: ''
-    applePayForMerchantListPostRequest:
-      title: applePayForMerchantListPostRequest
-      type: object
-      properties:
-        merchantIdDomainPairs:
-          type: array
-          items:
-            $ref: '#/components/schemas/appleDomainsMassEnablementDataPreviewItem'
-          description: ''
-    error-four-hundred1:
-      title: error-four-hundred1
-      type: object
-      properties:
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/error-four-hundred-Properties'
-          description: An array of zero or more errors that occurred when the API processed the request.
     updateApplePayDomainPostRequest:
       title: updateApplePayDomainPostRequest
       type: object
@@ -477,49 +472,15 @@ components:
           items:
             $ref: '#/components/schemas/appleDomainsMassEnablementDataPreview'
           description: ''
-    appleDomainsMassEnablementForMerchantList:
-      title: appleDomainsMassEnablementForMerchantList
+    applePayForMerchantListPostRequest:
+      title: applePayForMerchantListPostRequest
       type: object
       properties:
-        response:
-          type: array
-          items:
-            $ref: '#/components/schemas/appleDomainsMassEnablementMerchantListResult'
-          description: ''
-    appleDomainsMassEnablementDataPreview:
-      title: appleDomainsMassEnablementDataPreview
-      type: object
-      properties:
-        dataPreview:
+        merchantIdDomainPairs:
           type: array
           items:
             $ref: '#/components/schemas/appleDomainsMassEnablementDataPreviewItem'
           description: ''
-        msg:
-          type: string
-        status:
-          type: string
-    appleDomainsMassEnablementMerchantListResult:
-      title: appleDomainsMassEnablementMerchantListResult
-      type: object
-      properties:
-        msg:
-          type: string
-          description: Current verification status of the Apple Pay domain registration.
-        status:
-          type: string
-          description: 'Status of the Apple domain change
-
-
-            <details>
-
-            <summary>Valid Values</summary>
-
-            - `success` - **Domain successfully verified**
-
-            - `failed` - **Domain verification failed**
-
-            </details>'
     error-four-hundred-Properties:
       title: error-four-hundred-Properties
       type: object
@@ -541,6 +502,45 @@ components:
         errorCode:
           type: string
           description: An identifying string code for this error.
+    error-four-hundred1:
+      title: error-four-hundred1
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/error-four-hundred-Properties'
+          description: An array of zero or more errors that occurred when the API processed the request.
+    appleDomainsMassEnablementMerchantListResult:
+      title: appleDomainsMassEnablementMerchantListResult
+      type: object
+      properties:
+        msg:
+          type: string
+          description: Current verification status of the Apple Pay domain registration.
+        status:
+          type: string
+          description: 'Status of the Apple domain change
+
+
+            <details>
+
+            <summary>Valid Values</summary>
+
+            - `success` - **Domain successfully verified**
+
+            - `failed` - **Domain verification failed**
+
+            </details>'
+    appleDomainsMassEnablementForMerchantList:
+      title: appleDomainsMassEnablementForMerchantList
+      type: object
+      properties:
+        response:
+          type: array
+          items:
+            $ref: '#/components/schemas/appleDomainsMassEnablementMerchantListResult'
+          description: ''
   securitySchemes:
     apiKey:
       type: apiKey

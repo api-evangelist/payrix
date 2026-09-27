@@ -136,19 +136,6 @@ paths:
       deprecated: false
 components:
   schemas:
-    vasOptOutTargetType:
-      title: vasOptOutTargetType
-      enum:
-      - merchant
-      - entity
-      type: string
-    vasOptOutMethod:
-      title: vasOptOutMethod
-      enum:
-      - api
-      - portal
-      - widget
-      type: string
     vasOptOutResponseItem:
       title: vasOptOutResponseItem
       type: object
@@ -163,8 +150,21 @@ components:
           items:
             $ref: '#/components/schemas/errorItem'
           description: An array of zero or more errors that occurred when the API processed the request.
-    errorItem:
-      title: errorItem
+    vasOptOutResponseResult:
+      title: vasOptOutResponseResult
+      type: object
+      properties:
+        response:
+          $ref: '#/components/schemas/vasOptOutResponseItem'
+    Datum:
+      title: Datum
+      type: object
+      properties:
+        status:
+          type: string
+          description: The opt-out status result.
+    error-four-hundred-Properties:
+      title: error-four-hundred-Properties
       type: object
       properties:
         code:
@@ -193,17 +193,44 @@ components:
           items:
             $ref: '#/components/schemas/error-four-hundred-Properties'
           description: An array of zero or more errors that occurred when the API processed the request.
+    vasOptOutTargetType:
+      title: vasOptOutTargetType
+      enum:
+      - merchant
+      - entity
+      type: string
+    errorItem:
+      title: errorItem
+      type: object
+      properties:
+        code:
+          type: integer
+          description: The error code associated with a particular error.
+          contentEncoding: int32
+        severity:
+          type: integer
+          description: "The severity level of a particular error. \nPossible values are '0' (informational), '1' (warning), '2' (error) and '4' (failure)."
+          contentEncoding: int32
+        msg:
+          type: string
+          description: The message associated with a particular error.
+        field:
+          type: string
+          description: Field name associated with error.
+        errorCode:
+          type: string
+          description: An identifying string code for this error.
     vasOptOutService:
       title: vasOptOutService
       const: fraudSight
       type: string
-    Datum:
-      title: Datum
-      type: object
-      properties:
-        status:
-          type: string
-          description: The opt-out status result.
+    vasOptOutMethod:
+      title: vasOptOutMethod
+      enum:
+      - api
+      - portal
+      - widget
+      type: string
     vasOptOutPostRequestModel:
       title: vasOptOutPostRequestModel
       type: object
@@ -234,33 +261,6 @@ components:
       examples:
       - method: api
         reason: Customer request
-    vasOptOutResponseResult:
-      title: vasOptOutResponseResult
-      type: object
-      properties:
-        response:
-          $ref: '#/components/schemas/vasOptOutResponseItem'
-    error-four-hundred-Properties:
-      title: error-four-hundred-Properties
-      type: object
-      properties:
-        code:
-          type: integer
-          description: The error code associated with a particular error.
-          contentEncoding: int32
-        severity:
-          type: integer
-          description: "The severity level of a particular error. \nPossible values are '0' (informational), '1' (warning), '2' (error) and '4' (failure)."
-          contentEncoding: int32
-        msg:
-          type: string
-          description: The message associated with a particular error.
-        field:
-          type: string
-          description: Field name associated with error.
-        errorCode:
-          type: string
-          description: An identifying string code for this error.
   securitySchemes:
     apiKey:
       type: apiKey

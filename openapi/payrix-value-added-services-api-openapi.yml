@@ -126,35 +126,12 @@ paths:
       deprecated: false
 components:
   schemas:
-    vasEnablementStatusResponse:
-      title: vasEnablementStatusResponse
+    vasEnablementStatusResponseResult:
+      title: vasEnablementStatusResponseResult
       type: object
       properties:
-        status:
-          allOf:
-          - $ref: '#/components/schemas/Status1'
-          - description: This field indicates the entity's current status for the provided service.
-    errorItem:
-      title: errorItem
-      type: object
-      properties:
-        code:
-          type: integer
-          description: The error code associated with a particular error.
-          contentEncoding: int32
-        severity:
-          type: integer
-          description: "The severity level of a particular error. \nPossible values are '0' (informational), '1' (warning), '2' (error) and '4' (failure)."
-          contentEncoding: int32
-        msg:
-          type: string
-          description: The message associated with a particular error.
-        field:
-          type: string
-          description: Field name associated with error.
-        errorCode:
-          type: string
-          description: An identifying string code for this error.
+        response:
+          $ref: '#/components/schemas/vasEnablementStatusResponseItem'
     Status1:
       title: Status1
       enum:
@@ -175,27 +152,6 @@ components:
           items:
             $ref: '#/components/schemas/errorItem'
           description: An array of zero or more errors that occurred when the API processed the request.
-    error-four-hundred1:
-      title: error-four-hundred1
-      type: object
-      properties:
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/error-four-hundred-Properties'
-          description: An array of zero or more errors that occurred when the API processed the request.
-    vasEnablementStatusResponseResult:
-      title: vasEnablementStatusResponseResult
-      type: object
-      properties:
-        response:
-          $ref: '#/components/schemas/vasEnablementStatusResponseItem'
-    vasEnablementStatusTargetType:
-      title: vasEnablementStatusTargetType
-      enum:
-      - merchant
-      - entity
-      type: string
     vasEnablementStatusService:
       title: vasEnablementStatusService
       const: fraudSight
@@ -221,6 +177,50 @@ components:
         errorCode:
           type: string
           description: An identifying string code for this error.
+    error-four-hundred1:
+      title: error-four-hundred1
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/error-four-hundred-Properties'
+          description: An array of zero or more errors that occurred when the API processed the request.
+    errorItem:
+      title: errorItem
+      type: object
+      properties:
+        code:
+          type: integer
+          description: The error code associated with a particular error.
+          contentEncoding: int32
+        severity:
+          type: integer
+          description: "The severity level of a particular error. \nPossible values are '0' (informational), '1' (warning), '2' (error) and '4' (failure)."
+          contentEncoding: int32
+        msg:
+          type: string
+          description: The message associated with a particular error.
+        field:
+          type: string
+          description: Field name associated with error.
+        errorCode:
+          type: string
+          description: An identifying string code for this error.
+    vasEnablementStatusResponse:
+      title: vasEnablementStatusResponse
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/Status1'
+          - description: This field indicates the entity's current status for the provided service.
+    vasEnablementStatusTargetType:
+      title: vasEnablementStatusTargetType
+      enum:
+      - merchant
+      - entity
+      type: string
   securitySchemes:
     apiKey:
       type: apiKey
