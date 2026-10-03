@@ -423,14 +423,6 @@ paths:
       deprecated: false
 components:
   schemas:
-    updateApplePayDomainResponseResult:
-      title: updateApplePayDomainResponseResult
-      type: object
-      properties:
-        responses:
-          type: array
-          items: {}
-          description: ''
     appleDomainsMassEnablementDataPreview:
       title: appleDomainsMassEnablementDataPreview
       type: object
@@ -444,16 +436,15 @@ components:
           type: string
         status:
           type: string
-    appleDomainsMassEnablementDataPreviewItem:
-      title: appleDomainsMassEnablementDataPreviewItem
+    appleDomainsMassEnablementForMerchantList:
+      title: appleDomainsMassEnablementForMerchantList
       type: object
       properties:
-        merchantId:
-          type: string
-          description: The Payrix Pro Merchant ID associated with the domain or domains being verified for Apple Pay.
-        domain:
-          type: string
-          description: The Fully Qualified Domain Name (FQDN) associated with the registered Merchant.
+        response:
+          type: array
+          items:
+            $ref: '#/components/schemas/appleDomainsMassEnablementMerchantListResult'
+          description: ''
     updateApplePayDomainPostRequest:
       title: updateApplePayDomainPostRequest
       type: object
@@ -463,45 +454,6 @@ components:
           description: The Fully Qualified Domain Name (FQDN) associated with the registered Merchant.
       examples:
       - domain: domain.com
-    appleDomainsMassEnablementCsvResponseResult:
-      title: appleDomainsMassEnablementCsvResponseResult
-      type: object
-      properties:
-        response:
-          type: array
-          items:
-            $ref: '#/components/schemas/appleDomainsMassEnablementDataPreview'
-          description: ''
-    applePayForMerchantListPostRequest:
-      title: applePayForMerchantListPostRequest
-      type: object
-      properties:
-        merchantIdDomainPairs:
-          type: array
-          items:
-            $ref: '#/components/schemas/appleDomainsMassEnablementDataPreviewItem'
-          description: ''
-    error-four-hundred-Properties:
-      title: error-four-hundred-Properties
-      type: object
-      properties:
-        code:
-          type: integer
-          description: The error code associated with a particular error.
-          contentEncoding: int32
-        severity:
-          type: integer
-          description: "The severity level of a particular error. \nPossible values are '0' (informational), '1' (warning), '2' (error) and '4' (failure)."
-          contentEncoding: int32
-        msg:
-          type: string
-          description: The message associated with a particular error.
-        field:
-          type: string
-          description: Field name associated with error.
-        errorCode:
-          type: string
-          description: An identifying string code for this error.
     error-four-hundred1:
       title: error-four-hundred1
       type: object
@@ -532,14 +484,62 @@ components:
             - `failed` - **Domain verification failed**
 
             </details>'
-    appleDomainsMassEnablementForMerchantList:
-      title: appleDomainsMassEnablementForMerchantList
+    appleDomainsMassEnablementDataPreviewItem:
+      title: appleDomainsMassEnablementDataPreviewItem
+      type: object
+      properties:
+        merchantId:
+          type: string
+          description: The Payrix Pro Merchant ID associated with the domain or domains being verified for Apple Pay.
+        domain:
+          type: string
+          description: The Fully Qualified Domain Name (FQDN) associated with the registered Merchant.
+    error-four-hundred-Properties:
+      title: error-four-hundred-Properties
+      type: object
+      properties:
+        code:
+          type: integer
+          description: The error code associated with a particular error.
+          contentEncoding: int32
+        severity:
+          type: integer
+          description: "The severity level of a particular error. \nPossible values are '0' (informational), '1' (warning), '2' (error) and '4' (failure)."
+          contentEncoding: int32
+        msg:
+          type: string
+          description: The message associated with a particular error.
+        field:
+          type: string
+          description: Field name associated with error.
+        errorCode:
+          type: string
+          description: An identifying string code for this error.
+    applePayForMerchantListPostRequest:
+      title: applePayForMerchantListPostRequest
+      type: object
+      properties:
+        merchantIdDomainPairs:
+          type: array
+          items:
+            $ref: '#/components/schemas/appleDomainsMassEnablementDataPreviewItem'
+          description: ''
+    updateApplePayDomainResponseResult:
+      title: updateApplePayDomainResponseResult
+      type: object
+      properties:
+        responses:
+          type: array
+          items: {}
+          description: ''
+    appleDomainsMassEnablementCsvResponseResult:
+      title: appleDomainsMassEnablementCsvResponseResult
       type: object
       properties:
         response:
           type: array
           items:
-            $ref: '#/components/schemas/appleDomainsMassEnablementMerchantListResult'
+            $ref: '#/components/schemas/appleDomainsMassEnablementDataPreview'
           description: ''
   securitySchemes:
     apiKey:

@@ -132,30 +132,15 @@ components:
       properties:
         response:
           $ref: '#/components/schemas/vasEnablementStatusResponseItem'
-    Status1:
-      title: Status1
-      enum:
-      - enabled
-      - disabled
-      type: string
-    vasEnablementStatusResponseItem:
-      title: vasEnablementStatusResponseItem
+    error-four-hundred1:
+      title: error-four-hundred1
       type: object
       properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/vasEnablementStatusResponse'
-          description: The data object that the API returns for this request.
         errors:
           type: array
           items:
-            $ref: '#/components/schemas/errorItem'
+            $ref: '#/components/schemas/error-four-hundred-Properties'
           description: An array of zero or more errors that occurred when the API processed the request.
-    vasEnablementStatusService:
-      title: vasEnablementStatusService
-      const: fraudSight
-      type: string
     error-four-hundred-Properties:
       title: error-four-hundred-Properties
       type: object
@@ -177,15 +162,26 @@ components:
         errorCode:
           type: string
           description: An identifying string code for this error.
-    error-four-hundred1:
-      title: error-four-hundred1
+    vasEnablementStatusResponseItem:
+      title: vasEnablementStatusResponseItem
       type: object
       properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/vasEnablementStatusResponse'
+          description: The data object that the API returns for this request.
         errors:
           type: array
           items:
-            $ref: '#/components/schemas/error-four-hundred-Properties'
+            $ref: '#/components/schemas/errorItem'
           description: An array of zero or more errors that occurred when the API processed the request.
+    vasEnablementStatusTargetType:
+      title: vasEnablementStatusTargetType
+      enum:
+      - merchant
+      - entity
+      type: string
     errorItem:
       title: errorItem
       type: object
@@ -215,11 +211,15 @@ components:
           allOf:
           - $ref: '#/components/schemas/Status1'
           - description: This field indicates the entity's current status for the provided service.
-    vasEnablementStatusTargetType:
-      title: vasEnablementStatusTargetType
+    vasEnablementStatusService:
+      title: vasEnablementStatusService
+      const: fraudSight
+      type: string
+    Status1:
+      title: Status1
       enum:
-      - merchant
-      - entity
+      - enabled
+      - disabled
       type: string
   securitySchemes:
     apiKey:
