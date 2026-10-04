@@ -136,6 +136,37 @@ paths:
       deprecated: false
 components:
   schemas:
+    error-four-hundred-Properties:
+      title: error-four-hundred-Properties
+      type: object
+      properties:
+        code:
+          type: integer
+          description: The error code associated with a particular error.
+          contentEncoding: int32
+        severity:
+          type: integer
+          description: "The severity level of a particular error. \nPossible values are '0' (informational), '1' (warning), '2' (error) and '4' (failure)."
+          contentEncoding: int32
+        msg:
+          type: string
+          description: The message associated with a particular error.
+        field:
+          type: string
+          description: Field name associated with error.
+        errorCode:
+          type: string
+          description: An identifying string code for this error.
+    vasOptOutService:
+      title: vasOptOutService
+      const: fraudSight
+      type: string
+    vasOptOutTargetType:
+      title: vasOptOutTargetType
+      enum:
+      - merchant
+      - entity
+      type: string
     vasOptOutPostRequestModel:
       title: vasOptOutPostRequestModel
       type: object
@@ -166,16 +197,13 @@ components:
       examples:
       - method: api
         reason: Customer request
-    vasOptOutService:
-      title: vasOptOutService
-      const: fraudSight
+    vasOptOutMethod:
+      title: vasOptOutMethod
+      enum:
+      - api
+      - portal
+      - widget
       type: string
-    vasOptOutResponseResult:
-      title: vasOptOutResponseResult
-      type: object
-      properties:
-        response:
-          $ref: '#/components/schemas/vasOptOutResponseItem'
     error-four-hundred1:
       title: error-four-hundred1
       type: object
@@ -185,19 +213,26 @@ components:
           items:
             $ref: '#/components/schemas/error-four-hundred-Properties'
           description: An array of zero or more errors that occurred when the API processed the request.
-    Datum:
-      title: Datum
+    vasOptOutResponseItem:
+      title: vasOptOutResponseItem
       type: object
       properties:
-        status:
-          type: string
-          description: The opt-out status result.
-    vasOptOutTargetType:
-      title: vasOptOutTargetType
-      enum:
-      - merchant
-      - entity
-      type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Datum'
+          description: The data object that the API returns for this request.
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/errorItem'
+          description: An array of zero or more errors that occurred when the API processed the request.
+    vasOptOutResponseResult:
+      title: vasOptOutResponseResult
+      type: object
+      properties:
+        response:
+          $ref: '#/components/schemas/vasOptOutResponseItem'
     errorItem:
       title: errorItem
       type: object
@@ -219,48 +254,13 @@ components:
         errorCode:
           type: string
           description: An identifying string code for this error.
-    error-four-hundred-Properties:
-      title: error-four-hundred-Properties
+    Datum:
+      title: Datum
       type: object
       properties:
-        code:
-          type: integer
-          description: The error code associated with a particular error.
-          contentEncoding: int32
-        severity:
-          type: integer
-          description: "The severity level of a particular error. \nPossible values are '0' (informational), '1' (warning), '2' (error) and '4' (failure)."
-          contentEncoding: int32
-        msg:
+        status:
           type: string
-          description: The message associated with a particular error.
-        field:
-          type: string
-          description: Field name associated with error.
-        errorCode:
-          type: string
-          description: An identifying string code for this error.
-    vasOptOutMethod:
-      title: vasOptOutMethod
-      enum:
-      - api
-      - portal
-      - widget
-      type: string
-    vasOptOutResponseItem:
-      title: vasOptOutResponseItem
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Datum'
-          description: The data object that the API returns for this request.
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/errorItem'
-          description: An array of zero or more errors that occurred when the API processed the request.
+          description: The opt-out status result.
   securitySchemes:
     apiKey:
       type: apiKey

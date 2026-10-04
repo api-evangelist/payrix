@@ -423,77 +423,6 @@ paths:
       deprecated: false
 components:
   schemas:
-    appleDomainsMassEnablementDataPreview:
-      title: appleDomainsMassEnablementDataPreview
-      type: object
-      properties:
-        dataPreview:
-          type: array
-          items:
-            $ref: '#/components/schemas/appleDomainsMassEnablementDataPreviewItem'
-          description: ''
-        msg:
-          type: string
-        status:
-          type: string
-    appleDomainsMassEnablementForMerchantList:
-      title: appleDomainsMassEnablementForMerchantList
-      type: object
-      properties:
-        response:
-          type: array
-          items:
-            $ref: '#/components/schemas/appleDomainsMassEnablementMerchantListResult'
-          description: ''
-    updateApplePayDomainPostRequest:
-      title: updateApplePayDomainPostRequest
-      type: object
-      properties:
-        domain:
-          type: string
-          description: The Fully Qualified Domain Name (FQDN) associated with the registered Merchant.
-      examples:
-      - domain: domain.com
-    error-four-hundred1:
-      title: error-four-hundred1
-      type: object
-      properties:
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/error-four-hundred-Properties'
-          description: An array of zero or more errors that occurred when the API processed the request.
-    appleDomainsMassEnablementMerchantListResult:
-      title: appleDomainsMassEnablementMerchantListResult
-      type: object
-      properties:
-        msg:
-          type: string
-          description: Current verification status of the Apple Pay domain registration.
-        status:
-          type: string
-          description: 'Status of the Apple domain change
-
-
-            <details>
-
-            <summary>Valid Values</summary>
-
-            - `success` - **Domain successfully verified**
-
-            - `failed` - **Domain verification failed**
-
-            </details>'
-    appleDomainsMassEnablementDataPreviewItem:
-      title: appleDomainsMassEnablementDataPreviewItem
-      type: object
-      properties:
-        merchantId:
-          type: string
-          description: The Payrix Pro Merchant ID associated with the domain or domains being verified for Apple Pay.
-        domain:
-          type: string
-          description: The Fully Qualified Domain Name (FQDN) associated with the registered Merchant.
     error-four-hundred-Properties:
       title: error-four-hundred-Properties
       type: object
@@ -515,14 +444,14 @@ components:
         errorCode:
           type: string
           description: An identifying string code for this error.
-    applePayForMerchantListPostRequest:
-      title: applePayForMerchantListPostRequest
+    appleDomainsMassEnablementForMerchantList:
+      title: appleDomainsMassEnablementForMerchantList
       type: object
       properties:
-        merchantIdDomainPairs:
+        response:
           type: array
           items:
-            $ref: '#/components/schemas/appleDomainsMassEnablementDataPreviewItem'
+            $ref: '#/components/schemas/appleDomainsMassEnablementMerchantListResult'
           description: ''
     updateApplePayDomainResponseResult:
       title: updateApplePayDomainResponseResult
@@ -532,6 +461,45 @@ components:
           type: array
           items: {}
           description: ''
+    appleDomainsMassEnablementMerchantListResult:
+      title: appleDomainsMassEnablementMerchantListResult
+      type: object
+      properties:
+        msg:
+          type: string
+          description: Current verification status of the Apple Pay domain registration.
+        status:
+          type: string
+          description: 'Status of the Apple domain change
+
+
+            <details>
+
+            <summary>Valid Values</summary>
+
+            - `success` - **Domain successfully verified**
+
+            - `failed` - **Domain verification failed**
+
+            </details>'
+    applePayForMerchantListPostRequest:
+      title: applePayForMerchantListPostRequest
+      type: object
+      properties:
+        merchantIdDomainPairs:
+          type: array
+          items:
+            $ref: '#/components/schemas/appleDomainsMassEnablementDataPreviewItem'
+          description: ''
+    updateApplePayDomainPostRequest:
+      title: updateApplePayDomainPostRequest
+      type: object
+      properties:
+        domain:
+          type: string
+          description: The Fully Qualified Domain Name (FQDN) associated with the registered Merchant.
+      examples:
+      - domain: domain.com
     appleDomainsMassEnablementCsvResponseResult:
       title: appleDomainsMassEnablementCsvResponseResult
       type: object
@@ -541,6 +509,38 @@ components:
           items:
             $ref: '#/components/schemas/appleDomainsMassEnablementDataPreview'
           description: ''
+    appleDomainsMassEnablementDataPreview:
+      title: appleDomainsMassEnablementDataPreview
+      type: object
+      properties:
+        dataPreview:
+          type: array
+          items:
+            $ref: '#/components/schemas/appleDomainsMassEnablementDataPreviewItem'
+          description: ''
+        msg:
+          type: string
+        status:
+          type: string
+    appleDomainsMassEnablementDataPreviewItem:
+      title: appleDomainsMassEnablementDataPreviewItem
+      type: object
+      properties:
+        merchantId:
+          type: string
+          description: The Payrix Pro Merchant ID associated with the domain or domains being verified for Apple Pay.
+        domain:
+          type: string
+          description: The Fully Qualified Domain Name (FQDN) associated with the registered Merchant.
+    error-four-hundred1:
+      title: error-four-hundred1
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/error-four-hundred-Properties'
+          description: An array of zero or more errors that occurred when the API processed the request.
   securitySchemes:
     apiKey:
       type: apiKey

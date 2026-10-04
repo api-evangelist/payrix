@@ -126,21 +126,12 @@ paths:
       deprecated: false
 components:
   schemas:
-    vasEnablementStatusResponseResult:
-      title: vasEnablementStatusResponseResult
-      type: object
-      properties:
-        response:
-          $ref: '#/components/schemas/vasEnablementStatusResponseItem'
-    error-four-hundred1:
-      title: error-four-hundred1
-      type: object
-      properties:
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/error-four-hundred-Properties'
-          description: An array of zero or more errors that occurred when the API processed the request.
+    Status1:
+      title: Status1
+      enum:
+      - enabled
+      - disabled
+      type: string
     error-four-hundred-Properties:
       title: error-four-hundred-Properties
       type: object
@@ -176,12 +167,6 @@ components:
           items:
             $ref: '#/components/schemas/errorItem'
           description: An array of zero or more errors that occurred when the API processed the request.
-    vasEnablementStatusTargetType:
-      title: vasEnablementStatusTargetType
-      enum:
-      - merchant
-      - entity
-      type: string
     errorItem:
       title: errorItem
       type: object
@@ -203,6 +188,16 @@ components:
         errorCode:
           type: string
           description: An identifying string code for this error.
+    vasEnablementStatusTargetType:
+      title: vasEnablementStatusTargetType
+      enum:
+      - merchant
+      - entity
+      type: string
+    vasEnablementStatusService:
+      title: vasEnablementStatusService
+      const: fraudSight
+      type: string
     vasEnablementStatusResponse:
       title: vasEnablementStatusResponse
       type: object
@@ -211,16 +206,21 @@ components:
           allOf:
           - $ref: '#/components/schemas/Status1'
           - description: This field indicates the entity's current status for the provided service.
-    vasEnablementStatusService:
-      title: vasEnablementStatusService
-      const: fraudSight
-      type: string
-    Status1:
-      title: Status1
-      enum:
-      - enabled
-      - disabled
-      type: string
+    vasEnablementStatusResponseResult:
+      title: vasEnablementStatusResponseResult
+      type: object
+      properties:
+        response:
+          $ref: '#/components/schemas/vasEnablementStatusResponseItem'
+    error-four-hundred1:
+      title: error-four-hundred1
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/error-four-hundred-Properties'
+          description: An array of zero or more errors that occurred when the API processed the request.
   securitySchemes:
     apiKey:
       type: apiKey
