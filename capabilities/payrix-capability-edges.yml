@@ -1,0 +1,26 @@
+slug: payrix
+provider: Payrix
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Invoices
+  spec_file: payrix-invoices-api-openapi.yml
+  capability_id: BC-200.30
+  capability_id_l1: BC-200
+  capability_name: Accounts Receivable Management
+  confidence: 0.7
+  evidence: GET /invoices, POST /invoices, PUT /invoices/{id} — invoice lifecycle in a platform offering
+    'recurring billing, fees, disbursements'
+  reason: Full CRUD over invoice records used to bill payers and collect funds, which is customer invoicing
+    and collections. Mapped to Accounts Receivable Management; some ambiguity against the SaaS subscription-invoicing
+    capability since Payrix invoicing is generic rather than subscription-specific.
