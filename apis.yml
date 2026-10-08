@@ -52,6 +52,8 @@ maintainers:
   email: info@apis.io
 
 common:
+- type: Plans
+  url: plans/payrix-plans-pricing.yml
 - type: CapabilityMap
   url: capabilities/payrix-capability-edges.yml
   name: Payrix Business Capability Map
