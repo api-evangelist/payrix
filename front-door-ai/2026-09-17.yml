@@ -1,0 +1,30 @@
+# Front Door AI Index — payrix — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: payrix
+  lexicon_version: '1.0'
+  probed_at: '2026-09-25'
+  host: payrix.com
+  final_host: platforms.worldpay.com
+  ownership: own
+  owner: payrix
+  shares_host_with: null
+  inherited_from: null
+  alias_of: null
+  verdict: scored
+  score: 3
+  band: 3
+  band_label: light
+  host_score: 3
+  density: 1.79
+  words: 1675
+  tiers:
+    agentic: 0
+    core: 3
+    model: 0
+  ambiguous: 1
+  top_terms:
+    AI: 2
+    LLMs: 1
+    automation: 1
