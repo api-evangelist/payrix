@@ -126,47 +126,12 @@ paths:
       deprecated: false
 components:
   schemas:
-    Status1:
-      title: Status1
+    vasEnablementStatusTargetType:
+      title: vasEnablementStatusTargetType
       enum:
-      - enabled
-      - disabled
+      - merchant
+      - entity
       type: string
-    error-four-hundred-Properties:
-      title: error-four-hundred-Properties
-      type: object
-      properties:
-        code:
-          type: integer
-          description: The error code associated with a particular error.
-          contentEncoding: int32
-        severity:
-          type: integer
-          description: "The severity level of a particular error. \nPossible values are '0' (informational), '1' (warning), '2' (error) and '4' (failure)."
-          contentEncoding: int32
-        msg:
-          type: string
-          description: The message associated with a particular error.
-        field:
-          type: string
-          description: Field name associated with error.
-        errorCode:
-          type: string
-          description: An identifying string code for this error.
-    vasEnablementStatusResponseItem:
-      title: vasEnablementStatusResponseItem
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/vasEnablementStatusResponse'
-          description: The data object that the API returns for this request.
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/errorItem'
-          description: An array of zero or more errors that occurred when the API processed the request.
     errorItem:
       title: errorItem
       type: object
@@ -188,16 +153,26 @@ components:
         errorCode:
           type: string
           description: An identifying string code for this error.
-    vasEnablementStatusTargetType:
-      title: vasEnablementStatusTargetType
-      enum:
-      - merchant
-      - entity
-      type: string
-    vasEnablementStatusService:
-      title: vasEnablementStatusService
-      const: fraudSight
-      type: string
+    vasEnablementStatusResponseResult:
+      title: vasEnablementStatusResponseResult
+      type: object
+      properties:
+        response:
+          $ref: '#/components/schemas/vasEnablementStatusResponseItem'
+    vasEnablementStatusResponseItem:
+      title: vasEnablementStatusResponseItem
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/vasEnablementStatusResponse'
+          description: The data object that the API returns for this request.
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/errorItem'
+          description: An array of zero or more errors that occurred when the API processed the request.
     vasEnablementStatusResponse:
       title: vasEnablementStatusResponse
       type: object
@@ -206,12 +181,27 @@ components:
           allOf:
           - $ref: '#/components/schemas/Status1'
           - description: This field indicates the entity's current status for the provided service.
-    vasEnablementStatusResponseResult:
-      title: vasEnablementStatusResponseResult
+    error-four-hundred-Properties:
+      title: error-four-hundred-Properties
       type: object
       properties:
-        response:
-          $ref: '#/components/schemas/vasEnablementStatusResponseItem'
+        code:
+          type: integer
+          description: The error code associated with a particular error.
+          contentEncoding: int32
+        severity:
+          type: integer
+          description: "The severity level of a particular error. \nPossible values are '0' (informational), '1' (warning), '2' (error) and '4' (failure)."
+          contentEncoding: int32
+        msg:
+          type: string
+          description: The message associated with a particular error.
+        field:
+          type: string
+          description: Field name associated with error.
+        errorCode:
+          type: string
+          description: An identifying string code for this error.
     error-four-hundred1:
       title: error-four-hundred1
       type: object
@@ -221,6 +211,16 @@ components:
           items:
             $ref: '#/components/schemas/error-four-hundred-Properties'
           description: An array of zero or more errors that occurred when the API processed the request.
+    vasEnablementStatusService:
+      title: vasEnablementStatusService
+      const: fraudSight
+      type: string
+    Status1:
+      title: Status1
+      enum:
+      - enabled
+      - disabled
+      type: string
   securitySchemes:
     apiKey:
       type: apiKey

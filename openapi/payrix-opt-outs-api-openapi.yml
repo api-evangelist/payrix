@@ -136,8 +136,39 @@ paths:
       deprecated: false
 components:
   schemas:
-    error-four-hundred-Properties:
-      title: error-four-hundred-Properties
+    vasOptOutTargetType:
+      title: vasOptOutTargetType
+      enum:
+      - merchant
+      - entity
+      type: string
+    vasOptOutService:
+      title: vasOptOutService
+      const: fraudSight
+      type: string
+    Datum:
+      title: Datum
+      type: object
+      properties:
+        status:
+          type: string
+          description: The opt-out status result.
+    vasOptOutResponseItem:
+      title: vasOptOutResponseItem
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Datum'
+          description: The data object that the API returns for this request.
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/errorItem'
+          description: An array of zero or more errors that occurred when the API processed the request.
+    errorItem:
+      title: errorItem
       type: object
       properties:
         code:
@@ -157,16 +188,6 @@ components:
         errorCode:
           type: string
           description: An identifying string code for this error.
-    vasOptOutService:
-      title: vasOptOutService
-      const: fraudSight
-      type: string
-    vasOptOutTargetType:
-      title: vasOptOutTargetType
-      enum:
-      - merchant
-      - entity
-      type: string
     vasOptOutPostRequestModel:
       title: vasOptOutPostRequestModel
       type: object
@@ -197,44 +218,8 @@ components:
       examples:
       - method: api
         reason: Customer request
-    vasOptOutMethod:
-      title: vasOptOutMethod
-      enum:
-      - api
-      - portal
-      - widget
-      type: string
-    error-four-hundred1:
-      title: error-four-hundred1
-      type: object
-      properties:
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/error-four-hundred-Properties'
-          description: An array of zero or more errors that occurred when the API processed the request.
-    vasOptOutResponseItem:
-      title: vasOptOutResponseItem
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Datum'
-          description: The data object that the API returns for this request.
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/errorItem'
-          description: An array of zero or more errors that occurred when the API processed the request.
-    vasOptOutResponseResult:
-      title: vasOptOutResponseResult
-      type: object
-      properties:
-        response:
-          $ref: '#/components/schemas/vasOptOutResponseItem'
-    errorItem:
-      title: errorItem
+    error-four-hundred-Properties:
+      title: error-four-hundred-Properties
       type: object
       properties:
         code:
@@ -254,13 +239,28 @@ components:
         errorCode:
           type: string
           description: An identifying string code for this error.
-    Datum:
-      title: Datum
+    vasOptOutResponseResult:
+      title: vasOptOutResponseResult
       type: object
       properties:
-        status:
-          type: string
-          description: The opt-out status result.
+        response:
+          $ref: '#/components/schemas/vasOptOutResponseItem'
+    vasOptOutMethod:
+      title: vasOptOutMethod
+      enum:
+      - api
+      - portal
+      - widget
+      type: string
+    error-four-hundred1:
+      title: error-four-hundred1
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/error-four-hundred-Properties'
+          description: An array of zero or more errors that occurred when the API processed the request.
   securitySchemes:
     apiKey:
       type: apiKey
