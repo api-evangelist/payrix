@@ -1335,7 +1335,7 @@ apis:
   humanURL: https://docs.worldpay.com/api-specification/payrix/merchant
   baseURL: https://api.payrix.com
   tags:
-  - Message threads
+  - Message Threads
   tags_raw:
   - Message Threads
   properties:
