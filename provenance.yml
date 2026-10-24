@@ -12,6 +12,9 @@ artifacts:
   authentication/payrix-authentication.yml:
     method: derived
     evidence: declared in the artifact
+  capabilities/payrix-capability-edges.yml:
+    method: unknown
+    evidence: no authorship recorded
   changelog/payrix-changelog.yml:
     method: searched
     evidence: declared in the artifact
@@ -36,6 +39,12 @@ artifacts:
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
+  integrations/_index.yml:
+    method: generated
+    evidence: carries an API Evangelist house phrase
+  integrations/payrix-integration-edges.yml:
+    method: searched
+    evidence: declared in the artifact
   json-ld/payrix-context.jsonld:
     method: unknown
     evidence: no authorship recorded
@@ -219,7 +228,7 @@ artifacts:
   json-schema/payrix-update-apple-pay-domain-response-result-schema.json:
     method: unknown
     evidence: no authorship recorded
-  kin/checks-2026-09-24T161608.yml:
+  kin/checks-2026-10-11T110117.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-20T205903.yml:
@@ -247,6 +256,21 @@ artifacts:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-24T161608.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T210408.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T232841.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T000835.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T024842.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-11T110117.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   lifecycle/payrix-lifecycle.yml:
